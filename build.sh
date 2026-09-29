@@ -14,5 +14,9 @@ URL=https://jackywolf2008.github.io/yingxian-tower
   awk 'f||/^<div class="wrap">/{f=1;print}' index.html
   printf '\n</body>\n</html>\n'
 } > docs/index.html
+# 公开站点不依赖外部 CDN：three.js 随站点一起发布；Google 字体改为不阻塞渲染（大陆打不开时直接用系统字体）
+[ -f docs/three.min.js ] || curl -sfL https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js -o docs/three.min.js
+sed -i '' -e 's#https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js#three.min.js#' \
+  -e 's#display=swap" rel="stylesheet">#display=swap" rel="stylesheet" media="print" onload="this.media=\x27all\x27">#' docs/index.html
 cp ta-1933.jpg liang-*.jpg docs/
 touch docs/.nojekyll
