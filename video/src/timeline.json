@@ -1,0 +1,22 @@
+{
+  "fps": 30,
+  "transition": 15,
+  "scenes": [
+    { "id": "title", "frames": 135 },
+    { "id": "hero", "frames": 195 },
+    { "id": "history", "frames": 210 },
+    { "id": "eaves", "frames": 120 },
+    { "id": "spire", "frames": 120 },
+    { "id": "levels", "frames": 180 },
+    { "id": "dark", "frames": 165 },
+    { "id": "section", "frames": 180 },
+    { "id": "bracket", "frames": 240 },
+    { "id": "fork", "frames": 120 },
+    { "id": "joint", "frames": 105 },
+    { "id": "quake", "frames": 135 },
+    { "id": "today", "frames": 120 },
+    { "id": "build", "frames": 375 },
+    { "id": "ui", "frames": 270 },
+    { "id": "end", "frames": 180 }
+  ]
+}
