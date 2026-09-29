@@ -220,7 +220,7 @@ export const End: React.FC = () => {
       <Img src={staticFile('shots/build/f0374.webp')} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', opacity: rise(f, 0, 30) }} />
       <Band progress={rise(f, 6, 26)} top={0} height={12} />
       <div style={{ position: 'absolute', left: 96, top: 230, width: 860 }}>
-        <div style={{ fontFamily: F.disp, fontSize: 150, lineHeight: 1.05, color: C.ink, opacity: rise(f, 8, 20) }}>拆开应县木塔</div>
+        <div style={{ fontFamily: F.disp, fontSize: 128, lineHeight: 1.05, color: C.ink, whiteSpace: 'nowrap', opacity: rise(f, 8, 20) }}>拆开应县木塔</div>
         <div style={{ fontFamily: F.serif, fontWeight: 500, fontSize: 40, color: C.ink, marginTop: 36, opacity: rise(f, 20, 18) }}>打开网页，自己拆一遍</div>
         <div style={{ fontFamily: F.serif, fontSize: 26, color: C.mute, marginTop: 8, opacity: rise(f, 26, 18) }}>Open it — and take it apart yourself</div>
         <div style={{ display: 'inline-flex', alignItems: 'center', gap: 14, marginTop: 40, padding: '16px 30px', borderRadius: 40, background: C.qing, color: C.on, fontFamily: F.sans, fontWeight: 700, fontSize: 32, opacity: rise(f, 34, 18), transform: `scale(${0.94 + 0.06 * rise(f, 34, 18)})` }}>
