@@ -6,7 +6,7 @@ type ShotText = { plate: { kicker: string; title: string; sub: string }; caps: C
 export const SHOT_TEXT: Record<string, ShotText> = {
   hero: {
     plate: { kicker: '封面 · COVER', title: '应县木塔', sub: '佛宫寺释迦塔 · 辽清宁二年（1056）' },
-    caps: [{ from: 95, to: 195, zh: '世界上现存最高、最古老的木结构楼阁式塔', en: 'The world’s tallest and oldest surviving timber pagoda' }],
+    caps: [{ from: 95, to: 195, zh: '世界上现存最高、最古老的木结构楼阁式塔', en: 'The tallest and oldest surviving timber pagoda on Earth' }],
     labels: false,
   },
   eaves: {
