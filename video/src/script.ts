@@ -33,7 +33,7 @@ export const SHOT_TEXT: Record<string, ShotText> = {
   },
   section: {
     plate: { kicker: '内部 · INSIDE', title: '剖开看', sub: '沿中轴线一刀剖开' },
-    caps: [{ from: 20, to: 180, zh: '两圈柱子围成“筒中筒”：里面供佛，外面走人', en: 'A tube within a tube: Buddhas inside, visitors outside' }],
+    caps: [{ from: 20, to: 180, zh: '两圈柱子套成筒中筒：里面供佛，外面走人', en: 'A tube within a tube: Buddhas inside, visitors outside' }],
     side: 'right',
   },
   bracket: {
@@ -93,7 +93,7 @@ export const LEVELNAME = ['台基', '一层', '一层暗层', '二层', '二层�
 
 export const UI_FEATURES = [
   { img: 'ui/ui-home.png', zh: '点红点、点构件，一层层往下钻', en: 'Click hotspots and parts to drill down' },
-  { img: 'ui/ui-tour.png', zh: '点“导览”，字幕带你一路看下来', en: 'A guided tour with subtitles, 19 stops' },
+  { img: 'ui/ui-tour.png', zh: '点导览，字幕带你一路看下来', en: 'A guided tour with subtitles, 19 stops' },
   { img: 'ui/ui-toc.png', zh: '目录、前进后退，像翻一本书', en: 'Contents, breadcrumbs, back and forward' },
   { img: 'ui/ui-build.png', zh: '重建木塔：32 道工序', en: 'Rebuild the pagoda in 32 steps' },
 ];
