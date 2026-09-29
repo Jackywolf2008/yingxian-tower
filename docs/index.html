@@ -1,0 +1,941 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="一本可以一层层点进去的应县木塔立体书：结构按梁思成的测绘图与记述搭建，最后从空地把木塔重新盖起来。">
+<meta property="og:title" content="拆开应县木塔">
+<meta property="og:image" content="https://jackywolf2008.github.io/yingxian-tower/ta-1933.jpg">
+<style>[hidden]{display:none!important}img{max-width:100%}</style>
+<title>拆开应县木塔</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#e9e3d3;--sheet:#f5f1e6;--stage:#eee8d9;--ink:#29231c;--mute:#675e51;--line:#d4c9b0;--line2:#b7aa8d;
+ --qing:#2b5876;--lu:#37705a;--zhu:#b13d28;--huang:#ad802b;--on:#f7f3e9;
+ --disp:"Ma Shan Zheng","STKaiti","KaiTi","Kaiti SC",serif;--serif:"Noto Serif SC","Songti SC","STSong","SimSun",serif;--sans:"Noto Sans SC","PingFang SC","Microsoft YaHei",system-ui,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--paper:#141617;--sheet:#1c1f20;--stage:#212526;--ink:#ece5d3;--mute:#a49c8b;--line:#33393a;--line2:#4b5253;--qing:#8bb9d6;--lu:#86c4a8;--zhu:#e67d63;--huang:#ddb05a;--on:#141617}}
+:root[data-theme="dark"]{color-scheme:dark;--paper:#141617;--sheet:#1c1f20;--stage:#212526;--ink:#ece5d3;--mute:#a49c8b;--line:#33393a;--line2:#4b5253;--qing:#8bb9d6;--lu:#86c4a8;--zhu:#e67d63;--huang:#ddb05a;--on:#141617}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);-webkit-font-smoothing:antialiased}
+.wrap{max-width:1320px;margin:0 auto;padding-inline:16px;padding-block:16px 40px}
+.top{display:flex;align-items:baseline;gap:6px 18px;flex-wrap:wrap;margin-bottom:12px}
+h1{font-family:var(--disp);font-weight:400;font-size:clamp(34px,5vw,48px);line-height:1;margin:0;letter-spacing:.04em}
+.top p{margin:0;color:var(--mute);font-size:14.5px;line-height:1.6;max-width:42em;text-wrap:pretty}
+.win{position:relative;background:var(--sheet);border:1px solid var(--line2);border-radius:10px;overflow:hidden;box-shadow:0 14px 34px -20px rgba(40,28,10,.4)}
+.chrome{display:flex;align-items:center;gap:6px;padding:8px 10px;background:var(--paper);font-family:var(--sans)}
+.chrome button{font:inherit;font-size:14px;border:1px solid var(--line2);background:var(--sheet);color:var(--ink);border-radius:7px;height:34px;padding:0 12px;cursor:pointer;flex:none}
+.chrome .ic{width:34px;padding:0;font-size:19px;line-height:1}
+.chrome button:disabled{opacity:.35;cursor:default}
+.chrome button:hover:not(:disabled){border-color:var(--ink)}
+#buildBtn{background:var(--zhu);border-color:var(--zhu);color:var(--on);font-weight:700}
+#buildBtn[aria-pressed="true"]{background:var(--ink);border-color:var(--ink)}
+#tourBtn{background:var(--qing);border-color:var(--qing);color:var(--on);font-weight:700;min-width:5.2em}#tourBtn[aria-pressed="true"]{background:var(--ink);border-color:var(--ink)}
+.tsub{position:absolute;left:16px;right:16px;bottom:58px;margin:0 auto;max-width:640px;z-index:3;background:color-mix(in srgb,var(--sheet) 94%,transparent);border:1px solid var(--ink);padding:8px 14px 11px}
+.tsub .th{display:flex;align-items:center;justify-content:space-between;gap:6px 10px;flex-wrap:wrap;font-family:var(--sans);font-size:12px;color:var(--zhu);font-weight:700;letter-spacing:.06em}
+.tsub .tb{display:flex;gap:4px}
+.tsub button{font:inherit;font-weight:500;letter-spacing:0;font-size:12.5px;height:28px;padding:0 10px;border-radius:14px;border:1px solid var(--line2);background:var(--sheet);color:var(--ink);cursor:pointer}
+.tsub button:hover:not(:disabled){border-color:var(--ink)}.tsub button:disabled{opacity:.45;cursor:default}
+.tsub p{margin:6px 0 0;font-size:16px;line-height:1.7;min-height:1.7em;text-wrap:pretty}
+.tsub:not([hidden])~.cap{display:none}
+.addr{flex:1;min-width:0;display:flex;align-items:center;height:34px;padding:0 12px;border:1px solid var(--line2);border-radius:17px;background:var(--sheet);overflow-x:auto;white-space:nowrap;scrollbar-width:none;font-size:13.5px}
+.addr::-webkit-scrollbar{display:none}
+.addr button{border:0;background:none;height:auto;padding:2px 4px;color:var(--qing);font-size:13.5px;border-radius:4px}
+.addr button:hover{text-decoration:underline}
+.addr i{font-style:normal;color:var(--mute);padding:0 2px}
+.addr span{padding:2px 4px;font-weight:700}
+.band{height:6px;background:linear-gradient(90deg,var(--qing) 0 18%,var(--lu) 18% 33%,var(--huang) 33% 43%,var(--zhu) 43% 57%,var(--huang) 57% 67%,var(--lu) 67% 82%,var(--qing) 82%)}
+.page{display:grid;grid-template-columns:minmax(0,1fr) 380px}
+.stage{position:relative;height:clamp(500px,76vh,820px);touch-action:none;user-select:none;-webkit-user-select:none;overflow:hidden;
+ background:radial-gradient(ellipse at 50% 42%,transparent 55%,rgba(90,70,40,.1)),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .35 0 0 0 0 .28 0 0 0 0 .18 0 0 0 .1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),var(--stage)}
+#gl{position:absolute;inset:0;width:100%;height:100%;display:block;cursor:grab}#gl:active{cursor:grabbing}
+.panel{position:relative;height:clamp(500px,76vh,820px);overflow-y:auto;border-left:1px solid var(--line);padding:22px 22px 26px;display:flex;flex-direction:column;gap:18px}
+.plate{position:absolute;left:18px;top:18px;max-width:min(58%,310px);padding:9px 15px 11px;background:color-mix(in srgb,var(--sheet) 88%,transparent);border:1px solid var(--ink);outline:1px solid var(--ink);outline-offset:3px;pointer-events:none;z-index:2}
+.plate .k{font-family:var(--sans);font-size:11.5px;letter-spacing:.22em;color:var(--zhu);font-weight:700}
+.plate .t{font-family:var(--disp);font-size:clamp(28px,3.4vw,40px);line-height:1.1;margin-top:3px;text-wrap:balance}
+.plate .s{font-size:13.5px;color:var(--mute);margin-top:3px;line-height:1.5}
+.turn{animation:turn .55s cubic-bezier(.2,.7,.2,1);transform-origin:left center}
+@keyframes turn{from{opacity:0;transform:perspective(900px) rotateY(-14deg) translateX(-8px)}to{opacity:1;transform:none}}
+.labels{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:1}
+.lb{position:absolute;left:0;top:0;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s;will-change:transform;font-family:var(--sans)}
+.lb.on{opacity:1;visibility:visible}
+.lb i{position:absolute;left:-4px;top:-4px;width:8px;height:8px;border-radius:50%;background:var(--ink);box-shadow:0 0 0 2px var(--sheet)}
+.lb span{position:absolute;left:11px;top:0;transform:translateY(-50%);white-space:nowrap;background:var(--sheet);color:var(--ink);font-size:12.5px;line-height:1.3;padding:3px 8px 4px;border:1px solid var(--ink);border-radius:3px}
+.lb.flip span{left:auto;right:11px}
+.lb.go{pointer-events:auto;cursor:pointer}
+.lb.go i{width:12px;height:12px;left:-6px;top:-6px;background:var(--zhu)}
+.lb.go i::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:2px solid var(--zhu);animation:ping 1.8s ease-out infinite}
+@keyframes ping{from{transform:scale(.5);opacity:.9}to{transform:scale(1.6);opacity:0}}
+.lb.go span{border-color:var(--zhu);color:var(--zhu);font-weight:700}
+.lb.go:hover span,.lb.go:focus-visible span{background:var(--zhu);color:var(--on)}
+.lb.go:focus-visible{outline:none}
+.hint{position:absolute;right:14px;top:14px;font-family:var(--sans);font-size:12px;color:var(--mute);background:color-mix(in srgb,var(--sheet) 82%,transparent);padding:4px 10px;border-radius:12px;pointer-events:none;transition:opacity .6s;z-index:2}.hint.gone{opacity:0}
+.tip{position:absolute;left:0;top:0;z-index:3;pointer-events:none;font-family:var(--sans);font-size:12.5px;background:var(--ink);color:var(--sheet);padding:4px 9px;border-radius:4px;white-space:nowrap}
+.cap{position:absolute;left:16px;right:16px;bottom:60px;margin:0 auto;max-width:520px;z-index:2;background:var(--sheet);border:1px solid var(--ink);padding:9px 14px 10px;font-size:14px;line-height:1.6;pointer-events:none}
+.cap b{display:block;font-family:var(--sans);font-size:13px;color:var(--zhu)}
+.tools{position:absolute;left:12px;right:12px;bottom:12px;display:flex;gap:6px;flex-wrap:wrap;z-index:2;font-family:var(--sans);pointer-events:none}
+.tools button{pointer-events:auto;font:inherit;font-size:13.5px;height:34px;padding:0 13px;border-radius:17px;border:1px solid var(--line2);background:var(--sheet);color:var(--ink);cursor:pointer}
+.tools button:hover:not(:disabled){border-color:var(--ink)}.tools button:disabled{opacity:.4;cursor:default}
+.tools button[aria-pressed="true"]{background:var(--qing);border-color:var(--qing);color:var(--on)}
+.tools .act{border-color:var(--lu);color:var(--lu)}
+.tools .act[aria-pressed="true"]{background:var(--lu);border-color:var(--lu)}
+.tools .sep{width:1px;background:var(--line2);margin:5px 2px}
+.loading,.err{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:var(--stage);color:var(--ink);z-index:5;font-family:var(--disp);font-size:28px;transition:opacity .5s;text-align:center;padding:24px}
+.err{font-family:var(--serif);font-size:16px;line-height:1.7}
+.loading.gone{opacity:0;pointer-events:none}
+.lead{margin:0;font-size:16px;line-height:1.85;text-wrap:pretty}
+.facts{list-style:none;margin:0;padding:0;display:grid}
+.facts li{display:grid;grid-template-columns:5.2em 1fr;gap:12px;align-items:baseline;padding-block:10px;border-top:1px dashed var(--line2)}
+.facts li:last-child{border-bottom:1px dashed var(--line2)}
+.facts b{font-weight:900;font-size:20px;color:var(--qing);line-height:1.2;font-variant-numeric:tabular-nums;white-space:nowrap}
+.facts span{display:block;font-size:14.5px;line-height:1.55}
+.facts small{display:block;color:var(--mute);font-size:13px;line-height:1.6;margin-top:2px}
+.facts li.wide,.facts li.pic{grid-template-columns:1fr}
+.facts li.pic img{width:100%;max-height:230px;object-fit:cover;object-position:50% 30%;border:1px solid var(--ink);display:block}
+.facts li.pic span{font-size:13.5px;color:var(--ink)}.facts li.fit img{object-fit:contain;max-height:440px;background:var(--paper)}
+.tl{list-style:none;margin:0 0 0 4.4em;padding:0;border-left:2px solid var(--huang)}
+.tl li{position:relative;padding:0 0 14px 16px}
+.tl li:last-child{padding-bottom:0}
+.tl li::before{content:"";position:absolute;left:-7px;top:.42em;width:12px;height:12px;border-radius:50%;background:var(--sheet);border:2px solid var(--huang)}
+.tl b{position:absolute;right:calc(100% + 16px);top:0;white-space:nowrap;font-weight:900;color:var(--qing);font-size:16px;font-variant-numeric:tabular-nums}
+.tl strong{display:block;font-size:15px}
+.tl span{font-size:13.5px;color:var(--mute);line-height:1.65}
+.dh{margin:0;font-family:var(--sans);font-size:12.5px;letter-spacing:.18em;color:var(--mute);font-weight:700;display:flex;gap:4px 10px;align-items:baseline;flex-wrap:wrap}
+.dh span{letter-spacing:0;font-weight:400;color:var(--zhu)}
+.links{display:grid;border-top:1px solid var(--ink);margin-top:-8px}
+.lk{display:flex;align-items:center;gap:12px;width:100%;text-align:left;font:inherit;background:none;border:0;border-bottom:1px solid var(--line2);padding:11px 4px;color:var(--ink);cursor:pointer}
+.lk span{flex:1;min-width:0}
+.lk strong{display:block;font-size:16px}
+.lk small{display:block;color:var(--mute);font-size:13px;margin-top:1px}
+.lk i{font-style:normal;font-size:22px;color:var(--zhu);transition:transform .2s}
+.lk:hover{background:color-mix(in srgb,var(--huang) 10%,transparent)}.lk:hover i{transform:translateX(3px)}
+.upbtn{align-self:flex-start;font:inherit;font-family:var(--sans);font-size:13.5px;background:none;border:0;color:var(--qing);cursor:pointer;padding:4px 0;margin-top:auto}
+.bnow small{font-family:var(--sans);font-size:12px;letter-spacing:.14em;color:var(--zhu);font-weight:700}
+.bnow h3{font-family:var(--disp);font-weight:400;font-size:34px;margin:4px 0 6px;line-height:1.15}
+.bnow p{margin:0;font-size:15.5px;line-height:1.8;min-height:3.6em}
+.bctl{display:flex;gap:6px;font-family:var(--sans)}
+.bctl button{flex:1;font:inherit;font-size:14px;height:40px;border-radius:20px;border:1px solid var(--line2);background:var(--sheet);color:var(--ink);cursor:pointer;white-space:nowrap}
+.bctl .pri{background:var(--zhu);border-color:var(--zhu);color:var(--on);font-weight:700;flex:1.4}
+.bctl button:disabled{opacity:.35;cursor:default}
+.bsl{display:flex;align-items:center;gap:10px;font-family:var(--sans);font-size:13px;color:var(--mute)}
+.bsl input{flex:1;accent-color:var(--zhu);min-width:0}
+.bsl output{font-variant-numeric:tabular-nums;min-width:3.4em;text-align:right;color:var(--ink)}
+.blist{list-style:none;margin:0;padding:0;display:grid;font-family:var(--sans)}
+.blist button{display:flex;gap:10px;align-items:baseline;width:100%;text-align:left;font:inherit;font-size:13.5px;background:none;border:0;border-bottom:1px dotted var(--line2);padding:7px 4px;color:var(--mute);cursor:pointer}
+.blist i{font-style:normal;width:1.8em;text-align:right;font-variant-numeric:tabular-nums;color:var(--line2)}
+.blist .done{color:var(--ink)}.blist .done i{color:var(--lu)}
+.blist [aria-current]{color:var(--zhu);font-weight:700;background:color-mix(in srgb,var(--zhu) 8%,transparent)}.blist [aria-current] i{color:var(--zhu)}
+.toc{position:absolute;right:10px;top:54px;z-index:10;width:min(340px,calc(100% - 20px));max-height:min(70vh,560px);overflow:auto;background:var(--sheet);border:1px solid var(--ink);box-shadow:0 18px 40px -18px rgba(0,0,0,.45);padding:10px 12px;font-family:var(--sans)}
+.toc ul{list-style:none;margin:0;padding:0}
+.toc ul ul{padding-left:14px;border-left:1px solid var(--line2);margin-left:8px}
+.toc button{font:inherit;font-size:14px;background:none;border:0;color:var(--ink);padding:5px 6px;cursor:pointer;text-align:left;width:100%;border-radius:4px}
+.toc button:hover{background:color-mix(in srgb,var(--qing) 10%,transparent)}
+.toc [aria-current]{color:var(--zhu);font-weight:700}
+.notes{max-width:44em;color:var(--mute);font-size:13.5px;line-height:1.8;margin-top:22px}
+.notes h2{font-family:var(--sans);font-size:13px;letter-spacing:.18em;color:var(--ink);margin:0 0 6px}
+.notes p{margin:0 0 8px}.notes a{color:var(--qing)}
+button:focus-visible,.lb.go:focus-visible span{outline:2px solid var(--zhu);outline-offset:2px}
+@media (max-width:880px){.page{grid-template-columns:1fr}.stage{height:clamp(380px,64vh,640px)}.panel{height:auto;overflow:visible;border-left:0;border-top:1px solid var(--line)}.hint{display:none}.plate{max-width:calc(100% - 36px)}}
+@media (max-width:560px){.chrome{gap:5px;padding:8px}.chrome button{padding:0 9px;font-size:13.5px}#tourBtn{min-width:0}.tsub{bottom:52px;left:10px;right:10px;padding:7px 10px 9px}.tsub p{font-size:14.5px;line-height:1.6}.chrome{flex-wrap:wrap}.addr{order:9;flex-basis:100%}.plate{padding:7px 12px 9px}.plate .t{font-size:27px}.lb span{font-size:11.5px}.tools button{height:32px;padding:0 11px;font-size:13px}.cap{bottom:54px}}
+@media (prefers-reduced-motion:reduce){.turn{animation:none}.lb.go i::after{animation:none}.lk i{transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top"><h1>拆开应县木塔</h1><p>一本可以一直往下翻的立体书。点“导览”，它会配着字幕带你一路看下来；也可以自己点图上的红点或塔上的构件，钻进去看它是什么、为什么这样做。翻到最后，从一块空地把木塔重新盖起来。</p></header>
+<section class="win" id="win" aria-label="应县木塔立体书">
+ <nav class="chrome" aria-label="浏览">
+  <button class="ic" id="back" aria-label="后退" disabled>‹</button><button class="ic" id="fwd" aria-label="前进" disabled>›</button><button class="ic" id="home" aria-label="回到封面">⌂</button>
+  <div class="addr" id="addr" aria-label="当前位置"></div>
+  <button id="tourBtn" aria-pressed="false">▶ 导览</button><button id="tocBtn" aria-expanded="false" aria-controls="toc">目录</button><button id="buildBtn" aria-pressed="false">重建木塔</button>
+ </nav>
+ <div class="band" aria-hidden="true"></div>
+ <div class="toc" id="toc" hidden></div>
+ <div class="page">
+  <div class="stage" id="stage">
+   <canvas id="gl" aria-label="应县木塔三维模型，可拖动旋转，点构件进入对应页面"></canvas>
+   <div class="labels" id="labels"></div>
+   <div class="plate" id="plate"><div class="k" id="pk"></div><div class="t" id="pt"></div><div class="s" id="ps"></div></div>
+   <div class="hint" id="hint">拖动旋转 · 滚轮缩放 · 红点和构件都能点</div>
+   <div class="tip" id="tip" hidden></div>
+   <div class="tsub" id="tsub" hidden><div class="th"><span id="tpos"></span><span class="tb"><button id="tPause">暂停</button><button id="tNext">下一站</button><button id="tEnd">结束</button></span></div><p id="ttxt" aria-live="polite"></p></div>
+   <div class="cap" id="cap" hidden></div>
+   <div class="tools" id="tools" role="toolbar" aria-label="视图"></div>
+   <div class="loading" id="loading">正在搭建木塔…</div>
+   <div class="err" id="err" hidden>三维引擎没有加载成功。请检查网络后刷新页面；本页需要浏览器支持 WebGL。</div>
+  </div>
+  <aside class="panel" id="panel" aria-live="polite"></aside>
+ </div>
+</section>
+<section class="notes">
+<h2>说明与出处</h2>
+<p>三维模型的结构依据梁思成《中国建筑史》中“佛宫寺释迦木塔”一节的记述，比例按《图像中国建筑史》手绘图中中国营造学社测绘的立面图、剖面图推算：八角平面，内槽 8 柱、外槽 24 柱，首层副阶 24 柱；明五暗四共九层；塔高 67.31 米，塔刹约 12 米。各层外檐、平坐、内槽的铺作按书中逐层记载配置；斜撑、楼梯的具体数量和位置做了简化，补间铺作只做了“驼峰短柱承大斗”一种，塑像造型为示意；“重建木塔”是按木构常规工序的推演，不是史料记载。</p>
+<p>页面中的历史照片（1933 年外景、塔刹、斗拱）与立面图、剖面图均出自上述两本书。</p>
+<p>“元代大地震连震七日”“近代身中二百余发炮弹”“明成祖、明武宗题匾”等来自方志与通行记述，具体细节各说不一；民国改造削弱结构刚度是部分研究者的观点；木材中榆木的使用依据公开资料。现状与“1∶1研究性复建”建议参见国家文物局、山西省文物局发布及 2026 年 3 月科技日报、澎湃新闻等报道。</p>
+</section>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function(){if(!window.THREE){document.getElementById('err').hidden=false;document.getElementById('loading').classList.add('gone');return;}
+try{
+// ================= 基础工具 =================
+const T=THREE, V3=(x=0,y=0,z=0)=>new T.Vector3(x,y,z);
+const PI=Math.PI, P8=PI/8, TAN8=Math.tan(P8), COS8=Math.cos(P8);
+const C=h=>new T.Color(h).convertSRGBToLinear();
+let _seed=7;const rnd=()=>{_seed|=0;_seed=_seed+0x6D2B79F5|0;let t=Math.imul(_seed^_seed>>>15,1|_seed);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};
+const jit=(h,j=.07)=>{const c=C(h),f=1+(rnd()*2-1)*j;return c.multiplyScalar(f);};
+const ang=k=>PI/2+k*PI/4;
+function oct(k,u,a,y){const t=ang(k),c=Math.cos(t),s=Math.sin(t),w=u*a*TAN8;return V3(c*a-s*w,y,s*a+c*w);}
+function ringPts(a,bays,y){const r=[];for(let k=0;k<8;k++)for(let j=0;j<bays;j++){const u=-1+2*j/bays;r.push({p:oct(k,u,a,y),al:j===0?ang(k)-P8:ang(k),corner:j===0,k,j});}return r;}
+function bayMids(a,bays,y){const r=[];for(let k=0;k<8;k++)for(let j=0;j<bays;j++){const u=-1+(2*j+1)/bays;r.push({p:oct(k,u,a,y),al:ang(k),k,j});}return r;}
+
+// ================= 纹理 =================
+function canvasTex(w,h,draw,rep=true){const c=document.createElement('canvas');c.width=w;c.height=h;const g=c.getContext('2d');draw(g,w,h);const t=new T.CanvasTexture(c);t.encoding=T.sRGBEncoding;if(rep){t.wrapS=t.wrapT=T.RepeatWrapping;}t.anisotropy=8;return t;}
+const TEX={
+ tile:canvasTex(128,128,(g,w,h)=>{g.fillStyle='#4f575d';g.fillRect(0,0,w,h);
+   for(let x=0;x<w;x+=32){const gr=g.createLinearGradient(x,0,x+32,0);gr.addColorStop(0,'#2f363b');gr.addColorStop(.25,'#6c767c');gr.addColorStop(.5,'#7d878c');gr.addColorStop(.75,'#5a646a');gr.addColorStop(1,'#2c3337');g.fillStyle=gr;g.fillRect(x+16,0,16,h);
+     g.fillStyle='#3c4448';g.fillRect(x,0,16,h);for(let y=0;y<h;y+=16){g.fillStyle='rgba(0,0,0,.35)';g.fillRect(x,y,16,2);g.fillStyle='rgba(0,0,0,.25)';g.fillRect(x+16,y+8,16,2);}}}),
+ raf:canvasTex(64,64,(g,w,h)=>{g.fillStyle='#2a1a10';g.fillRect(0,0,w,h);const gr=g.createLinearGradient(0,0,w,0);gr.addColorStop(0,'#5a3a22');gr.addColorStop(.3,'#9a6a40');gr.addColorStop(.6,'#7a5030');gr.addColorStop(1,'#4a2e1a');g.fillStyle=gr;g.fillRect(6,0,w*.62,h);}),
+ lat:canvasTex(128,128,(g,w,h)=>{g.fillStyle='#5c3a25';g.fillRect(0,0,w,h);g.fillStyle='#17110c';const ph=h*.66;for(let y=10;y<ph-4;y+=12)for(let x=10;x<w-10;x+=12)g.fillRect(x,y,8,8);g.fillStyle='#4a2e1c';g.fillRect(10,ph+4,w-20,h-ph-14);g.strokeStyle='#7a5234';g.lineWidth=2;g.strokeRect(10,ph+4,w-20,h-ph-14);},false),
+ wall:canvasTex(64,64,(g,w,h)=>{g.fillStyle='#e8dcc0';g.fillRect(0,0,w,h);for(let i=0;i<260;i++){g.fillStyle=`rgba(90,70,40,${Math.random()*.06})`;g.fillRect(Math.random()*w,Math.random()*h,2+Math.random()*4,2+Math.random()*4);}}),
+ stone:canvasTex(128,128,(g,w,h)=>{g.fillStyle='#8f887b';g.fillRect(0,0,w,h);g.strokeStyle='rgba(40,34,26,.55)';g.lineWidth=2;for(let y=0;y<=h;y+=32){g.beginPath();g.moveTo(0,y);g.lineTo(w,y);g.stroke();for(let x=(y/32)%2?0:32;x<w;x+=64){g.beginPath();g.moveTo(x,y);g.lineTo(x,y+32);g.stroke();}}for(let i=0;i<500;i++){g.fillStyle=`rgba(255,255,255,${Math.random()*.05})`;g.fillRect(Math.random()*w,Math.random()*h,2,2);}}),
+ plaque:canvasTex(128,48,(g,w,h)=>{g.fillStyle='#caa24f';g.fillRect(0,0,w,h);g.fillStyle='#1d3644';g.fillRect(6,6,w-12,h-12);g.fillStyle='rgba(214,178,94,.85)';for(let i=0;i<3;i++){g.fillRect(26+i*28,15,14,3);g.fillRect(31+i*28,15,3,20);g.fillRect(24+i*28,26,18,3);}},false),
+};
+
+// ================= 材质（按类别） =================
+const CUT=new T.Plane(V3(0,0,-1),1e4), CUTY=new T.Plane(V3(0,-1,0),1e4);
+const MATS={};
+function mat(cat,o={}){const m=new T.MeshStandardMaterial(Object.assign({color:0xffffff,roughness:.82,metalness:0,side:T.DoubleSide,clippingPlanes:[CUT,CUTY],clipShadows:true},o));m.userData.cat=cat;(MATS[cat]=MATS[cat]||[]).push(m);return m;}
+const BASEMAT={};
+['stone','layout','col','beam','brk','ang','brace','wall','deck','rail','stair','ridge','fascia','bell','plaque','iron','buddha','dim'].forEach(c=>BASEMAT[c]=mat(c));
+BASEMAT.brk.flatShading=true;BASEMAT.ang.flatShading=true;
+BASEMAT.layout.emissive=C(0xd25a3b);BASEMAT.layout.emissiveIntensity=.9;
+BASEMAT.dim.emissive=C(0xe3bb62);BASEMAT.dim.emissiveIntensity=.9;
+BASEMAT.iron.metalness=.55;BASEMAT.iron.roughness=.42;BASEMAT.bell.metalness=.5;
+BASEMAT.buddha.metalness=.3;BASEMAT.buddha.roughness=.5;
+BASEMAT.wall.map=TEX.wall;
+BASEMAT.stone.map=TEX.stone;
+BASEMAT.lattice=mat('lattice',{map:TEX.lat});
+BASEMAT.plaque.map=TEX.plaque;
+BASEMAT.roof=mat('roof',{map:TEX.tile,roughness:.9});
+BASEMAT.soffit=mat('soffit',{map:TEX.raf,roughness:.9});
+
+const COL={col:0x5e3c27,beam:0x71492f,brk:0x8d6342,dou:0x9f7652,ang:0x7c5234,brace:0x6c4329,wall:0xd2c5aa,wallD:0x8f7b61,wall1:0xc2ad8e,deck:0x4f3524,rail:0x6e3b26,stair:0x5e3e28,stone:0xb0a794,stone2:0x958c7c,ridge:0x444a4e,fascia:0x3f2a1c,iron:0x3f3c39,gold:0xcaa152,lat:0xffffff,plaque:0xffffff,lay:0xd25a3b};
+
+// ================= 实例化构件收集器 =================
+const GEO={box:new T.BoxGeometry(1,1,1),cyl:new T.CylinderGeometry(.5,.5,1,14),cyl8:new T.CylinderGeometry(.5,.5,1,8),cone:new T.CylinderGeometry(.18,.5,1,8)};
+GEO.dou=(()=>{const g=new T.LatheGeometry([V3(0,-.5),V3(.51,-.5),V3(.6,-.22),V3(.707,-.08),V3(.707,.5),V3(0,.5)].map(v=>new T.Vector2(v.x,v.y)),4,PI/4);return g;})();
+const STEPS=[];let cur=null;
+function step(name,level,tag){cur={name,level,tag,top:0,items:new Map(),meshes:[],i:STEPS.length};STEPS.push(cur);return cur;}
+const _M=new T.Matrix4(),_Q=new T.Quaternion(),_Qp=new T.Quaternion(),_S=V3(),_Y=V3(0,1,0),_Z=V3(0,0,1),_x=V3(),_y=V3(),_z=V3(),_mb=new T.Matrix4();
+function put(cat,kind,pos,q,s,color){if(pos.y>cur.top)cur.top=pos.y;const key=cat+'|'+kind;let it=cur.items.get(key);if(!it){it={cat,kind,m:[],c:[]};cur.items.set(key,it);}_M.compose(pos,q,s);for(let i=0;i<16;i++)it.m.push(_M.elements[i]);it.c.push(color);}
+function lbox(cat,kind,o,al,x,y,z,sx,sy,sz,color,pitch=0){const c=Math.cos(al),s=Math.sin(al);_Q.setFromAxisAngle(_Y,-al);if(pitch){_Qp.setFromAxisAngle(_Z,pitch);_Q.multiply(_Qp);}put(cat,kind,V3(o.x+c*x-s*z,o.y+y,o.z+s*x+c*z),_Q,_S.set(sx,sy,sz),color);}
+function beam(cat,p1,p2,w,h,color,kind='box'){_x.subVectors(p2,p1);const L=_x.length();_x.divideScalar(L);const up=Math.abs(_x.y)>.97?V3(1,0,0):_Y;_z.crossVectors(_x,up).normalize();_y.crossVectors(_z,_x);_mb.makeBasis(_x,_y,_z);_Q.setFromRotationMatrix(_mb);put(cat,kind,V3().addVectors(p1,p2).multiplyScalar(.5),_Q,_S.set(L,h,w),color);}
+function rod(cat,p1,p2,r,color,kind='cyl'){_x.subVectors(p2,p1);const L=_x.length();_x.divideScalar(L);_Q.setFromUnitVectors(_Y,_x);put(cat,kind,V3().addVectors(p1,p2).multiplyScalar(.5),_Q,_S.set(2*r,L,2*r),color);}
+function mesh(cat,geo,m){geo.computeBoundingBox();cur.top=Math.max(cur.top,geo.boundingBox.max.y);cur.meshes.push({cat,geo,m});}
+
+// ================= 斗拱构件生成（局部坐标：x 向外，y 向上，z 横向） =================
+function bracketPieces(n,nAng,s,opt={}){
+ const P=[],H=.26,W=.17,DH=.18,TI=.44,LD=.36,nH=n-nAng;
+ const dou=(name,x,y,z,sz,h,t)=>P.push({name,kind:'dou',x,y:y+h/2,z,sx:sz,sy:h,sz:sz,t});
+ const arm=(name,x0,x1,y,t)=>P.push({name,kind:'box',x:(x0+x1)/2,y:y+H/2,z:0,sx:x1-x0,sy:H,sz:W,t});
+ const lat=(name,x,y,L,t)=>P.push({name,kind:'box',x,y:y+H/2,z:0,sx:W,sy:H,sz:L,t});
+ dou('栌斗',0,0,0,.62,LD,0);
+ for(let k=1;k<=n;k++){const yk=LD+(k-1)*TI;
+  if(k<=nH){arm('华拱',-(opt.inner?k*s:.3+.25*k),k*s+.13,yk,k);dou('交互斗',k*s,yk+H,0,.3,DH,k);}
+  const L=k%2?1.24:1.86;lat(k%2?'泥道拱':'慢拱',0,yk,L,k);dou('散斗',0,yk+H,L/2-.14,.28,DH,k);dou('散斗',0,yk+H,-(L/2-.14),.28,DH,k);
+  if(k>=2){const x=(k-1)*s;lat(k===n&&nAng===0?'令拱':'瓜子拱',x,yk,1.14,k);dou('散斗',x,yk+H,.43,.28,DH,k);dou('散斗',x,yk+H,-.43,.28,DH,k);}
+ }
+ for(let j=1;j<=nAng;j++){const k=nH+j,yk=LD+(k-1)*TI,m=-.42,xc=k*s,yc=yk+H/2,x1=xc+.42,x0=-(1.0+.35*j);const y1=yc+m*(x1-xc),y0=yc+m*(x0-xc);
+  const len=Math.hypot(x1-x0,y1-y0);P.push({name:'下昂',kind:'box',ang:1,x:(x0+x1)/2,y:(y0+y1)/2,z:0,sx:len,sy:H,sz:W,pitch:Math.atan2(y1-y0,x1-x0),t:k});
+  dou('交互斗',xc,yc+H*.62,0,.3,DH,k);}
+ const yt=LD+n*TI;
+ lat('令拱',n*s,yt,1.44,n+1);dou('散斗',n*s,yt+H,.58,.28,DH,n+1);dou('散斗',n*s,yt+H,-.58,.28,DH,n+1);dou('散斗',n*s,yt+H,0,.28,DH,n+1);
+ arm('耍头',(n-1)*s,n*s+.55,yt,n+1);
+ return {P,h:yt+H+DH,proj:n*s};
+}
+function placeBracket(o,al,B,sc,cat='brk'){for(const q of B.P){const color=q.kind==='dou'?jit(COL.dou,.045):q.ang?jit(COL.ang,.04):jit(COL.brk,.05);
+ lbox(q.ang?'ang':cat,q.kind,o,al,q.x*sc,q.y*sc,q.z*sc,q.sx*sc,q.sy*sc,q.sz*sc,color,q.pitch||0);}}
+
+// ================= 几何：八角环板、屋面 =================
+function octSlab(a0,a1,y0,y1){const pos=[],idx=[];const add=(p)=>{pos.push(p.x,p.y,p.z);return pos.length/3-1;};
+ for(let k=0;k<8;k++){const q=[[a1,y1,-1],[a1,y1,1],[a0,y1,1],[a0,y1,-1]];
+  const top=[oct(k,-1,a1,y1),oct(k,1,a1,y1),oct(k,1,a0,y1),oct(k,-1,a0,y1)],bot=top.map(p=>V3(p.x,y0,p.z));
+  const quad=(a,b,c,d)=>{const i=[a,b,c,d].map(add);idx.push(i[0],i[2],i[1],i[0],i[3],i[2]);};
+  quad(top[0],top[1],top[2],top[3]);quad(bot[3],bot[2],bot[1],bot[0]);quad(bot[0],bot[1],top[1],top[0]);if(a0>0)quad(top[3],top[2],bot[2],bot[3]);}
+ return geomNI(pos,idx);}
+function geomNI(pos,idx,uv){let g=new T.BufferGeometry();g.setAttribute('position',new T.Float32BufferAttribute(pos,3));if(uv)g.setAttribute('uv',new T.Float32BufferAttribute(uv,2));g.setIndex(idx);g=g.toNonIndexed();g.computeVertexNormals();
+ if(!uv){const p=g.attributes.position,u=[];for(let i=0;i<p.count;i++)u.push(p.getX(i)*.25+p.getZ(i)*.25,p.getY(i)*.25);g.setAttribute('uv',new T.Float32BufferAttribute(u,2));}return g;}
+// 屋面：Ae 檐口半径(边心距) Ain 内缘；ye/yin 高度；expo 凹曲；lift 翘角
+function roofGeo(Ae,Ain,ye,yin,o={}){const expo=o.expo||1.5,lift=o.lift||.9,flare=o.flare||.6,NT=o.NT||10,NU=o.NU||14,th=o.th||.4;
+ const P=(k,u,t)=>{const a=Ae+(Ain-Ae)*t,c=Math.pow(Math.abs(u),2.6)*Math.pow(1-t,1.6),aa=a+flare*c;return oct(k,u,aa,ye+(yin-ye)*Math.pow(t,expo)+lift*c);};
+ const top={p:[],uv:[],i:[]},bot={p:[],uv:[],i:[]},edge={p:[],i:[]};
+ for(let k=0;k<8;k++){const b0=top.p.length/3;
+  for(let it=0;it<=NT;it++){const t=it/NT;for(let iu=0;iu<=NU;iu++){const u=-1+2*iu/NU,p=P(k,u,t),a=Ae+(Ain-Ae)*t;
+    top.p.push(p.x,p.y,p.z);top.uv.push(u*a*TAN8/1.05,(Ae-a)*1.15/1.05);bot.p.push(p.x,p.y-th,p.z);bot.uv.push(u*a*TAN8/.62,t*3);}}
+  for(let it=0;it<NT;it++)for(let iu=0;iu<NU;iu++){const a=b0+it*(NU+1)+iu,b=a+1,c=a+NU+1,d=c+1;top.i.push(a,c,b,b,c,d);bot.i.push(a,b,c,b,d,c);}
+  const e0=edge.p.length/3;for(let iu=0;iu<=NU;iu++){const u=-1+2*iu/NU,p=P(k,u,0);edge.p.push(p.x,p.y,p.z,p.x,p.y-th-.05,p.z);}
+  for(let iu=0;iu<NU;iu++){const a=e0+iu*2;edge.i.push(a,a+1,a+2,a+2,a+1,a+3);}}
+ const hips=[];for(let k=0;k<8;k++){const pts=[];for(let it=0;it<=NT;it++)pts.push(P(k,1,it/NT).add(V3(0,.12,0)));hips.push(pts);}
+ return {top:geomNI(top.p,top.i,top.uv),bot:geomNI(bot.p,bot.i,bot.uv),edge:geomNI(edge.p,edge.i),hips,P};}
+
+// ================= 通用合并 / 自定义材质 =================
+const CMAT={};
+function cmat(cat,color,o={}){const key=cat+color+JSON.stringify(o);if(!CMAT[key]){const b=BASEMAT[cat];CMAT[key]=mat(cat,Object.assign({color:C(color),map:b&&b.map||null,roughness:b?b.roughness:.8,metalness:b?b.metalness:0,flatShading:b?b.flatShading:false},o));}return CMAT[key];}
+function merge(list){const pos=[],nor=[],uv=[];const nm=new T.Matrix3();for(const {g,m} of list){let q=g.index?g.toNonIndexed():g.clone();if(m)q.applyMatrix4(m);if(!q.attributes.normal)q.computeVertexNormals();const P=q.attributes.position,N=q.attributes.normal,U=q.attributes.uv;for(let i=0;i<P.count;i++){pos.push(P.getX(i),P.getY(i),P.getZ(i));nor.push(N.getX(i),N.getY(i),N.getZ(i));if(U)uv.push(U.getX(i),U.getY(i));else uv.push(0,0);}}
+ const g=new T.BufferGeometry();g.setAttribute('position',new T.Float32BufferAttribute(pos,3));g.setAttribute('normal',new T.Float32BufferAttribute(nor,3));g.setAttribute('uv',new T.Float32BufferAttribute(uv,2));return g;}
+const mtx=(x=0,y=0,z=0,ry=0,s=1,sy)=>new T.Matrix4().compose(V3(x,y,z),new T.Quaternion().setFromAxisAngle(_Y,ry),V3(s,sy===undefined?s:sy,s));
+
+// ================= 塑像（示意） =================
+const SPH=new T.SphereGeometry(1,20,14),CYL=new T.CylinderGeometry(1,1,1,20);
+function prim(g,x,y,z,sx,sy,sz){return {g,m:new T.Matrix4().compose(V3(x,y,z),new T.Quaternion(),V3(sx,sy,sz))};}
+function taper(rt,rb,h,y){return {g:new T.CylinderGeometry(rt,rb,h,20),m:new T.Matrix4().makeTranslation(0,y,0)};}
+function figure(x,y,z,h,ry,standing,halo=true,throne=0){const P=[];
+ if(standing){P.push(taper(.1*h,.16*h,.52*h,.26*h),taper(.1*h,.12*h,.24*h,.62*h),prim(SPH,0,.72*h,0,.17*h,.065*h,.1*h),taper(.035*h,.04*h,.06*h,.77*h),prim(SPH,0,.83*h,0,.07*h,.085*h,.075*h),prim(SPH,0,.915*h,0,.035*h,.035*h,.035*h),
+  prim(SPH,.16*h,.55*h,.02*h,.035*h,.17*h,.04*h),prim(SPH,-.16*h,.55*h,.02*h,.035*h,.17*h,.04*h));}
+ else{P.push(prim(SPH,0,.11*h,.05*h,.44*h,.12*h,.27*h),taper(.16*h,.2*h,.34*h,.37*h),prim(SPH,0,.52*h,0,.24*h,.085*h,.15*h),prim(SPH,0,.22*h,.2*h,.12*h,.05*h,.08*h),
+  prim(SPH,.2*h,.36*h,.05*h,.06*h,.16*h,.07*h),prim(SPH,-.2*h,.36*h,.05*h,.06*h,.16*h,.07*h),taper(.06*h,.07*h,.08*h,.6*h),prim(SPH,0,.69*h,0,.105*h,.125*h,.11*h),prim(SPH,0,.8*h,0,.05*h,.05*h,.05*h));}
+ const M0=new T.Matrix4().compose(V3(x,y+throne,z),new T.Quaternion().setFromAxisAngle(_Y,ry),V3(1,1,1));const L=P.map(q=>({g:q.g,m:M0.clone().multiply(q.m)}));
+ if(throne){const tw=Math.min(h,7.2);L.push({g:new T.CylinderGeometry(.5,.42,1,8),m:mtx(x,y+throne*.275,z,ry,tw,throne*.55)});L.push({g:new T.CylinderGeometry(.56,.44,1,16),m:mtx(x,y+throne*.72,z,ry,tw,throne*.56)});}
+ if(halo){const ha=new T.RingGeometry(h*.11,h*.2,32);const m=new T.Matrix4().compose(V3(x-Math.sin(ry)*h*.16,y+throne+h*(standing?.84:.7),z-Math.cos(ry)*h*.16),new T.Quaternion().setFromAxisAngle(_Y,ry),V3(1,1,1));L.push({g:ha,m});}
+ return L;}
+
+// ================= 楼层参数 =================
+const BASE_TOP=3.6;
+// 楼层标高按中国营造学社剖面图的比例推算（塔高 67.31 m）；各层铺作按梁思成《中国建筑史》“佛宫寺释迦木塔”一节
+const FY=[BASE_TOP,18.2,27.4,36.1,44.5],APEX=54.8;
+// n/nAng：外檐出几跳、其中几跳为下昂。一、二层双杪双下昂，三层三杪，四层双杪，五层半栱承单杪；pz：其上平坐出几杪
+const FL=[{A:11.4,Ai:6.0,hc:7.9,n:4,nAng:2,s:.5,sc:1,ep:3.7,r:.33,pz:3},{A:11.1,Ai:6.0,hc:3.2,n:4,nAng:2,s:.5,sc:.86,ep:3.6,r:.29,pz:3},{A:10.75,Ai:6.0,hc:3.1,n:3,nAng:0,s:.5,sc:.86,ep:3.4,r:.28,pz:3},{A:10.4,Ai:6.0,hc:3.0,n:2,nAng:0,s:.5,sc:.86,ep:2.9,r:.27,pz:2},{A:10.0,Ai:5.6,hc:3.0,n:1,nAng:0,s:.5,sc:.86,ep:2.7,r:.27}];
+const HD=[],PZ={s:.62,sc:.82},FJ={A:15.0,hc:4.1,n:2,s:.45,sc:.72,ep:2.4};
+// 补间铺作比柱头铺作少两跳，垫在驼峰短柱上
+const BP={};const bp=(n,na,s,o)=>{const k=[n,na,s,!!(o&&o.inner)].join();if(!BP[k]){BP[k]=bracketPieces(n,na,s,o);BP[k].mid=n>1?bracketPieces(Math.max(1,n-2),0,s,o):BP[k];}return BP[k];};
+(function(){FL.forEach((f,i)=>{f.y=FY[i];f.top=f.y+f.hc;f.yb=f.top+.2;f.B=bp(f.n,f.nAng,f.s);f.ybt=f.yb+f.B.h*f.sc;
+ f.Bi=bp(4,0,.42,{inner:1});f.sci=f.B.h*f.sc/f.Bi.h; // 内槽一律出华栱四跳，顶面与外檐齐平
+ if(i<4){f.Ad=(f.A+FL[i+1].A)/2;f.Adi=(f.Ai+FL[i+1].Ai)/2;f.PZB=bp(f.pz,0,PZ.s);const pzh=f.PZB.h*PZ.sc;HD[i]=FY[i+1]-.25-pzh-.2-f.ybt;f.ydt=f.ybt+HD[i];f.pzb=f.ydt+.2;f.pzt=f.pzb+pzh;}});
+ FJ.y=BASE_TOP;FJ.top=FJ.y+FJ.hc;FJ.yb=FJ.top+.2;FJ.B=bp(FJ.n,0,FJ.s);FJ.ybt=FJ.yb+FJ.B.h*FJ.sc;})();
+const TOTAL_H=67.31;
+const LEVELNAME=['台基','一层','一层暗层','二层','二层暗层','三层','三层暗层','四层','四层暗层','五层','塔刹'];
+
+// ================= 构件环 =================
+function ringBeams(cat,a,y,w,h,color,bays=1){for(let k=0;k<8;k++)for(let j=0;j<bays;j++){const u0=-1+2*j/bays,u1=-1+2*(j+1)/bays;beam(cat,oct(k,u0,a,y),oct(k,u1,a,y),w,h,jit(color,.05));}}
+function columns(a,bays,y0,h,r,color=COL.col){for(const c of ringPts(a,bays,y0))rod('col',c.p,V3(c.p.x,y0+h,c.p.z),r,jit(color,.06));}
+function frameTop(a,bays,top,sc=1){ringBeams('beam',a,top-.27*sc,.24*sc,.5*sc,COL.beam,bays);ringBeams('beam',a,top+.1,.46*sc,.2,COL.beam,bays);}
+function bracketRing(a,bays,yb,B,sc,withMid=true,cat='brk'){for(const c of ringPts(a,bays,yb))placeBracket(c.p,c.al,B,sc,cat);
+ if(withMid){const M=B.mid||B,dy=(B.h-M.h)*sc;for(const c of bayMids(a,bays,yb)){if(dy>.25){lbox(cat,'box',c.p,c.al,0,.15*sc,0,.42*sc,.3*sc,1.2*sc,jit(COL.dou,.05));rod(cat,V3(c.p.x,yb+.28*sc,c.p.z),V3(c.p.x,yb+dy,c.p.z),.12*sc,jit(COL.brk,.05));}placeBracket(V3(c.p.x,yb+dy,c.p.z),c.al,M,sc,cat);}}
+ for(let k=2;k<=Math.min(4,B.P.reduce((m,q)=>Math.max(m,q.t),0));k++)ringBeams('beam',a,yb+(.36+.44*(k-1)+.13)*sc,.17*sc,.26*sc,COL.beam,1);}
+function walls(a,bays,y0,y1,th,color,skip=()=>false,cat='wall'){for(let k=0;k<8;k++)for(let j=0;j<bays;j++){const s=skip(k,j);if(s===true)continue;const u0=-1+2*j/bays,u1=-1+2*(j+1)/bays;
+ if(s&&s.door){const yd=y0+s.door;beam(cat,oct(k,u0,a,(yd+y1)/2),oct(k,u1,a,(yd+y1)/2),th,y1-yd,jit(color,.03));continue;}
+ if(s&&s.lattice){beam('lattice',oct(k,u0+.04,a,(y0+y1)/2),oct(k,u1-.04,a,(y0+y1)/2),.16,y1-y0,C(0xffffff));continue;}
+ beam(cat,oct(k,u0,a,(y0+y1)/2),oct(k,u1,a,(y0+y1)/2),th,y1-y0,jit(color,.03));}}
+// 首层内外两周柱“均甃以土墼墙”，剖面上下厚上薄
+function batterWalls(a,bays,y0,y1,tb,tt,color,skip=()=>false){const L=[],th=y=>tb+(tt-tb)*(y-y0)/(y1-y0);
+ for(let k=0;k<8;k++)for(let j=0;j<bays;j++){const s=skip(k,j);if(s===true)continue;let p0=oct(k,-1+2*j/bays,a,0),p1=oct(k,-1+2*(j+1)/bays,a,0);
+  const d=V3().subVectors(p1,p0).normalize(),n=V3(-d.z,0,d.x),e=tb/2*TAN8;if(j===0)p0=p0.clone().addScaledVector(d,-e);if(j===bays-1)p1=p1.clone().addScaledVector(d,e);
+  const ya=s&&s.door?y0+s.door:y0,ta=th(ya),P=(p,y,t,sg)=>[p.x+n.x*t*sg/2,y,p.z+n.z*t*sg/2];
+  const v=[P(p0,ya,ta,-1),P(p1,ya,ta,-1),P(p1,ya,ta,1),P(p0,ya,ta,1),P(p0,y1,tt,-1),P(p1,y1,tt,-1),P(p1,y1,tt,1),P(p0,y1,tt,1)],pos=[],idx=[];
+  v.forEach(q=>pos.push(...q));[[0,1,5,4],[1,2,6,5],[2,3,7,6],[3,0,4,7],[4,5,6,7],[3,2,1,0]].forEach(([q0,q1,q2,q3])=>idx.push(q0,q1,q2,q0,q2,q3));L.push({g:geomNI(pos,idx)});}
+ mesh('wall',merge(L),cmat('wall',color));}
+// 上四层“内柱间无墙壁，但立叉子”
+function chazi(a,y){for(let k=0;k<8;k++){const p=oct(k,-1,a,y),q=oct(k,1,a,y),n=Math.floor(p.distanceTo(q)/.3);
+ beam('rail',V3(p.x,y+1.15,p.z),V3(q.x,y+1.15,q.z),.1,.1,C(COL.rail));beam('rail',V3(p.x,y+.12,p.z),V3(q.x,y+.12,q.z),.12,.12,C(COL.rail));
+ for(let b=1;b<n;b++){const r=V3().lerpVectors(p,q,b/n);rod('rail',V3(r.x,y+.1,r.z),V3(r.x,y+1.32,r.z),.035,C(COL.rail),'cyl8');}}}
+function roof(Ae,Ain,ye,yin,o={}){const R=roofGeo(Ae,Ain,ye,yin,o);mesh('roof',R.top,BASEMAT.roof);mesh('soffit',R.bot,BASEMAT.soffit);mesh('fascia',R.edge,cmat('fascia',COL.fascia));
+ for(const h of R.hips){for(let i=0;i<h.length-1;i++)rod('ridge',h[i],h[i+1],.17,C(COL.ridge));const e=h[0],d=V3().subVectors(h[0],h[1]).normalize();
+  beam('ridge',e,V3().addVectors(e,d.clone().multiplyScalar(.7)).add(V3(0,.35,0)),.3,.3,C(0x3a3f42));
+  for(let q=1;q<=3;q++){const p=V3().lerpVectors(h[0],h[1],q*.24).add(V3(0,.22,0));rod('ridge',p,V3(p.x,p.y+.32,p.z),.1,C(0x51575b),'cyl8');}
+  const b=V3(e.x,e.y-.45,e.z);rod('bell',V3(e.x,e.y-.1,e.z),b,.02,C(COL.iron));rod('bell',V3(b.x,b.y-.42,b.z),b,.13,C(0x5a524a),'cone');}
+ if(!o.noRidge)ringBeams('ridge',Ain+.05,yin+.12,.34,.34,COL.ridge);return R;}
+function solveYe(Ae,Ain,yin,ap,Yp,expo){const t=Math.pow((Ae-ap)/(Ae-Ain),expo);return (Yp-yin*t)/(1-t);}
+function slab(a0,a1,y0,y1,cat='deck',color=COL.deck){mesh(cat,octSlab(a0,a1,y0,y1),cmat(cat,color));}
+function railing(a,y){const P=ringPts(a,3,y);for(let i=0;i<P.length;i++){const p=P[i].p,q=P[(i+1)%P.length].p;rod('rail',p,V3(p.x,y+1.25,p.z),.07,jit(COL.rail,.05),'cyl8');
+ beam('rail',V3(p.x,y+1.05,p.z),V3(q.x,y+1.05,q.z),.08,.08,C(COL.rail));beam('rail',V3(p.x,y+.72,p.z),V3(q.x,y+.72,q.z),.12,.08,C(COL.rail));beam('rail',V3(p.x,y+.08,p.z),V3(q.x,y+.08,q.z),.16,.16,C(COL.rail));
+ beam('rail',V3(p.x,y+.42,p.z),V3(q.x,y+.42,q.z),.04,.5,C(0x5e2f1e));const L=p.distanceTo(q),nb=Math.floor(L/.9);for(let b=1;b<nb;b++){const r=V3().lerpVectors(p,q,b/nb);rod('rail',V3(r.x,y+.76,r.z),V3(r.x,y+1.05,r.z),.035,C(COL.rail));}}}
+function stairs(a,ks,nf,y0,y1){const rise=(y1-y0)/nf;for(let f=0;f<nf;f++){const k=(ks+f)%8,n=Math.max(8,Math.round(rise/.3));for(let i=0;i<n;i++){const u=-.72+1.44*(i+.5)/n,p=oct(k,u,a,y0+f*rise+(i+.5)*rise/n);
+ const q=oct(k,u+1.44/n,a,p.y);beam('stair',V3(p.x,p.y-rise/n/2,p.z),V3(q.x,p.y-rise/n/2,q.z),1.2,rise/n,jit(COL.stair,.04));}
+ const e0=oct(k,-.72,a,y0+f*rise),e1=oct(k,.72,a,y0+(f+1)*rise);for(const o of [-.62,.62]){const n0=V3(Math.cos(ang(k)),0,Math.sin(ang(k))).multiplyScalar(o);beam('stair',e0.clone().add(n0).add(V3(0,-.25,0)),e1.clone().add(n0).add(V3(0,-.25,0)),.12,.35,C(0x4d2f1c));}}}
+
+// ================= 按“建造顺序”生成整座塔 =================
+const LBL={};
+function buildPagoda(){
+ const f1=FL[0];
+ // 0 台基
+ step('夯基筑台',0,'base');
+ put('stone','box',V3(0,.8,0),_Q.set(0,0,0,1),V3(40,1.6,40),C(COL.stone2));
+ slab(0,17.6,1.6,BASE_TOP,'stone',COL.stone);slab(17.3,17.9,BASE_TOP-.15,BASE_TOP+.05,'stone',0x9d9482);
+ for(let i=0;i<8;i++){const h=1.6/8,h2=(BASE_TOP-1.6)/8;put('stone','box',V3(0,h*(i+1)/2,23.2-i*.4),_Q.set(0,0,0,1),V3(7,h*(i+1),.4),C(0x9a917f));put('stone','box',V3(0,1.6+h2*(i+1)/2,19.85-i*.3),_Q.set(0,0,0,1),V3(5.4,h2*(i+1),.3),C(0xa39a88));}
+ LBL.taiji=V3(0,2.6,17.7);LBL.taiji2=V3(-14,1.2,20.1);
+ // 1 放线、柱础
+ step('放线定柱网',0,'layout');
+ for(const a of [f1.A,f1.Ai,FJ.A])ringBeams('layout',a,BASE_TOP+.03,.12,.05,COL.lay);
+ for(let k=0;k<8;k++)beam('layout',V3(0,BASE_TOP+.03,0),oct(k,-1,FJ.A+1.2,BASE_TOP+.03),.1,.05,C(COL.lay));
+ for(const [a,b] of [[f1.A,3],[f1.Ai,1],[FJ.A,3]])for(const c of ringPts(a,b,BASE_TOP))rod('stone',c.p,V3(c.p.x,BASE_TOP+.22,c.p.z),.6,jit(0xb8ae9a,.04),'cyl8');
+ // 2 首层立柱
+ step('立首层柱',1,'cols');
+ columns(f1.A,3,BASE_TOP,f1.hc,f1.r);columns(f1.Ai,1,BASE_TOP,f1.hc,f1.r);columns(FJ.A,3,BASE_TOP,FJ.hc,.28);
+ LBL.col_out=oct(7,-1/3,f1.A,9);LBL.col_in=oct(0,-1,f1.Ai,9);
+ // 3 阑额普拍枋
+ step('阑额普拍枋',1,'beams');frameTop(f1.A,3,f1.top);frameTop(f1.Ai,1,f1.top);frameTop(FJ.A,3,FJ.top,.8);
+ // 4 斗拱
+ step('安斗拱',1,'brk');
+ bracketRing(f1.A,3,f1.yb,f1.B,f1.sc);ringBeams('beam',f1.A+f1.B.proj*f1.sc,f1.ybt+.15,.3,.3,COL.beam);
+ bracketRing(f1.Ai,1,f1.yb,f1.Bi,f1.sci);
+ bracketRing(FJ.A,3,FJ.yb,FJ.B,FJ.sc);ringBeams('beam',FJ.A+FJ.B.proj*FJ.sc,FJ.ybt+.12,.24,.24,COL.beam);
+ for(let k=0;k<8;k++)beam('beam',oct(k,-1,f1.Ai,f1.yb+.9),oct(k,-1,f1.A,f1.yb+.9),.3,.45,jit(COL.beam));
+ LBL.dou1=oct(7,1/3,f1.A+1.2,f1.yb+1.2);
+ // 5 墙、屋面
+ step('铺椽盖瓦',1,'roof');
+ batterWalls(f1.A,3,BASE_TOP,f1.top-.52,2.2,1.0,COL.wall1,(k,j)=>(k===0||k===4)&&j===1?{door:5.6}:false);
+ batterWalls(f1.Ai,1,BASE_TOP,f1.top-.52,2.0,.9,COL.wall1,(k)=>k===0?{door:7.0}:k===4?{door:5.6}:false);
+ slab(f1.Ai-.3,f1.A-.3,f1.ybt,f1.ybt+.22);
+ {const h=FY[1]-.7-f1.ybt,g=new T.CylinderGeometry(.5,(f1.Ai-.4)/COS8,h,8,1,true);g.rotateY(P8);g.translate(0,f1.ybt+h/2,0);mesh('beam',g,cmat('beam',0x6d4a31));} // 斗八藻井
+ {const Ain=f1.A+.5,yin=f1.top+.3,ap=FJ.A+FJ.B.proj*FJ.sc,Ae=FJ.A+FJ.ep;const ye=solveYe(Ae,Ain,yin,ap,FJ.ybt+.72,1.5);FJ.roof=roof(Ae,Ain,ye,yin,{lift:.7,flare:.5});FJ.ye=ye;}
+ {const Ae=f1.A+f1.ep,Ain=f1.Ad+.2,yin=f1.ydt-.1,ap=f1.A+f1.B.proj*f1.sc;const ye=solveYe(Ae,Ain,yin,ap,f1.ybt+.72,1.5);f1.roof=roof(Ae,Ain,ye,yin,{lift:1.0,flare:.7});f1.ye=ye;}
+ stairs((f1.A+f1.Ai)/2+.2,5,3,f1.y,FL[1].y);
+ LBL.fujie=oct(7,.2,FJ.A+FJ.ep-.6,FJ.ye+.6);LBL.door1=oct(0,0,f1.A+.5,7);
+ // 各层
+ for(let i=0;i<5;i++){const f=FL[i],L=2*i+1;
+  if(i>0){
+   step(`${LEVELNAME[L]}立柱`,L,'up');columns(f.A,3,f.y,f.hc,f.r);columns(f.Ai,1,f.y,f.hc,f.r);frameTop(f.A,3,f.top,f.sc);frameTop(f.Ai,1,f.top,f.sc);
+   step(`${LEVELNAME[L]}斗拱`,L,'up');bracketRing(f.A,3,f.yb,f.B,f.sc);ringBeams('beam',f.A+f.B.proj*f.sc,f.ybt+.15,.28,.28,COL.beam);bracketRing(f.Ai,1,f.yb,f.Bi,f.sci);
+   for(let k=0;k<8;k++)beam('beam',oct(k,-1,f.Ai,f.yb+.8),oct(k,-1,f.A,f.yb+.8),.28,.42,jit(COL.beam));
+   step(`${LEVELNAME[L]}墙与屋檐`,L,i===4?'top':'up');
+   walls(f.A,3,f.y,f.top-.5,.34,COL.wall,(k,j)=>k%2===0&&j===1?{lattice:1}:false);chazi(f.Ai,f.y);
+   slab(0,f.Ai-.6,f.y,f.y+.75,'stone',0xa89f8c);
+   if(i<4){slab(0,f.A-.3,f.ybt,f.ybt+.2);const Ae=f.A+f.ep,Ain=f.Ad+.2,yin=f.ydt-.1,ap=f.A+f.B.proj*f.sc;const ye=solveYe(Ae,Ain,yin,ap,f.ybt+.7,1.5);f.roof=roof(Ae,Ain,ye,yin,{lift:.85,flare:.6});f.ye=ye;
+     stairs((f.A+f.Ai)/2+.2,i%2?5:1,2,f.y,FL[i+1].y);}
+   else{const Ae=f.A+f.ep,Ain=1.25,ap=f.A+f.B.proj*f.sc,yin=APEX;const ye=solveYe(Ae,Ain,yin,ap,f.ybt+.7,1.9);f.roof=roof(Ae,Ain,ye,yin,{expo:1.9,lift:1.1,flare:.8,NT:14,noRidge:true});f.ye=ye;f.apex=yin;
+     slab(0,f.A-.3,f.ybt,f.ybt+.2);}
+  }
+  if(i<4){const D=L+1,g=FL[i+1];
+   step(`${LEVELNAME[D]}斜撑`,D,i===0?'dark':'up');
+   columns(f.Ad,3,f.ybt,HD[i]+.02,.25);columns(f.Adi,1,f.ybt,HD[i]+.02,.25);frameTop(f.Ad,3,f.ydt,.8);frameTop(f.Adi,1,f.ydt,.8);
+   const Po=ringPts(f.Ad,3,0),Pi=ringPts(f.Adi,1,0);
+   for(let q=0;q<Po.length;q++){const a=Po[q].p,b=Po[(q+1)%Po.length].p,up=q%2===0;beam('brace',V3(a.x,up?f.ybt+.15:f.ydt-.2,a.z),V3(b.x,up?f.ydt-.2:f.ybt+.15,b.z),.2,.24,jit(COL.brace));beam('brace',V3(a.x,(f.ybt+f.ydt)/2,a.z),V3(b.x,(f.ybt+f.ydt)/2,b.z),.16,.2,jit(COL.brace));}
+   for(let q=0;q<8;q++){const a=Pi[q].p,b=Pi[(q+1)%8].p;beam('brace',V3(a.x,f.ybt+.15,a.z),V3(b.x,f.ydt-.2,b.z),.2,.24,jit(COL.brace));beam('brace',V3(b.x,f.ybt+.15,b.z),V3(a.x,f.ydt-.2,a.z),.2,.24,jit(COL.brace));
+    const o=Po[q*3].p;beam('brace',V3(o.x,f.ybt+.15,o.z),V3(a.x,f.ydt-.2,a.z),.2,.24,jit(COL.brace));beam('brace',V3(a.x,f.ybt+.15,a.z),V3(o.x,f.ydt-.2,o.z),.2,.24,jit(COL.brace));
+    beam('beam',V3(o.x,f.ydt-.05,o.z),V3(a.x,f.ydt-.05,a.z),.26,.3,jit(COL.beam));}
+   walls(f.Ad,3,f.ybt+.1,f.ydt-.3,.3,COL.wallD);walls(f.Adi,1,f.ybt+.1,f.ydt-.3,.3,COL.wallD);
+   LBL['dark'+(i+1)]=oct(1,-.1,f.Ad,(f.ybt+f.ydt)/2);LBL['brace'+(i+1)]=oct(0,.33,f.Ad,(f.ybt+f.ydt)/2);
+   step(`${LEVELNAME[L+2]}平坐`,D,i===0?'pz':'up');
+   bracketRing(f.Ad,3,f.pzb,f.PZB,PZ.sc);slab(0,g.A+1.5,g.y-.25,g.y);ringBeams('beam',g.A+1.4,g.y-.4,.3,.3,COL.beam);railing(g.A+1.38,g.y);
+   LBL['pz'+(i+2)]=oct(7,.15,g.A+1.45,g.y+.6);}
+ }
+ // 塔刹
+ // 塔刹：“以砖砌仰莲两层为坐，上又为铁仰莲一层，以承覆钵、相轮、宝盖、圆光等部分”，顶上仰月、宝珠（据剖面图）
+ const f5=FL[4],ya=f5.apex;
+ step('立铁刹',10,'spire');
+ const lat=(pts,seg=24)=>new T.LatheGeometry(pts.map(([r,y])=>new T.Vector2(r,y)),seg);
+ {const g=lat([[0,-.7],[1.9,-.7],[1.9,.2],[1.45,.45],[1.3,.75],[1.7,1.05],[1.85,1.2],[1.3,1.3],[1.15,1.55],[1.55,1.85],[1.7,2.0],[0,2.0]],8);g.rotateY(P8);g.translate(0,ya,0);mesh('stone',g,cmat('stone',0x8c8272));}
+ const sp=[],y0=ya+2.0;
+ sp.push({g:lat([[0,0],[.6,0],[1.2,.35],[1.3,.45],[.8,.45],[0,.45]]),m:mtx(0,y0,0)});
+ sp.push({g:lat([[0,0],[.8,0],[1.25,.4],[1.42,1.0],[1.35,1.55],[1.0,2.0],[.55,2.25],[0,2.25]]),m:mtx(0,y0+.45,0)});
+ const yx=y0+2.7;for(let i=0;i<6;i++){const r=1.02-i*.03;sp.push({g:new T.CylinderGeometry(r,r,.24,28),m:mtx(0,yx+.15+i*.37,0)});}
+ const yg=yx+2.35;sp.push({g:lat([[0,0],[1.35,0],[1.35,.12],[.9,.3],[0,.3]]),m:mtx(0,yg,0)});
+ const yh=yg+1.45;sp.push({g:new T.TorusGeometry(1.0,.09,8,40),m:mtx(0,yh,0)});
+ const ym=yh+1.35;sp.push({g:new T.TorusGeometry(.45,.07,6,20,PI),m:new T.Matrix4().compose(V3(0,ym+.45,0),new T.Quaternion().setFromAxisAngle(V3(0,0,1),PI),V3(1,1,1))});
+ sp.push({g:new T.SphereGeometry(.32,16,12),m:mtx(0,ym+.75,0)});sp.push({g:new T.SphereGeometry(.18,12,10),m:mtx(0,ym+1.3,0)});
+ sp.push({g:new T.CylinderGeometry(.06,.13,TOTAL_H-y0,8),m:mtx(0,(TOTAL_H+y0)/2,0)});
+ mesh('iron',merge(sp),cmat('iron',COL.iron));
+ LBL.s_lotus=V3(1.85,ya+1.1,0);LBL.s_bowl=V3(1.42,y0+1.45,0);LBL.s_rings=V3(1.02,yx+1.1,0);LBL.s_gai=V3(1.35,yg+.1,0);LBL.s_halo=V3(1.0,yh,0);LBL.s_moon=V3(.45,ym+.1,0);LBL.s_pearl=V3(.32,ym+.75,0);
+ const ch=[];const top=V3(0,yg+.05,0);for(let k=0;k<8;k++){const e=f5.roof.hips[k][0].clone().add(V3(0,.3,0));const mid=V3().lerpVectors(top,e,.5);mid.y-=1.1;const cv=new T.QuadraticBezierCurve3(top.clone().add(V3(e.x,0,e.z).normalize().multiplyScalar(1.25)),mid,e);ch.push({g:new T.TubeGeometry(cv,24,.06,5)});}
+ mesh('chain',merge(ch),cmat('chain',0x2e2c2a,{metalness:.5,roughness:.5}));
+ LBL.chain=V3().lerpVectors(top,f5.roof.hips[7][0],.55).add(V3(0,-.7,0));LBL.spire=V3(1.9,ya+1.2,0);
+ // 塑像与牌匾（每层一步）
+ const FIG={1:[],3:[],5:[],7:[],9:[]};
+ FIG[1].push(...figure(0,BASE_TOP,-.4,10.3,0,false,true,3.0));
+ {const y=FL[1].y+.75;FIG[3].push(...figure(0,y,-.6,2.6,0,false,true,1),...figure(-2,y,0,2.8,0,true),...figure(2,y,0,2.8,0,true),...figure(-3.4,y,.6,2.2,0,true,false),...figure(3.4,y,.6,2.2,0,true,false));}
+ {const y=FL[2].y+.75;for(let q=0;q<4;q++){const a=q*PI/2;FIG[5].push(...figure(Math.sin(a)*1.9,y,Math.cos(a)*1.9,2.4,a,false,true,.8));}}
+ {const y=FL[3].y+.75;FIG[7].push(...figure(0,y,-.6,2.5,0,false,true,1),...figure(-1.8,y,.2,2.4,0,true,false),...figure(1.8,y,.2,2.4,0,true,false),...figure(-3.2,y,.6,2.6,0,true),...figure(3.2,y,.6,2.6,0,true));}
+ {const y=FL[4].y+.75;FIG[9].push(...figure(0,y,0,2.5,0,false,true,1));for(let q=0;q<8;q++){const a=q*PI/4+P8;FIG[9].push(...figure(Math.sin(a)*3.4,y,Math.cos(a)*3.4,1.5,a,false,false,.5));}}
+ [1,3,5,7,9].forEach((L,i)=>{step(`${LEVELNAME[L]}塑像`,L,'statue');mesh('buddha',merge(FIG[L]),cmat('buddha',COL.gold));
+  const f=FL[i];beam('plaque',oct(0,-.2,f.A+(i?.25:.55),f.top-1.1),oct(0,.2,f.A+(i?.25:.55),f.top-1.1),.14,.95,C(0xffffff));});
+ LBL.b1=V3(0,13,0);LBL.b2=V3(0,FL[1].y+3.8,0);LBL.b3=V3(0,FL[2].y+2.8,0);LBL.b4=V3(0,FL[3].y+3,0);LBL.b5=V3(0,FL[4].y+2.6,0);
+ LBL.stair=oct(6,0,(f1.A+f1.Ai)/2+.2,9);
+ for(let i=0;i<5;i++){const f=FL[i];LBL['L'+(2*i+1)]=oct(2,0,f.A+2,(f.y+f.top)/2);if(i<4)LBL['L'+(2*i+2)]=oct(2,0,f.Ad+2,(f.ybt+f.ydt)/2);}
+ LBL.L0=oct(2,0,20,1.8);LBL.L10=V3(-2,TOTAL_H-4,0);
+ LBL.eave=[oct(1,1,FJ.A+FJ.ep+.5,FJ.ye),...FL.map(f=>oct(1,1,f.A+f.ep+.7,f.ye+.9))];
+ LBL.corner=FL[1].roof.hips[7][0].clone();LBL.bell=LBL.corner.clone().add(V3(0,-1,0));LBL.lattice=oct(0,0,FL[1].A+.3,FL[1].y+1.6);
+ LBL.lean=oct(0,.33,FL[1].A,FL[1].y+2);
+}
+
+// ================= 场景（纸面 + 墨线） =================
+const stage=document.getElementById('stage'),canvas=document.getElementById('gl');
+const renderer=new T.WebGLRenderer({canvas,antialias:true,alpha:true,powerPreference:'high-performance'});
+renderer.setClearColor(0x000000,0);
+renderer.outputEncoding=T.sRGBEncoding;renderer.toneMapping=T.ACESFilmicToneMapping;renderer.toneMappingExposure=1.15;
+renderer.shadowMap.enabled=true;renderer.shadowMap.type=T.PCFSoftShadowMap;renderer.shadowMap.autoUpdate=false;renderer.localClippingEnabled=true;
+const MOBILE=Math.min(screen.width,screen.height)<600;
+renderer.setPixelRatio(Math.min(devicePixelRatio||1,MOBILE?2:1.75));
+const scene=new T.Scene();
+const cam=new T.PerspectiveCamera(34,1,.3,1500);
+const hemi=new T.HemisphereLight(0xf2ede2,0x6b5a45,.95);scene.add(hemi);
+const sun=new T.DirectionalLight(0xffe6c2,1.5);sun.position.set(-48,95,70);sun.castShadow=true;
+sun.shadow.mapSize.set(MOBILE?1024:2048,MOBILE?1024:2048);Object.assign(sun.shadow.camera,{left:-46,right:46,top:80,bottom:-10,near:20,far:260});sun.shadow.bias=-.0006;sun.shadow.normalBias=.04;
+sun.target.position.set(0,26,0);scene.add(sun,sun.target);
+const fill=new T.DirectionalLight(0xbfd2dc,.4);fill.position.set(60,40,-50);scene.add(fill);
+// 地面只接影子，让塔像画在纸上
+const ground=new T.Mesh(new T.CircleGeometry(260,64),new T.ShadowMaterial({opacity:.17}));ground.rotation.x=-PI/2;ground.receiveShadow=true;scene.add(ground);
+const root=new T.Group();scene.add(root);
+function finalize(){STEPS.forEach(s=>{const g=new T.Group();g.userData={level:s.level,step:s.i};s.group=g;
+ s.items.forEach(it=>{const n=it.c.length,im=new T.InstancedMesh(GEO[it.kind],BASEMAT[it.cat]||BASEMAT.beam,n);for(let j=0;j<n;j++){_M.fromArray(it.m,j*16);im.setMatrixAt(j,_M);im.setColorAt(j,it.c[j]);}
+  im.instanceMatrix.needsUpdate=true;if(im.instanceColor)im.instanceColor.needsUpdate=true;im.frustumCulled=false;im.castShadow=it.cat!=='layout';im.receiveShadow=true;im.userData={cat:it.cat,level:s.level};g.add(im);});
+ s.meshes.forEach(({cat,geo,m})=>{const me=new T.Mesh(geo,m);me.castShadow=me.receiveShadow=true;me.userData={cat,level:s.level};g.add(me);});
+ root.add(g);});}
+// 墨线：先画一遍法线+深度，再按突变处描边
+const INK=renderer.capabilities.isWebGL2||!!renderer.extensions.get('WEBGL_depth_texture');
+const inkRT=new T.WebGLRenderTarget(1,1,{minFilter:T.NearestFilter,magFilter:T.NearestFilter});
+inkRT.depthTexture=new T.DepthTexture(1,1);inkRT.depthTexture.type=T.UnsignedIntType;
+const inkN=new T.MeshNormalMaterial({side:T.DoubleSide,clippingPlanes:[CUT,CUTY]});
+const inkQ=new T.Mesh(new T.PlaneGeometry(2,2),new T.ShaderMaterial({transparent:true,depthTest:false,depthWrite:false,
+ uniforms:{tN:{value:inkRT.texture},tD:{value:inkRT.depthTexture},px:{value:new T.Vector2(1,1)},nf:{value:new T.Vector2(cam.near,cam.far)},ink:{value:new T.Vector3(.15,.12,.09)}},
+ vertexShader:'varying vec2 vUv;void main(){vUv=uv;gl_Position=vec4(position.xy,0.,1.);}',
+ fragmentShader:`uniform sampler2D tN,tD;uniform vec2 px,nf;uniform vec3 ink;varying vec2 vUv;
+ float L(vec2 u){float z=texture2D(tD,u).x*2.-1.;return 2.*nf.x*nf.y/(nf.y+nf.x-z*(nf.y-nf.x));}
+ void main(){float d=L(vUv);vec3 n=texture2D(tN,vUv).xyz;float dd=0.,nd=0.;
+  for(int i=0;i<4;i++){vec2 o=i==0?vec2(px.x,0.):i==1?vec2(-px.x,0.):i==2?vec2(0.,px.y):vec2(0.,-px.y);
+   float di=L(vUv+o);dd=max(dd,abs(di-d)/min(di,d));nd=max(nd,distance(texture2D(tN,vUv+o).xyz,n));}
+  float e=max(smoothstep(.015,.045,dd),smoothstep(.22,.5,nd))*clamp(1.3-min(d,1e3)/320.,.35,1.);
+  gl_FragColor=vec4(ink,e*.8);}`}));
+inkQ.frustumCulled=false;const inkScene=new T.Scene();inkScene.add(inkQ);const inkCam=new T.Camera();
+const ALLM=[];
+function render(){
+ if(INK){const hid=[];for(const o of ALLM){const c=o.userData.cat||o.material.userData.cat;if(o.visible&&c&&catOp[c]<.5){o.visible=false;hid.push(o);}}
+  ground.visible=false;scene.overrideMaterial=inkN;renderer.setRenderTarget(inkRT);renderer.clear();renderer.render(scene,cam);
+  scene.overrideMaterial=null;renderer.setRenderTarget(null);for(const o of hid)o.visible=true;ground.visible=true;}
+ renderer.shadowMap.needsUpdate=true;renderer.render(scene,cam);
+ if(INK){renderer.autoClear=false;renderer.render(inkScene,inkCam);renderer.autoClear=true;}}
+
+// ================= 构件实验室：斗拱 / 叉柱造 / 榫卯 =================
+const labRoot=new T.Group();labRoot.visible=false;scene.add(labRoot);
+const LABS={};
+function labMesh(group,name,geo,m,material,ex,tier=0){const me=new T.Mesh(geo,material);me.applyMatrix4(m);me.castShadow=me.receiveShadow=true;me.userData={name,ex:ex||V3(),base:me.position.clone(),tier};group.add(me);return me;}
+function labBox(group,name,cat,color,x,y,z,sx,sy,sz,ex,pitch=0,kind='box',ry=0){const q=new T.Quaternion().setFromAxisAngle(_Y,ry);if(pitch)q.multiply(new T.Quaternion().setFromAxisAngle(_Z,pitch));return labMesh(group,name,GEO[kind],new T.Matrix4().compose(V3(x,y,z),q,V3(sx,sy,sz)),cmat(cat,color),ex);}
+function buildLabs(){
+ // ---- 斗拱：首层外檐 七铺作双杪双下昂（示意） ----
+ {const g=new T.Group();g.userData.id='bracket';labRoot.add(g);const B=bracketPieces(4,2,.5),Y0=2.8,s=.5,gap=.62;
+  labBox(g,'柱','col',COL.col,0,Y0/2-.2,0,.62,Y0-.4,.62,V3(0,0,0),0,'cyl');
+  labBox(g,'阑额','beam',COL.beam,0,Y0-.47,0,.24,.5,3.4,V3(0,0,0));
+  labBox(g,'普拍枋','beam',0x7b5236,0,Y0-.1,0,.46,.2,3.6,V3(0,gap*.5,0));
+  const tierY=t=>gap*(t+1);
+  for(const q of B.P){const color=q.kind==='dou'?COL.dou:q.ang?COL.ang:COL.brk;const ex=V3(q.ang?.35:0,tierY(q.t)+(q.kind==='dou'?gap*.45:0),0);
+   labBox(g,q.name,q.ang?'ang':'brk',color,q.x,Y0+q.y,q.z,q.sx,q.sy,q.sz,ex,q.pitch||0,q.kind).userData.q=q;}
+  for(let k=2;k<=4;k++)labBox(g,'柱头方','beam',COL.beam,0,Y0+.36+.44*(k-1)+.13,0,.17,.26,3.6,V3(0,tierY(k)+gap*.2,0)).userData.q={t:k};
+  labBox(g,'橑檐方','beam',COL.beam,4*s,Y0+B.h+.15,0,.3,.3,3.6,V3(0,tierY(6),0));
+  for(let i=-3;i<=3;i++){const z=i*.5,p1=V3(-.6,Y0+B.h+.72,z),p2=V3(4*s+1.8,Y0+B.h+.05,z);const L=p1.distanceTo(p2),mid=V3().addVectors(p1,p2).multiplyScalar(.5);
+   const q=new T.Quaternion().setFromUnitVectors(_Y,V3().subVectors(p2,p1).normalize());labMesh(g,'椽子',GEO.cyl,new T.Matrix4().compose(mid,q,V3(.2,L,.2)),cmat('beam',0x7a5234),V3(0,tierY(7),0)).userData.q={i};}
+  setAnch(g,[['栌斗',null,[0,.5,.5]],['华拱',q=>q.t===2,[.5,.5,0]],['泥道拱',q=>q.t===1,[0,.5,.5]],['慢拱',q=>q.t===2,[0,.5,-.5]],['瓜子拱',q=>q.t===3,[0,.5,.5]],['散斗',q=>q.t===1&&q.z<0,[0,.5,0]],['交互斗',q=>q.t===1,[.5,.5,0]],
+   ['下昂',null,[.5,0,0]],['令拱',null,[0,.5,.5]],['耍头',null,[.5,.5,0]],['橑檐方',null,[0,.5,.5]],['柱头方',q=>q.t===3,[0,.5,-.5]],['普拍枋',null,[0,.5,-.5]],['阑额',null,[0,0,.5]],['柱',null,[0,.28,.5]],['椽子',q=>q.i===3,[0,.5,0]]]);
+  g.userData.anchor={'栌斗':1,'华拱':1,'泥道拱':1,'瓜子拱':1,'慢拱':1,'散斗':1,'交互斗':1,'下昂':1,'令拱':1,'耍头':1,'橑檐方':1,'柱头方':1,'普拍枋':1,'阑额':1,'柱':1,'椽子':1};
+  LABS.bracket=g;}
+ // ---- 叉柱造 ----
+ {const g=new T.Group();g.userData.id='fork';labRoot.add(g);const Y0=2.4;
+  labBox(g,'下层柱','col',COL.col,0,Y0/2,0,.62,Y0,.62,V3(),0,'cyl');
+  labBox(g,'普拍枋','beam',0x7b5236,0,Y0+.1,0,.9,.2,2.4,V3(0,.25,0));
+  labBox(g,'栌斗','brk',COL.dou,0,Y0+.2+.18,0,.62,.36,.62,V3(0,.5,0),0,'dou');
+  labBox(g,'十字相交的拱','brk',COL.brk,0,Y0+.56+.13,0,2.2,.26,.17,V3(0,.8,0));
+  labBox(g,'十字相交的拱','brk',COL.brk,0,Y0+.56+.13,0,.17,.26,1.6,V3(0,.8,0));
+  const yf=Y0+.56,h=.26,up=V3(0,2.2,0);
+  for(const [sx,sz] of [[1,1],[1,-1],[-1,1],[-1,-1]])labBox(g,'柱脚开叉','col',0x9a6a44,sx*.2,yf+h/2,sz*.2,.23,h,.23,up);
+  labBox(g,'上层柱','col',COL.col,0,yf+h+1.6,0,.56,3.2,.56,up,0,'cyl');
+  setAnch(g,[['上层柱',null,[0,.3,.5]],['下层柱',null,[0,-.1,.5]],['柱脚开叉',null,[.5,-.5,.5]],['十字相交的拱',null,[.5,.5,0]],['栌斗',null,[0,.2,.5]],['普拍枋',null,[0,.5,.5]]]);
+  LABS.fork=g;}
+ // ---- 榫卯：燕尾榫 ----
+ {const g=new T.Group();g.userData.id='joint';labRoot.add(g);
+  const shp=(pts)=>{const s=new T.Shape();pts.forEach(([x,y],i)=>i?s.lineTo(x,y):s.moveTo(x,y));return s;};
+  const ext=(s)=>{const e=new T.ExtrudeGeometry(s,{depth:.5,bevelEnabled:false});e.rotateX(PI/2);e.translate(0,.5,0);return e;};
+  const tongue=ext(shp([[-2.2,-.28],[0,-.28],[0,-.12],[.42,-.22],[.42,.22],[0,.12],[0,.28],[-2.2,.28]]));
+  const socket=ext(shp([[0,.28],[0,.12],[.42,.22],[.42,-.22],[0,-.12],[0,-.28],[2.2,-.28],[2.2,.28]]));
+  labMesh(g,'卯（凹口）',socket,new T.Matrix4().makeTranslation(0,1.4,0),cmat('beam',0x8a6040),V3());
+  labMesh(g,'榫（燕尾凸头）',tongue,new T.Matrix4().makeTranslation(0,1.4,0),cmat('brk',0x9f7652),V3(-.7,1.1,0));
+  labBox(g,'支架','stone',0x8a8272,-1.2,.7,0,.4,1.4,.8,V3());labBox(g,'支架','stone',0x8a8272,1.4,.7,0,.4,1.4,.8,V3());
+  setAnch(g,[['榫（燕尾凸头）',null,[-1.2,.5,0]],['卯（凹口）',null,[1.3,.5,0]]]);LABS.joint=g;}
+ Object.values(LABS).forEach(g=>g.visible=false);
+}
+function setAnch(g,specs){g.userData.anch={};for(const [name,pred,loc] of specs){const m=g.children.find(c=>c.userData.name===name&&(!pred||pred(c.userData.q||{})));if(m)g.userData.anch[name]={m,loc:V3(...loc)};}}
+function labAnchor(g,name){const a=g.userData.anch&&g.userData.anch[name];if(a){a.m.updateMatrixWorld();return a.m.localToWorld(a.loc.clone());}for(const m of g.children)if(m.userData.name===name){const b=new T.Box3().setFromObject(m);const c=b.getCenter(V3());c.y=b.max.y+.05;return c;}return null;}
+
+// ================= 组装 =================
+buildPagoda();finalize();buildLabs();
+const NSTEP=STEPS.length;
+const tagEnd=tag=>{let e=0;STEPS.forEach((s,i)=>{if(s.tag===tag)e=i+1;});return e;};
+const byLevel={};STEPS.forEach(s=>(byLevel[s.level]=byLevel[s.level]||[]).push(s.group));
+// 高度标尺
+const dimG=new T.Group();dimG.visible=false;scene.add(dimG);
+{const m=cmat('dim',0xe3bb62);const x=-27,z=6;const add=(g,p)=>{const me=new T.Mesh(g,m);me.position.copy(p);dimG.add(me);};
+ add(new T.BoxGeometry(.18,TOTAL_H,.18),V3(x,TOTAL_H/2,z));add(new T.BoxGeometry(3,.18,.18),V3(x,0.1,z));add(new T.BoxGeometry(3,.18,.18),V3(x,TOTAL_H,z));
+ for(let y=10;y<TOTAL_H;y+=10)add(new T.BoxGeometry(1.2,.12,.12),V3(x,y,z));}
+
+// ================= 相机 =================
+const view={t:V3(0,33,0),r:140,th:.55,ph:1.45};let tween=null,userHold=0,spin=0;
+function camApply(){const {t,r,th,ph}=view;cam.position.set(t.x+r*Math.sin(ph)*Math.sin(th),t.y+r*Math.cos(ph),t.z+r*Math.sin(ph)*Math.cos(th));cam.lookAt(t);}
+const PRE={
+ wide:{t:[0,33,0],w:40,h:70,th:.55,ph:1.45}, wideL:{t:[0,33,0],w:40,h:70,th:-.55,ph:1.42}, up:{t:[0,35,0],w:34,h:72,th:.3,ph:1.7},
+ base:{t:[0,5,8],w:44,h:16,th:.42,ph:1.22}, eave1:{t:[0,11,4],w:36,h:20,th:.6,ph:1.33}, eaveLow:{t:[0,10,0],w:42,h:26,th:.5,ph:1.4},
+ pz:{t:[0,20.5,4],w:26,h:15,th:.5,ph:1.36}, spire:{t:[0,61,0],w:11,h:15.5,th:.5,ph:1.32}, top:{t:[0,54.5,0],w:30,h:27,th:.55,ph:1.2},
+ explode:{t:[0,57,0],w:40,h:116,th:.55,ph:1.46}, sect:{t:[0,33,0],w:36,h:70,th:0,ph:1.53}, sect1:{t:[0,10.8,0],w:24,h:18.5,th:0,ph:1.5},
+ sectUp:{t:[0,37,0],w:26,h:40,th:0,ph:1.5}, plan:{t:[0,6,0],w:40,h:40,th:.001,ph:.06}, dark:{t:[0,16,2],w:26,h:11,th:.45,ph:1.4},
+ front:{t:[0,33,0],w:40,h:70,th:0,ph:1.52}, bLab:{t:[1.4,4.7,0],w:7.8,h:6.8,th:.62,ph:1.3}, bLabW:{t:[1.1,5.7,0],w:7.6,h:9.6,th:.62,ph:1.3},
+ bLabX:{t:[1.3,5.9,0],w:8,h:12.8,th:.62,ph:1.3}, fLab:{t:[0,3.6,0],w:3.8,h:6.8,th:.62,ph:1.28}, jLab:{t:[-.1,2.1,0],w:5.8,h:4.2,th:.4,ph:.82}, build0:{t:[0,20,0],w:48,h:44,th:.5,ph:1.2},
+ layout:{t:[0,4,0],w:42,h:30,th:.3,ph:.7}, rise:{t:[0,36,0],w:40,h:72,th:.7,ph:1.42}
+};
+function fitR(w,h){const v=Math.tan(cam.fov*PI/360);return (Math.max(h/2/v,w/2/(v*cam.aspect))+w*.3)*1.14;}
+function camTo(p,dur=2.2){if(!p)return;if(typeof p==='string')p=PRE[p];const t=Array.isArray(p.t)?V3(...p.t):p.t.clone();
+ const to={t,r:fitR(p.w,p.h),th:p.th,ph:p.ph};let dth=to.th-view.th;dth=((dth+PI)%(2*PI)+2*PI)%(2*PI)-PI;to.th=view.th+dth;
+ if(REDUCED)dur=.01;tween={from:{t:view.t.clone(),r:view.r,th:view.th,ph:view.ph},to,t0:performance.now(),dur:dur*1000};}
+const ease=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;
+function stepTween(now){if(!tween)return false;const {from,to}=tween;let k=Math.min(1,(now-tween.t0)/tween.dur);const e=ease(k);
+ view.t.lerpVectors(from.t,to.t,e);view.r=Math.exp(Math.log(from.r)+(Math.log(to.r)-Math.log(from.r))*e);view.th=from.th+(to.th-from.th)*e;view.ph=from.ph+(to.ph-from.ph)*e;if(k>=1)tween=null;return true;}
+// 手势
+const ptr=new Map();let pinch0=0,down=null;
+canvas.addEventListener('pointerdown',e=>{canvas.setPointerCapture(e.pointerId);ptr.set(e.pointerId,{x:e.clientX,y:e.clientY});tween=null;userHold=performance.now();down={x:e.clientX,y:e.clientY,t:performance.now(),n:ptr.size};if(ptr.size===2){const [a,b]=[...ptr.values()];pinch0=Math.hypot(a.x-b.x,a.y-b.y);}hideHint();kick();});
+canvas.addEventListener('pointermove',e=>{if(!ptr.has(e.pointerId))return;const p=ptr.get(e.pointerId),dx=e.clientX-p.x,dy=e.clientY-p.y;p.x=e.clientX;p.y=e.clientY;userHold=performance.now();
+ if(ptr.size===1){view.th-=dx*.0065;view.ph=Math.min(1.66,Math.max(.05,view.ph-dy*.005));}
+ else if(ptr.size===2){const [a,b]=[...ptr.values()];const d=Math.hypot(a.x-b.x,a.y-b.y);if(pinch0){view.r=Math.min(420,Math.max(3,view.r*pinch0/d));}pinch0=d;view.t.y=Math.min(80,Math.max(0,view.t.y+dy*.5*view.r*.0025));}
+ kick();});
+const up=e=>{if(!ptr.has(e.pointerId))return;ptr.delete(e.pointerId);pinch0=0;if(down&&down.n===1&&ptr.size===0&&performance.now()-down.t<320&&Math.hypot(e.clientX-down.x,e.clientY-down.y)<7)pick(e);if(ptr.size===0)down=null;};
+canvas.addEventListener('pointerup',up);canvas.addEventListener('pointercancel',up);
+canvas.addEventListener('wheel',e=>{e.preventDefault();tween=null;userHold=performance.now();view.r=Math.min(420,Math.max(3,view.r*Math.exp(e.deltaY*.0012)));kick();},{passive:false});
+
+// ================= 状态 =================
+const FAST=/[?&]fast/.test(location.search);const REDUCED=matchMedia('(prefers-reduced-motion: reduce)').matches||FAST;
+const XFADE={wall:.06,lattice:.06,roof:.07,soffit:.05,fascia:.08,ridge:.1,deck:.14,rail:.2,plaque:.1,bell:.15,stair:.35,stone:.5,buddha:.35,iron:.6,chain:.6};
+const CATS=Object.keys(MATS);
+const S={cut:0,cutY:0,xray:0,explode:0,labEx:0,sway:0,lean:0,iso:0};const TG=Object.assign({},S);
+let cutYval=9,focus=[],labId=null,buildT=null,buildShown=NSTEP,labels=[],dimOn=false;
+const catOp={},catEm={};CATS.forEach(c=>{catOp[c]=1;catEm[c]=0;});
+const FOCUSCOL={brace:0xd84a2a,chain:0xe0a040,stair:0xe0a040,col:0xe0a040,brk:0xe0a040,ang:0xe0a040,buddha:0xe0a040};
+function setState(st){TG.cut=st.cut?1:0;if(st.cutY!=null){cutYval=st.cutY;TG.cutY=1;}else TG.cutY=0;TG.xray=st.xray?1:0;TG.explode=st.explode?1:0;TG.sway=st.sway?1:0;TG.lean=st.lean||0;
+ focus=st.focus||[];TG.iso=st.iso?1:0;TG.labEx=st.labEx||0;
+ if(st.lab!==labId){labId=st.lab||null;S.labEx=0;Object.entries(LABS).forEach(([k,g])=>g.visible=k===labId);labRoot.visible=!!labId;root.visible=!labId;}
+ if(st.build===undefined||st.build===null){buildT=null;}else buildT=typeof st.build==='string'?tagEnd(st.build):st.build;
+ dimOn=!!st.dim;spin=REDUCED?0:(st.spin||0);labels=st.labels||[];kick();}
+const lerp=(a,b,k)=>a+(b-a)*k;
+let buildNext=0;const appear=new Array(NSTEP).fill(-1e9);
+function updateBuild(now){const target=buildT===null?NSTEP:buildT;let changed=false;
+ if(buildT===null){if(buildShown!==NSTEP){for(let i=buildShown;i<NSTEP;i++)appear[i]=-1e9;buildShown=NSTEP;changed=true;}}
+ else if(target<buildShown){buildShown=target;changed=true;}
+ else if(target>buildShown&&FAST){for(let i=buildShown;i<target;i++)appear[i]=-1e9;buildShown=target;changed=true;}
+ else if(target>buildShown&&now>=buildNext){appear[buildShown]=now;const s=STEPS[buildShown];buildShown++;buildNext=now+(s.tag==='up'?300:650);changed=true;}
+ let anim=false;STEPS.forEach((s,i)=>{s.group.visible=i<buildShown;s.dropK=Math.min(1,(now-appear[i])/850);if(s.dropK<1)anim=true;});
+ const layoutOn=buildT!==null&&buildT<NSTEP;STEPS.forEach(s=>s.group.children.forEach(m=>{if(m.userData.cat==='layout')m.visible=layoutOn;}));
+ return changed||anim||(buildT!==null&&target!==buildShown);}
+const PIV=V3(0,0,0);
+function updateGroups(now){const tm=now/1000,w=REDUCED?3:7.5;
+ const th=-S.lean*.085,py=FL[1].y,sn=Math.sin(th),cs=Math.cos(th);
+ STEPS.forEach(s=>{const g=s.group,L=s.level;let x=0,y=L*4.6*S.explode,rz=0;
+  if(L>=3){rz+=th;x+=py*sn;y+=py*(1-cs);}
+  if(S.sway>.001){const f=Math.pow(L/10,1.4);x+=S.sway*(.28*Math.sin(w*tm)+1.1*f*Math.sin(w*tm-.7));rz+=-S.sway*.012*f*Math.cos(w*tm-.7);}
+  const d=s.dropK===undefined?1:s.dropK;y+=(1-(1-Math.pow(1-d,3)))*9;g.position.set(x,y,0);g.rotation.z=rz;});
+ ground.position.x=S.sway*.28*Math.sin(w*tm);}
+function updateMats(dt){let act=false;const k=FAST?1:1-Math.exp(-dt*5);
+ for(const c of CATS){let op=1;if(XFADE[c]!==undefined)op=lerp(1,XFADE[c],S.xray);if(focus.length&&!focus.includes(c))op=Math.min(op,lerp(1,.1,S.iso));if(c==='dim'||c==='layout')op=1;
+  const em=focus.includes(c)||c===hoverCat?1:0;const o0=catOp[c],e0=catEm[c];catOp[c]=Math.abs(op-o0)<.004?op:lerp(o0,op,k);catEm[c]=Math.abs(em-e0)<.004?em:lerp(e0,em,k);if(catOp[c]!==o0||catEm[c]!==e0)act=true;
+  for(const m of MATS[c]){const o=catOp[c],tr=o<.995;if(m.transparent!==tr){m.transparent=tr;m.needsUpdate=true;}m.opacity=o;m.depthWrite=o>.55;
+   if(c!=='dim'&&c!=='layout'){m.emissive.set(FOCUSCOL[c]||0xe0a040).convertSRGBToLinear();m.emissiveIntensity=catEm[c]*(.35+.15*Math.sin(performance.now()/300));}}}
+ return act||focus.length>0||!!hoverCat;}
+function updateScalars(dt){let act=false;const k=FAST?1:1-Math.exp(-dt*(REDUCED?20:2.6));for(const key in S){const v=S[key],t=TG[key];if(Math.abs(v-t)<.002){S[key]=t;}else{S[key]=lerp(v,t,key==='labEx'&&!FAST?1-Math.exp(-dt*2):k);act=true;}}
+ CUT.constant=S.cut<.002?1e4:lerp(48,0,ease(S.cut));CUTY.constant=S.cutY<.002?1e4:lerp(90,cutYval,ease(S.cutY));
+ if(labId){for(const m of LABS[labId].children)m.position.copy(m.userData.base).addScaledVector(m.userData.ex,S.labEx);}
+ dimG.visible=dimOn&&!labId;return act||S.sway>0;}
+
+// ================= 标注 =================
+const labelsEl=document.getElementById('labels');const LBEL={};
+const LT={taiji:['台基：下方上八角',LBL.taiji,0],fujie:['副阶周匝：首层外廊',LBL.fujie,1],pz2:['平坐与勾栏',LBL.pz2,2],lattice:['当心间辟门',LBL.lattice,3],corner:['垂脊与兽头',LBL.corner,3],bell:['铁马风铃',LBL.bell,3],
+ dou1:['斗拱',LBL.dou1,1],spire:['塔刹',LBL.spire,10],chain:['铁链',LBL.chain,10],s_lotus:['砖砌仰莲座',LBL.s_lotus,10],s_gai:['宝盖',LBL.s_gai,10],s_halo:['圆光',LBL.s_halo,10],s_bowl:['覆钵',LBL.s_bowl,10],s_rings:['相轮',LBL.s_rings,10],s_moon:['仰月',LBL.s_moon,10],s_pearl:['宝珠',LBL.s_pearl,10],
+ in8:['内槽 8 柱',oct(3,-1,FL[0].Ai,9),1],out24:['外槽 24 柱',oct(0,1/3,FL[0].A,9),1],fj24:['副阶 24 柱',oct(6,0,FJ.A,7),1],
+ b1:['释迦牟尼坐像 约11米',LBL.b1,1],b2:['二层：一佛二菩萨二胁侍',LBL.b2,3],b3:['三层：四方佛',LBL.b3,5],b4:['四层：释迦与弟子、菩萨',LBL.b4,7],b5:['五层：毗卢遮那佛与八大菩萨',LBL.b5,9],
+ stair:['楼梯',LBL.stair,1],h67:['67.31 米',V3(-27,TOTAL_H/2,6),-1],lean:['二层柱：倾斜最严重（示意已夸大）',LBL.lean,3],shoufen:['逐层内收',oct(0,0,FL[3].A,FL[3].y+1),7],
+ door1:['首层南门',LBL.door1,1],bucket:['内筒供佛',V3(0,6,0),1],ambul:['外筒走人',oct(7,0,(FL[0].A+FL[0].Ai)/2,6),1]};
+for(let i=1;i<=4;i++){LT['dark'+i]=['暗层'+['一','二','三','四'][i-1]+'：斜撑',LBL['dark'+i],2*i];LT['brace'+i]=['斜撑',LBL['brace'+i],2*i];}
+for(let L=0;L<=10;L++)LT['L'+L]=[LEVELNAME[L],LBL['L'+L],L];
+LBL.eave.forEach((p,i)=>LT['e'+(i+1)]=['第'+'一二三四五六'[i]+'重檐',p,i?2*i-1:1]);
+['副阶：双杪偷心','一层：双杪双下昂','二层：双杪双下昂','三层：三杪','四层：双杪','五层：半栱承单杪'].forEach((t,i)=>LT['k'+(i+1)]=[t,LBL.eave[i],i?2*i-1:1]);
+const _v=V3();const LSIDE={'泥道拱':'l','散斗':'l','华拱':'r','交互斗':'r','瓜子拱':'r','令拱':'l','耍头':'r','橑檐方':'l','椽子':'r','下昂':'r','柱头方':'l','阑额':'l','普拍枋':'r','栌斗':'l','柱':'r'};
+function updateLabels(){const W=stage.clientWidth,H=stage.clientHeight;const want=new Set(labels);
+ for(const id of labels){let el=LBEL[id];if(!el){el=document.createElement('div');el.className='lb';el.innerHTML='<i></i><span></span>';
+   el.onclick=()=>{const h=HOT[id];if(h)go(Array.isArray(h)?h[0]:h);};el.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();el.onclick();}};labelsEl.appendChild(el);LBEL[id]=el;}
+  const hot=HOT[id];if(el.classList.contains('go')!==!!hot){el.classList.toggle('go',!!hot);if(hot){el.tabIndex=0;el.setAttribute('role','button');}else{el.removeAttribute('tabindex');el.removeAttribute('role');}}
+  let text,p;if(LT[id]){text=LT[id][0];const L=LT[id][2];p=LT[id][1].clone();if(L>=0&&byLevel[L]){byLevel[L][0].updateMatrixWorld();p.applyMatrix4(byLevel[L][0].matrixWorld);}}
+  else if(labId){text=id;p=labAnchor(LABS[labId],id);}
+  if(!p){el.classList.remove('on');continue;}if(hot)text=(Array.isArray(hot)&&hot[1]||text)+' ›';el.lastChild.textContent=text;_v.copy(p).project(cam);
+  const x=(_v.x+1)/2*W,y=(1-_v.y)/2*H,vis=_v.z<1&&x>-20&&x<W+20&&y>-10&&y<H+10;el.classList.toggle('on',vis);el.classList.toggle('flip',LSIDE[id]?LSIDE[id]==='l':x>W*.62);el.style.transform=`translate(${x.toFixed(1)}px,${y.toFixed(1)}px)`;}
+ for(const id in LBEL)if(!want.has(id)){const el=LBEL[id];el.classList.remove('on','go');el.removeAttribute('tabindex');el.removeAttribute('role');}}
+
+// ================= 拾取 =================
+const INFO={col:['柱','内圈8根、外圈24根，逐层叠立；首层外还有副阶一圈。上层柱脚用“叉柱造”骑在下层斗拱上。'],brk:['斗拱','柱头与屋檐之间层层出挑的木构件，由斗、拱、昂组成。梁思成统计各层内外共有三十余种。'],ang:['下昂','斜置的长杆，像杠杆一样挑起屋檐。'],
+ beam:['梁枋','阑额、普拍枋、柱头方、橑檐方等横向构件，把柱子箍成整体。'],brace:['暗层斜撑','藏在暗层墙里的斜向木撑，与柱梁组成三角形，是木塔的“腰箍”。'],wall:['墙体','首层内外两圈柱都包在下厚上薄的土墼墙里；上四层外圈是木条编道抹灰墙；暗层的墙把斜撑包在里面。'],lattice:['门','上四层外圈四个正面的当心间辟门。'],
+ roof:['屋面','灰瓦屋面，檐口凹曲，屋角起翘。'],soffit:['椽子','屋檐下密排的椽子，搭在橑檐方上向外挑出。'],fascia:['连檐','椽头外侧的通长木条，收住檐口。'],ridge:['垂脊与脊饰','沿八条角线伸下的屋脊，脊端有兽头。'],deck:['楼板与平坐','每层楼板向外挑出成平坐，可以绕塔一周。'],
+ rail:['勾栏与叉子','平坐外缘是斗子蜀柱勾栏；上四层内槽柱间不砌墙，只立叉子。'],stair:['楼梯','藏在内外两圈柱子之间，盘旋而上。'],stone:['台基与佛坛','石砌台基下方上八角；上层中央是佛坛。'],iron:['塔刹','砖砌仰莲两层为座，上为铁仰莲，承覆钵、相轮、宝盖、圆光，顶上是仰月、宝珠。'],chain:['铁链','八条铁链把塔刹拉结在八条屋脊上。'],
+ buddha:['塑像（造型为示意）','各层供奉佛像，一层释迦坐像约11米。'],plaque:['牌匾','木塔上挂有历代牌匾五十多块。'],bell:['铁马风铃','挂在屋角，风吹作响。'],layout:['放线','施工前在台面上放出柱网。'],dim:['高度','塔高67.31米。']};
+const ray=new T.Raycaster(),_nd=new T.Vector2();
+// 点到哪类构件，就翻到哪一页
+const CAT2PAGE={brk:'bracket',ang:'bracket',beam:'bracket',brace:'dark',col:'tube',buddha:'statues',stair:'stair',iron:'spire',chain:'spire',roof:'eaves',soffit:'eaves',fascia:'eaves',ridge:'eaves',bell:'eaves',rail:'pingzuo',deck:'pingzuo',lattice:'pingzuo',stone:'base',wall:'fujie',plaque:'history'};
+function hitAt(cx,cy){const r=canvas.getBoundingClientRect();_nd.set((cx-r.left)/r.width*2-1,-(cy-r.top)/r.height*2+1);ray.setFromCamera(_nd,cam);
+ const objs=labId?LABS[labId].children:root.children.filter(g=>g.visible).flatMap(g=>g.children.filter(m=>m.visible));
+ return ray.intersectObjects(objs,false).find(h=>{if(CUT.distanceToPoint(h.point)<0||CUTY.distanceToPoint(h.point)<0)return false;const c=h.object.userData.cat;return !c||catOp[c]>.3;})||null;}
+function pick(e){if(!PAGE||PAGE.build)return;const h=hitAt(e.clientX,e.clientY);if(!h){caption(null);return;}const o=h.object;
+ if(labId){const n=o.userData.name;if(n){labels=[n];caption(n,LABTIP[n]);kick();}return;}
+ const c=o.userData.cat,dest=CAT2PAGE[c];if(dest&&dest!==PAGE.id){go(dest);return;}
+ const inf=INFO[c]||[c,''];focus=[c];caption(`${inf[0]}（${LEVELNAME[o.userData.level]}）`,inf[1]);clearTimeout(pick.t);pick.t=setTimeout(()=>apply(false),2600);kick();}
+let hoverCat=null,hvT=0;
+canvas.addEventListener('pointermove',e=>{if(e.pointerType!=='mouse'||ptr.size||!PAGE||PAGE.build)return;const now=performance.now();if(now-hvT<60)return;hvT=now;
+ const h=hitAt(e.clientX,e.clientY);let cat=null,txt='';
+ if(h){if(labId)txt=h.object.userData.name||'';else{cat=h.object.userData.cat;const d=CAT2PAGE[cat];txt=(INFO[cat]||[cat])[0]+(d&&d!==PAGE.id?`　点击进入「${PAGES[d].t}」›`:'');}}
+ if(cat!==hoverCat){hoverCat=cat;kick();}
+ canvas.style.cursor=h?'pointer':'';tipEl.hidden=!txt;if(txt){const r=stage.getBoundingClientRect();tipEl.textContent=txt;tipEl.style.transform=`translate(${Math.max(8,Math.min(e.clientX-r.left+14,r.width-tipEl.offsetWidth-8))}px,${e.clientY-r.top+18}px)`;}});
+canvas.addEventListener('pointerleave',()=>{hoverCat=null;tipEl.hidden=true;kick();});
+const LABTIP={'栌斗':'斗拱最底下的大斗，坐在普拍枋上。','华拱':'沿出挑方向伸出的拱，每挑出一层叫一跳。','泥道拱':'柱中线上的横拱。','慢拱':'比泥道拱更长的横拱。','瓜子拱':'每一跳外端的横拱。','散斗':'垫在拱两端的小斗。','交互斗':'华拱或昂外端上的小斗。','齐心斗':'拱正中的小斗。',
+ '下昂':'斜置的长杆，像杠杆一样挑起屋檐。','令拱':'最外一跳的横拱，托住橑檐方。','耍头':'最上层伸出的构件端头。','橑檐方':'托住椽子的通长方木。','柱头方':'柱中线上层层叠放的横方。','普拍枋':'压在柱头上的平板枋。','阑额':'柱与柱之间的横梁。','柱':'承托斗拱的柱子。','椽子':'搭在橑檐方上的圆木，承托屋面。',
+ '下层柱':'下面一层的柱子。','十字相交的拱':'下层斗拱在栌斗上十字相交。','柱脚开叉':'上层柱底开出十字口。','上层柱':'骑在下层斗拱上的柱子。','榫（燕尾凸头）':'头大颈小，越拉越紧。','卯（凹口）':'与榫对应的凹槽。','支架':'展示用支架。'};
+
+// ================= 渲染循环 =================
+let needs=3,last=performance.now();function kick(){needs=Math.max(needs,3);}
+function resize(){const w=stage.clientWidth,h=stage.clientHeight;renderer.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix();
+ const pr=renderer.getPixelRatio(),k=Math.max(1,pr*.75);inkRT.setSize(Math.round(w*pr),Math.round(h*pr));inkQ.material.uniforms.px.value.set(k/(w*pr),k/(h*pr));kick();}
+new ResizeObserver(resize).observe(stage);
+function loop(now){requestAnimationFrame(loop);const dt=Math.min(.05,(now-last)/1000);last=now;if(document.hidden)return;
+ let act=stepTween(now);if(spin&&!tween&&now-userHold>3500){view.th+=spin*dt;act=true;}
+ act=updateScalars(dt)||act;act=updateBuild(now)||act;act=updateMats(dt)||act;if(ptr.size)act=true;
+ if(act)kick();if(needs>0){needs--;updateGroups(now);camApply();render();updateLabels();}}
+
+// ================= 立体书：页面树 =================
+// 每页 = 一个三维视角 + 知识点；hot 是图上的红点（标注 id → 目标页 或 [目标页, 显示文字]），links 是面板里的下钻入口
+const DEF={cut:0,cutY:null,xray:0,explode:0,focus:[],iso:0,lab:null,labEx:0,build:null,spin:0,dim:0,sway:0,lean:0};
+const DOU1CAM={t:oct(7,1/3,FL[0].A+1.2,FL[0].yb+1.2),w:12,h:8,th:.55,ph:1.62},CORNERCAM={t:LBL.corner,w:9,h:7,th:.95,ph:1.42};
+const PAGES={
+home:{say:["这是山西应县佛宫寺释迦塔，人们叫它应县木塔。", "它建于辽清宁二年，也就是公元一零五六年，到今天快一千岁了。", "塔高六十七点三一米，约合二十多层楼，是世界上现存最高、最古老的木结构楼阁式塔。", "接下来，我们把它一层层拆开来看。这里的三维模型，按梁思成书中的测绘图和记述搭建。"],k:'封面',t:'应县木塔',s:'佛宫寺释迦塔 · 辽清宁二年（1056）',cam:'wide',st:{spin:.05},
+ lead:'山西应县佛宫寺里，立着一座快一千岁的木塔，是世界上现存最高、最古老的木结构楼阁式塔。这里的三维模型按梁思成书中的测绘图和记述搭建。图上的红点能点，塔上每一类构件也能点，一层层往下看。',
+ facts:[{b:'1056',t:'辽清宁二年起建'},{b:'67.31 m',t:'塔高，约合二十多层楼'},{b:'5 + 4',t:'外看五层，里面九层',x:'明五暗四'},{img:'ta-1933.jpg',t:'1933 年中国营造学社考察时拍摄的应县木塔',x:'梁思成《中国建筑史》图 64'}],
+ hot:{spire:['spire','塔刹'],e3:['eaves','六重屋檐'],pz2:['pingzuo','平坐与勾栏'],dou1:['bracket','斗拱'],fujie:['fujie','副阶周匝'],taiji:['base','台基']},
+ links:['levels','section','bracket','quake','history','today','build']},
+history:{say:["先看它的履历。辽代在边城应州起建这座塔，到金代明昌六年增修完毕。", "元代一场大地震连震七日，据记载塔身屹立不倒。明成祖题了“峻极神工”，明武宗题了“天下奇观”。", "近代战火中，据说它身中二百余发炮弹，依然没有倒下。", "一九三三年，梁思成给应县的照相馆寄去一块钱，求一张木塔照片，随后和中国营造学社的同人赶来实测，画出了这张立面图。"],k:'年表',t:'千年履历',s:'从辽到今天',up:'home',cam:'wideL',st:{spin:.06},
+ lead:'契丹人建立的辽朝，在边城应州起了这座塔，用的却是中原一脉相承的木构技艺。梁思成说辽代建筑“以雄朴为主，结构完固，不尚华饰”。',
+ tl:[['1056','辽清宁二年起建','当时的应州在辽国西南边地，与北宋隔着雁门关一带相望。'],['1195','金明昌六年增修完毕',''],['元','大地震','据记载连震七日，塔身屹立不倒。'],['明','两位皇帝题匾','明成祖题“峻极神工”，明武宗题“天下奇观”。塔上挂有历代牌匾五十多块。'],['近代','战火','据说身中二百余发炮弹，依然没有倒下。'],['1933','梁思成的一块钱','他给应县的照相馆寄去一块钱求一张木塔照片，随后与中国营造学社同人赶来实测，绘出立面图和剖面图。'],['1974','秘藏重现','四层佛像腹中发现辽代秘藏经卷。'],['2016','吉尼斯认证','世界最高的木塔。']],
+ facts:[{img:'liang-elev.jpg',fit:1,t:'中国营造学社测绘的立面图',x:'梁思成《图像中国建筑史》手绘图'}],
+ links:['statues','today']},
+spire:{say:["塔的源头，是印度埋藏舍利的窣堵坡。传入中国后，它和楼阁结合，成了可以登临的楼阁式塔。", "塔顶的刹，就是一座缩小的窣堵坡。梁思成记：以砖砌仰莲两层为座，上面是铁仰莲，承托覆钵、相轮、宝盖和圆光，最顶上是仰月和宝珠。", {"s": "八条铁链从宝盖拉到八条屋脊上，像八根风缆，稳住高处的塔刹。", "act": 0}],k:'塔顶',t:'塔刹',s:'塔顶上一座缩小的窣堵坡',up:'home',cam:'spire',labels:['s_lotus','s_bowl','s_rings','s_gai','s_halo','s_moon','s_pearl'],
+ lead:'塔的源头是印度的窣堵坡，一座埋藏舍利的半球形坟冢。传入中国后，它和楼阁结合，长成了可以登临的楼阁式塔；塔顶的刹，就是一座缩小的窣堵坡。',
+ facts:[{b:'砖座',t:'砖砌仰莲两层为座',x:'梁思成《中国建筑史》'},{b:'铁刹',t:'铁仰莲之上，依次是覆钵、相轮、宝盖、圆光',x:'顶上是仰月和宝珠'},{b:'约 12 m',t:'塔刹高度',x:'按剖面图比例推算'},{b:'8 条',t:'铁链',x:'从宝盖拉到八条屋脊上，像八根风缆'},{img:'liang-spire.jpg',fit:1,t:'塔刹近景',x:'梁思成《中国建筑史》图 65-3'}],
+ acts:[{t:'看铁链',cam:'top',st:{focus:['chain']},labels:['chain']}],links:['history']},
+eaves:{say:["从外面看，五层塔身，加上首层外面副阶的一重，一共六重屋檐。", "越往下，斗拱出挑越多，屋檐伸得越远；越往上越简，屋檐一层层收窄。", {"s": "屋角翘起，挂着铁马风铃，风一吹就响。", "act": 0}],k:'外观',t:'六重屋檐',s:'五层六檐，檐角起翘',up:'home',cam:'wideL',labels:['e1','e2','e4','e5','e6'],hot:{dou1:['bracket','屋檐靠什么挑出去？']},
+ lead:'五层塔身，加上首层外面副阶的一重，一共六重屋檐。檐口向上凹曲，屋角翘起。越往上，斗拱出挑越少，屋檐也越收越窄。',
+ facts:[{b:'6 重',t:'五层六檐',x:'首层有两重檐：副阶一重，塔身一重'},{b:'出挑',t:'一、二层外檐出双杪双下昂，出挑最远',x:'往上依次是三杪、双杪、单杪（梁思成）'},{b:'翘角',t:'屋角起翘',x:'屋面在角上抬高、外伸，檐线成一条弧'},{b:'风铃',t:'铁马风铃',x:'挂在屋角，风吹作响'}],
+ acts:[{t:'看屋角',cam:CORNERCAM,labels:['corner','bell']}],links:['brktypes','bracket','fujie']},
+pingzuo:{say:["二层以上，每层屋檐上方都挑出一圈平坐，外缘围着勾栏，可以绕塔一周。", "四个正面的当心间开门，其余各间是木条编道抹灰墙。", "平坐的斗拱后面，藏着一个从外面看不出来的暗层。"],k:'外观',t:'平坐与勾栏',s:'每层挑出的一圈环廊',up:'home',cam:'pz',labels:['pz2','lattice'],hot:{dark1:['dark','平坐后面藏着什么？']},
+ lead:'二层以上，每层屋檐上方挑出一圈平坐，外缘围着勾栏，可以绕塔一周。梁思成记：平坐柱的下端“叉于下层斗栱之上”。',
+ facts:[{b:'4 圈',t:'平坐',x:'二至五层各一圈'},{b:'三杪',t:'二、三、四层平坐斗拱',x:'五层为双杪'},{b:'勾栏',t:'斗子蜀柱，华版无华',x:'华版素面，不雕花'},{b:'门 · 墙',t:'四个正面的当心间辟门',x:'其余各间是木条编道抹灰墙'},{t:'平坐斗拱后面藏着一个暗层，从外面看不出来'}],
+ links:['levels','dark']},
+fujie:{say:["首层外面绕着一圈带屋檐的回廊，叫副阶周匝，所以首层有两重屋檐。", "梁思成记，最下层内外两圈柱子，都包砌在土墼墙里。剖开来看，墙体下厚上薄，底层格外稳。"],k:'一层',t:'首层与副阶',s:'副阶周匝：绕着首层的回廊',up:'home',cam:'eave1',labels:['fujie'],hot:{door1:['section','进门，剖开看'],taiji:['base','台基']},
+ lead:'首层外面绕了一圈带屋檐的回廊，叫“副阶周匝”，所以首层有两重屋檐。梁思成记：最下层内外两圈柱子，都包砌在土墼墙里。',
+ facts:[{b:'24 根',t:'副阶檐柱',x:'比塔身外槽柱再往外一圈'},{b:'双杪',t:'副阶斗拱出双杪，偷心',x:'偷心：跳头上不施横拱'},{b:'土墼墙',t:'内外两圈柱都包在厚墙里',x:'剖面图上墙体下厚上薄，底层格外稳'},{b:'两门',t:'首层南北各开一门'}],
+ links:['section','base']},
+base:{k:'地基',t:'台基',s:'下方上八角',up:'home',cam:'base',labels:['taiji'],
+ lead:'木塔坐在石砌的台基上。台基分两层：下层方形，上层八角，和塔身的八角平面对齐。',
+ facts:[{b:'2 层',t:'石台基',x:'下层方，上层八角'},{b:'3–4 m',t:'台基高度',x:'剖面图上约 3.6 米'}],
+ acts:[{t:'俯看柱网',cam:'plan',st:{cutY:9.6,focus:['col']},labels:['in8','out24','fj24']}],links:['tube','build']},
+levels:{say:["把塔一层层拉开，就能数清楚：五个明层之间，各夹着一个暗层，一共九层。这就是明五暗四。", "暗层也就是平坐层。上一层的平坐柱，就立在下一层的草栿上，层层相叠。"],k:'结构',t:'明五暗四',s:'外看五层，里面九层',up:'home',cam:'explode',st:{explode:1},labels:['L1','L3','L5','L7','L9'],hot:{L2:'dark',L4:'dark',L6:'dark',L8:'dark'},
+ lead:'把塔一层层拉开，就能数清楚：五个明层之间，各夹着一个暗层，一共九层。暗层藏在平坐斗拱后面，外面看不出来。',
+ facts:[{b:'5',t:'明层',x:'供佛、登临'},{b:'4',t:'暗层',x:'即平坐层，里面是斜撑'},{b:'9',t:'合计'},{t:'每层以内外两周柱为主，柱上施斗拱，上承乳栿、草栿；上一层的平坐柱，就立在下一层的草栿上',x:'梁思成《中国建筑史》'}],links:['dark','section']},
+dark:{say:["把墙变透明，暗层的秘密就露出来了：内外两圈柱子之间，用斜撑连成一个个三角形。", {"s": "三角形最不容易变形。四个暗层就像四道刚性的腰箍，把内外两圈柱筒牢牢箍在一起。", "act": 0}, "明层以柔为主，暗层以刚为主，一刚一柔，层层相间。"],k:'结构',t:'暗层斜撑',s:'四道刚性的腰箍',up:'levels',cam:'dark',st:{xray:1,focus:['brace'],iso:1},labels:['brace1'],
+ lead:'把墙变透明，暗层的秘密就露出来了：内外两圈柱子之间，用斜撑连成一个个三角形。三角形最不容易变形。',
+ facts:[{b:'4 道',t:'腰箍',x:'四个暗层把内外两圈柱筒牢牢箍在一起'},{b:'刚柔',t:'层层相间',x:'明层柱间是门和编道墙，以柔为主；暗层以刚为主'},{t:'民国时期的一次改造拆改了部分墙体和斜撑',x:'有研究认为这削弱了结构刚度'}],
+ acts:[{t:'看全部四层',cam:'wideL',st:{iso:0},labels:['dark1','dark2','dark3','dark4']}],links:['quake','today']},
+section:{say:["现在，沿着中轴线把木塔剖开。", "每一层都是两圈柱子围成的两个八角形筒子：里面供佛，外面走人，楼梯就藏在两圈柱子之间。这张剖面的比例，按营造学社的剖面图推算。"],k:'内部',t:'剖开看',s:'沿中轴线一刀剖开',up:'home',cam:'sect',st:{cut:1},labels:['b2','b3','b4','b5'],hot:{b1:'statues',stair:'stair',bucket:['tube','筒中筒']},
+ lead:'沿着中轴线把木塔剖开。每一层都是两圈柱子围成的两个八角形筒子：里面供佛，外面走人，楼梯藏在两圈柱子之间。三维剖面的比例按营造学社的剖面图推算。',
+ facts:[{b:'≈11 m',t:'一层释迦牟尼坐像'},{b:'筒中筒',t:'内槽 + 外槽，两圈柱子'},{b:'5 层',t:'每个明层都供着佛像',x:'塑像造型为示意'},{img:'liang-sect.jpg',fit:1,t:'中国营造学社测绘的剖面图',x:'梁思成《图像中国建筑史》手绘图'}],links:['tube','statues','stair']},
+tube:{say:["从上往下看首层的柱网：内圈八根，外圈二十四根，副阶再一圈二十四根。", "梁思成记，内槽的柱子下四层上下中线相直，只有顶层退进少许。", {"s": "两个八角形的柱筒套在一起，和今天许多超高层建筑的筒中筒结构异曲同工。", "act": 0}],k:'内部',t:'筒中筒',s:'两个套在一起的八角筒',up:'section',cam:'plan',st:{cutY:9.6,focus:['col']},labels:['in8','out24','fj24'],
+ lead:'从上往下看首层的柱网：内圈 8 根，外圈 24 根，副阶再一圈 24 根。内外两圈柱子各自连成八角形的筒，套在一起。',
+ facts:[{b:'8',t:'内槽柱'},{b:'24',t:'外槽柱'},{b:'24',t:'副阶柱'},{b:'相直',t:'内槽柱下四层上下中线相直',x:'顶层退入少许；各柱都微有侧脚（梁思成）'},{t:'这种“筒中筒”的思路，和今天许多超高层建筑的框筒结构异曲同工'}],
+ acts:[{t:'侧面剖开',cam:'sect1',st:{cut:1,cutY:null},labels:['bucket','ambul']}],links:['shoufen','fork']},
+statues:{say:["五个明层都供着佛像，梁思成说它们都是辽代原塑，颇为精美。", {"s": "一层是一尊约十一米高的释迦牟尼坐像，头顶是斗八藻井。", "act": 0}, "一九七四年，人们在四层佛像的腹中，发现了辽代秘藏的经卷。"],k:'内部',t:'各层塑像',s:'一座木构的佛国',up:'section',cam:'sectUp',st:{cut:1,focus:['buddha']},labels:['b2','b3','b4','b5'],
+ lead:'五个明层都供着佛像，梁思成记为“均为辽代原塑，颇精美”。一层是一尊约 11 米高的释迦牟尼坐像，头顶是斗八藻井。',
+ facts:[{b:'一层',t:'释迦牟尼坐像，约 11 米',x:'头顶斗八藻井，不施斗拱'},{b:'二层',t:'一佛二菩萨二胁侍'},{b:'三层',t:'四方佛'},{b:'四层',t:'释迦与弟子、菩萨',x:'1974 年在这一层佛像腹中发现辽代秘藏经卷'},{b:'五层',t:'毗卢遮那佛与八大菩萨'}],
+ acts:[{t:'看一层坐像',cam:'sect1',labels:['b1']}],links:['history']},
+stair:{k:'内部',t:'楼梯',s:'藏在两圈柱子之间',up:'section',cam:'sect',st:{cut:1,focus:['stair'],iso:1},labels:['stair'],
+ lead:'楼梯夹在内外两圈柱子之间，一段段转着方向往上爬。梁思成记，观音阁的扶梯经后世改过，木塔的梯“尚完全保存原状”。',
+ facts:[{b:'45°',t:'楼梯斜度大致为四十五度',x:'两颊夹安踏板与促版'},{b:'卧棂',t:'扶梯勾栏',x:'颊上安斗子蜀柱勾栏，不施华版，用卧棂一条'},{b:'9 层',t:'楼梯经过全部明层和暗层'}],links:['levels']},
+bracket:{say:["屋檐为什么能挑出去这么远？秘密在柱头上的斗拱。", "这是一组首层外檐斗拱，梁思成记为双杪双下昂。最底下是栌斗，向外一层层挑出的是华拱，斜着伸出去的两根长杆是下昂。", {"s": "把它拆开来看：一组斗拱由几十个构件咬合而成。梁思成统计，木塔各层内外共有斗拱三十余种。", "act": 0}],k:'构造',t:'斗拱',s:'柱头上层层出挑的木构件',up:'home',cam:'bLab',st:{lab:'bracket'},labels:['栌斗','华拱','下昂','令拱','耍头'],
+ lead:'屋檐为什么能挑出去这么远？秘密在柱头上的斗拱。这是一组首层外檐斗拱，梁思成记为“双杪双下昂”，单独取下来放大。点任何一块木头，看它叫什么。',
+ facts:[{b:'30余种',t:'梁思成统计：各层内外共有斗拱三十余种',x:'今天通行的说法是 54 种，分类口径不同'},{b:'斗拱昂',t:'三类构件',x:'斗是垫块，拱是横臂，昂是斜杆'},{b:'一跳',t:'每向外挑出一层'},{img:'liang-dougong.jpg',t:'照片里有人坐在斗拱之间，可以看出斗拱有多大',x:'梁思成《中国建筑史》图 65-2'}],
+ acts:[{t:'拆开构件',cam:'bLabX',st:{labEx:1},labels:['华拱','泥道拱','瓜子拱','令拱','下昂','橑檐方','椽子']},{t:'放回塔上',cam:DOU1CAM,st:{lab:null,focus:['brk','ang']},labels:['dou1']}],
+ links:['brktypes','ang','fork','joint']},
+brktypes:{say:["而且每一层的斗拱都不一样。", "副阶双杪偷心；一层、二层双杪双下昂，出挑最远；三层三杪，四层双杪，五层半栱承单杪。", "平坐二到四层出三杪，五层出双杪；内槽一律出华拱四跳。越往上越简，正好配合屋檐一层层收窄。"],k:'构造',t:'各层斗拱',s:'每一层的铺作都不一样',up:'bracket',cam:'wideL',st:{focus:['brk','ang']},labels:['k1','k2','k3','k4','k5','k6'],
+ lead:'梁思成逐层记下了木塔斗拱的做法：越往下出挑越多，越往上越简，正好配合屋檐一层层收窄。',
+ tl:[['副阶','双杪，偷心','跳头上不施横拱'],['一层','双杪双下昂','出挑最远，托起首层大檐'],['二层','双杪双下昂','与独乐寺观音阁上层檐同'],['三层','三杪','不用昂'],['四层','双杪',''],['五层','半栱承单杪',''],['平坐','二、三、四层出三杪，五层出双杪',''],['内槽','一律出华拱四跳','跳头或施横拱，或偷心'],['补间','驼峰短柱承大斗，或用斜拱相交','如善化寺大殿及普贤阁所见']],
+ facts:[{t:'模型按上表逐层配置铺作；补间铺作按“驼峰短柱承大斗”做，斜拱从略'}],links:['ang','eaves']},
+ang:{k:'构造',t:'下昂',s:'一根杠杆挑起屋檐',up:'bracket',cam:'bLabX',st:{lab:'bracket',labEx:.85,focus:['ang']},labels:['下昂','柱头方','交互斗'],
+ lead:'斜着伸出的两根长杆叫下昂。它像一根杠杆：里端被屋架压住，外端向上挑起屋檐。木塔只在一、二层外檐用下昂。',
+ facts:[{b:'2 根',t:'这组斗拱里的下昂',x:'一、二层外檐都是双杪双下昂'},{b:'平 / 斜',t:'华拱平着出挑，下昂斜着出挑'}],links:['joint']},
+fork:{say:["上下两层的柱子，并不是一根通到顶的。", {"s": "上层柱的柱脚开出十字口，像叉子一样，骑在下层柱头斗拱的十字交叉处。这叫叉柱造。", "act": 0}],k:'构造',t:'叉柱造',s:'上层柱怎么接到下层',up:'bracket',cam:'fLab',st:{lab:'fork'},labels:['上层柱','下层柱'],
+ lead:'上下两层的柱子不是一根通到顶。上层柱的柱脚开出十字口，像叉子一样骑在下层柱头斗拱的十字交叉处。梁思成称平坐柱“将下端叉于下层斗栱之上”。',
+ facts:[{b:'十字口',t:'柱脚开叉'},{b:'骑',t:'骑在下层斗拱上',x:'合上以后，上下两层就卡在一起'}],
+ acts:[{t:'拆开',cam:{t:[0,4.3,0],w:4.2,h:7.6,th:.7,ph:1.42},st:{labEx:1},labels:['柱脚开叉','十字相交的拱','栌斗']}],links:['shoufen']},
+shoufen:{say:["而且外圈每一层的平坐柱，都比下一层的檐柱稍稍退进一点。塔身就这样逐层收小，重心压得又低又稳。"],k:'结构',t:'逐层收分',s:'越往上越往里收',up:'fork',cam:'front',st:{xray:1,focus:['col']},labels:['shoufen'],
+ lead:'塔身逐层收小。梁思成记：外檐每层的平坐柱，都比下一层的檐柱稍稍退进一点，“促成塔全部向上递收之势”。',
+ facts:[{b:'退入',t:'平坐柱较下一层檐柱微退入'},{b:'相直',t:'内槽柱下四层上下相直',x:'顶层退入少许'},{b:'重心低',t:'下大上小，更稳'}],links:['quake']},
+joint:{say:["构件之间，全靠榫卯咬合。", {"s": "这是一种燕尾榫：榫头大、颈小，插进卯口以后越拉越紧。榫卯能承重，也能微微转动，把震动的能量一点点消耗掉。", "act": 0}, "木塔的主材是华北落叶松，据资料，部分斗拱用了榆木。"],k:'构造',t:'榫卯',s:'不靠钉子，靠咬合',up:'bracket',cam:'jLab',st:{lab:'joint'},labels:['榫（燕尾凸头）','卯（凹口）'],
+ lead:'构件之间靠榫卯咬合。这是一种燕尾榫：榫头大、颈小，插进卯口以后越拉越紧。',
+ facts:[{b:'半刚性',t:'节点',x:'能承重，也能微微转动'},{b:'耗能',t:'震动时一点点消耗能量'},{b:'落叶松',t:'主材是华北落叶松',x:'纹理顺直、强度高、富含树脂较耐腐；据资料部分斗拱用了榆木'}],
+ acts:[{t:'拆开',st:{labEx:1}}],links:['quake']},
+quake:{say:["地震来时，斗拱层像一层层减震垫，暗层像四道腰箍，榫卯在转动中消耗能量。", "它能晃、能消耗、还能回来。刚柔相济，这就是它扛过多次大地震的秘密。"],k:'抗震',t:'为什么震不倒',s:'刚柔相济',up:'home',cam:'wideL',st:{sway:1},hot:{dou1:['bracket','斗拱：减震垫'],dark1:['dark','暗层：腰箍']},
+ lead:'据记载，元代一场大地震连震七日，塔身屹立不倒。它靠的不是硬扛，而是能晃、能消耗、能回来。',
+ facts:[{b:'斗拱',t:'像一层层减震垫'},{b:'暗层',t:'像四道腰箍'},{b:'榫卯',t:'半刚性节点，在转动中消耗能量'}],links:['joint','dark','today']},
+today:{say:["近千年的荷载、地震和战火，让二层的柱子明显倾斜、扭曲，是全塔最危险的部位。模型里把倾斜夸大了，方便看清。", "怎么修，争论了近三十年。现在的做法是变形监测、全面测绘、建立信息模型，并推进局部加固。", "二零二六年全国两会上，山西代表团建议在附近另选址，按一比一做一座研究性复建，先把古人的手艺摸透。"],k:'现状',t:'今天的木塔',s:'歪了，怎么修',up:'home',cam:'front',st:{lean:1},labels:['lean'],
+ lead:'近千年的荷载、地震和战火，让二层的柱子明显倾斜、扭曲，是全塔最危险的部位。模型里把倾斜夸大了，方便看清。',
+ facts:[{b:'二层',t:'倾斜最严重'},{b:'近 30 年',t:'修缮方案的争论',x:'有研究认为民国时期一次改造拆改了部分墙体和斜撑，削弱了刚度'},{b:'现在',t:'变形监测、全面测绘、信息模型、局部加固',x:'网传“马上落架大修”已被官方辟谣'},{b:'1 : 1',t:'研究性复建的建议',x:'2026 年全国两会，山西代表团建议在附近另选址复建，先把古人的手艺摸透'}],
+ acts:[{t:'透视看斜撑',st:{xray:1,focus:['brace']}}],links:['dark','build']},
+build:{k:'建造',t:'重建木塔',s:'从一块空地开始',up:'home',build:true}
+};
+Object.entries(PAGES).forEach(([id,p])=>p.id=id);
+const KIDS={};Object.values(PAGES).forEach(p=>{if(p.up)(KIDS[p.up]=KIDS[p.up]||[]).push(p.id);});
+
+// ================= 界面 =================
+const $=id=>document.getElementById(id);
+const panel=$('panel'),tipEl=$('tip'),capEl=$('cap'),hintEl=$('hint');
+let PAGE=null,hist=[],hi=-1,ov={},actOn=-1,HOT={};
+function hideHint(){hintEl.classList.add('gone');tipEl.hidden=true;}
+function caption(t,x){clearTimeout(caption.t);if(!t){capEl.hidden=true;return;}capEl.innerHTML=`<b>${t}</b>${x||''}`;capEl.hidden=false;caption.t=setTimeout(()=>capEl.hidden=true,5000);}
+const curAct=()=>actOn>=0&&PAGE.acts?PAGE.acts[actOn]:null;
+const eff=()=>Object.assign({},DEF,PAGE.st||{},(curAct()||{}).st||{},ov);
+const curCam=()=>(curAct()||{}).cam||PAGE.cam||'wide';
+function apply(moveCam){const p=PAGE,a=curAct(),st=eff();
+ HOT=a&&a.hot||p.hot||{};st.labels=[...(a&&a.labels||p.labels||[]),...Object.keys(HOT)];
+ if(p.build){const done=bk>=NSTEP,s=bk?STEPS[bk-1]:null;Object.assign(st,{build:bk,cut:!done&&s&&s.tag==='statue'?1:0,spin:done?.06:0,labels:[]});}
+ setState(st);
+ if(moveCam)p.build?camTo(bcam(bk),1.8):camTo(st.explode&&!(p.st&&p.st.explode)&&!(a&&a.cam)?'explode':curCam());
+ renderTools();}
+function go(id,push=true,byTour=false){const p=PAGES[id];if(!p||PAGE===p)return;if(!byTour)tourPause();
+ if(push){hist=hist.slice(0,hi+1);hist.push(id);hi=hist.length-1;}
+ bStop();PAGE=p;ov={};actOn=-1;focus=[];hoverCat=null;tipEl.hidden=true;caption(null);clearTimeout(pick.t);if(p.build)bk=0;
+ $('pk').textContent=p.k;$('pt').textContent=p.t;$('ps').textContent=p.s;flip($('plate'));
+ renderPanel();renderChrome();apply(true);if(p.build&&!REDUCED&&!byTour)bPlay();tourUI();}
+function flip(el){el.classList.remove('turn');void el.offsetWidth;el.classList.add('turn');}
+const narrow=matchMedia('(max-width:880px)');
+function toStage(){if(narrow.matches)$('win').scrollIntoView({behavior:REDUCED?'auto':'smooth',block:'start'});}
+// ---- 面板 ----
+const factHTML=f=>f.img?`<li class="pic${f.fit?' fit':''}"><img src="${f.img}" alt="${f.t}" loading="lazy"><span>${f.t}</span>${f.x?`<small>${f.x}</small>`:''}</li>`
+ :`<li${f.b?'':' class="wide"'}>${f.b?`<b>${f.b}</b>`:''}<div><span>${f.t}</span>${f.x?`<small>${f.x}</small>`:''}</div></li>`;
+const linkHTML=id=>{const q=PAGES[id];return `<button class="lk" data-go="${id}"><span><strong>${q.t}</strong><small>${q.s}</small></span><i aria-hidden="true">›</i></button>`;};
+function renderPanel(){const p=PAGE;let h='';
+ if(p.build)h=buildHTML();
+ else{h=`<p class="lead">${p.lead}</p>`;
+  if(p.tl)h+=`<ol class="tl">${p.tl.map(([y,a,b])=>`<li><b>${y}</b><strong>${a}</strong>${b?`<span>${b}</span>`:''}</li>`).join('')}</ol>`;
+  if(p.facts)h+=`<ul class="facts">${p.facts.map(factHTML).join('')}</ul>`;
+  if(p.links)h+=`<h3 class="dh">往下钻${p.hot?'<span>也可以点图上的红点</span>':''}</h3><div class="links">${p.links.map(linkHTML).join('')}</div>`;}
+ if(p.up)h+=`<button class="upbtn" data-go="${p.up}">‹ 回到上一级：${PAGES[p.up].t}</button>`;
+ panel.innerHTML=h;panel.scrollTop=0;flip(panel);if(p.build)bindBuild();}
+panel.addEventListener('click',e=>{const b=e.target.closest('[data-go]');if(b){go(b.dataset.go);toStage();}});
+// ---- 浏览器外框 ----
+function pathOf(id){const a=[];for(let p=PAGES[id];p;p=PAGES[p.up])a.unshift(p);return a;}
+function renderChrome(){const a=pathOf(PAGE.id);
+ $('addr').innerHTML=a.map((p,i)=>i<a.length-1?`<button data-go="${p.id}">${p.t}</button><i>›</i>`:`<span aria-current="page">${p.t}</span>`).join('');$('addr').scrollLeft=1e4;
+ $('back').disabled=hi<=0;$('fwd').disabled=hi>=hist.length-1;$('buildBtn').setAttribute('aria-pressed',PAGE.id==='build');}
+$('addr').addEventListener('click',e=>{const b=e.target.closest('[data-go]');if(b)go(b.dataset.go);});
+$('back').onclick=()=>{if(hi>0)go(hist[--hi],false);};$('fwd').onclick=()=>{if(hi<hist.length-1)go(hist[++hi],false);};
+$('home').onclick=()=>go('home');$('buildBtn').onclick=()=>go('build');
+const tocHTML=id=>{const k=KIDS[id]||[];return `<li><button data-go="${id}"${id===PAGE.id?' aria-current="page"':''}>${PAGES[id].t}</button>${k.length?`<ul>${k.map(tocHTML).join('')}</ul>`:''}</li>`;};
+function toggleToc(open){const t=$('toc');open=open===undefined?t.hidden:open;if(open)t.innerHTML=`<ul>${tocHTML('home')}</ul>`;t.hidden=!open;$('tocBtn').setAttribute('aria-expanded',open);}
+$('tocBtn').onclick=()=>toggleToc();
+$('toc').addEventListener('click',e=>{const b=e.target.closest('[data-go]');if(b){toggleToc(false);go(b.dataset.go);toStage();}});
+document.addEventListener('click',e=>{if(!$('toc').hidden&&!$('toc').contains(e.target)&&e.target!==$('tocBtn'))toggleToc(false);});
+// ---- 图上的视图开关 ----
+const TOOLS=[['cut','剖开'],['xray','透视'],['explode','分层'],['sway','地震']];
+function renderTools(){const p=PAGE,e=eff();let h='';
+ if(p.build)h=`<button data-b="-1" ${bk<=0?'disabled':''}>‹ 上一步</button><button class="act" data-b="play" aria-pressed="${bPlaying}">${bPlaying?'暂停':bk>=NSTEP?'再盖一遍':bk?'继续建造':'开始建造'}</button><button data-b="1" ${bk>=NSTEP?'disabled':''}>下一步 ›</button>`;
+ if(!p.build){if(!e.lab)h+=TOOLS.map(([k,t])=>`<button data-t="${k}" aria-pressed="${!!e[k]}">${t}</button>`).join('');h+=`<button data-t="spin" aria-pressed="${!!e.spin}">旋转</button>`;}
+ if(p.acts)h+='<span class="sep"></span>'+p.acts.map((a,i)=>`<button class="act" data-a="${i}" aria-pressed="${actOn===i}">${a.t}</button>`).join('');
+ $('tools').innerHTML=h;}
+$('tools').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;caption(null);
+ if(b.dataset.b){tourPause();if(b.dataset.b==='play')bPlaying?bStop():bPlay();else{bStop();bSet(bk+ +b.dataset.b);}return;}
+ if(b.dataset.a!==undefined){const i=+b.dataset.a;actOn=actOn===i?-1:i;ov={};apply(true);return;}
+ const k=b.dataset.t;ov[k]=eff()[k]?0:(k==='spin'?.08:1);if(k==='explode')camTo(ov.explode?'explode':curCam());apply(false);});
+
+// ================= 重建木塔 =================
+let bk=0,bPlaying=false,bT=0;
+function stepTxt(s){const L=LEVELNAME[s.level];
+ const T0={base:'夯实地基，用石块包砌出两层台基：下层方形，上层八角。',layout:'在台面上放出三圈八角形的柱网线，摆好柱础。',cols:'立首层柱：内槽 8 根，外槽 24 根，副阶再一圈 24 根。',beams:'用阑额和普拍枋把柱头连成一圈，箍成整体。',brk:'在柱头上安装斗拱，一跳一跳向外挑出：外檐双杪双下昂，内槽华拱四跳，副阶双杪偷心。',roof:'把内外两圈柱子包进下厚上薄的土墼墙，在坐像头顶架起斗八藻井，再架椽铺瓦，副阶和首层的两重屋檐就出来了。楼梯也装进了两圈柱子之间。',spire:'在塔顶立起铁刹，用八条铁链拉结到八条屋脊上。'};
+ if(T0[s.tag])return T0[s.tag];
+ if(s.tag==='statue')return `${L}的塑像就位，檐下挂上牌匾。`;
+ if(/斜撑$/.test(s.name))return `搭${L}：立短柱，在内外两圈柱子之间装斜撑，箍上一道“腰箍”。`;
+ if(/平坐$/.test(s.name))return `在暗层顶上架平坐斗拱，铺楼板，围上勾栏，${s.name.replace('平坐','')}的地面就有了。`;
+ if(/立柱$/.test(s.name))return `用叉柱造把${L}的柱子骑在下方的斗拱上；每层都比下层向内收进一点。`;
+ if(/斗拱$/.test(s.name))return `安装${L}的外檐斗拱（${['','','双杪双下昂','三杪','双杪','半栱承单杪'][(s.level+1)/2]}）和内槽斗拱（华拱四跳）。`;
+ return s.tag==='top'?'四正面当心间装门，其余各间做编道抹灰墙，内槽柱间立叉子，盖上八角攒尖的塔顶。':`四正面当心间装门，其余各间做编道抹灰墙，内槽柱间立叉子，铺楼板，盖起${L}的屋檐。`;}
+function bcam(k){if(k<=0)return 'build0';if(k>=NSTEP)return 'wide';const s=STEPS[k-1];
+ if(s.tag==='layout')return 'layout';if(s.tag==='spire')return 'top';
+ if(s.tag==='statue'){const f=FL[(s.level-1)/2];return {t:[0,f.y+(s.level===1?5:2.6),0],w:s.level===1?30:22,h:s.level===1?16:10,th:0,ph:1.5};}
+ let top=0;for(let i=0;i<k;i++)top=Math.max(top,STEPS[i].top);
+ return {t:[0,Math.max(5,top*.52),0],w:46,h:Math.max(22,top+8),th:.35+k*.04,ph:top<20?1.22:1.38};}
+const buildHTML=()=>`<p class="lead">像辽代工匠一样，从一块空地开始，按工序把木塔重新盖一遍。每一步都可以停下来，拖动着看。</p>
+ <div class="bnow" id="bnow"></div>
+ <div class="bctl"><button id="bprev">‹ 上一步</button><button id="bplay" class="pri"></button><button id="bnext">下一步 ›</button></div>
+ <label class="bsl" for="bsl"><span>进度</span><input type="range" id="bsl" min="0" max="${NSTEP}" step="1"><output id="bval"></output></label>
+ <ol class="blist" id="blist">${STEPS.map((s,i)=>`<li><button data-b="${i+1}"><i>${i+1}</i>${s.name}</button></li>`).join('')}</ol>`;
+function bindBuild(){$('bprev').onclick=()=>{tourPause();bStop();bSet(bk-1);};$('bnext').onclick=()=>{tourPause();bStop();bSet(bk+1);};
+ $('bplay').onclick=()=>{tourPause();bPlaying?bStop():bPlay();};$('bsl').oninput=e=>{tourPause();bStop();bSet(+e.target.value);};
+ $('blist').onclick=e=>{const b=e.target.closest('[data-b]');if(b){tourPause();bStop();bSet(+b.dataset.b);}};bUI();}
+function bSet(k){bk=Math.max(0,Math.min(NSTEP,k));apply(true);bUI();}
+function bUI(){if(!PAGE.build)return;const s=bk?STEPS[bk-1]:null;renderTools();
+ $('ps').textContent=bk>=NSTEP?`全部 ${NSTEP} 步 · 落成`:s?`第 ${bk} / ${NSTEP} 步 · ${s.name}`:'从一块空地开始';
+ $('bnow').innerHTML=bk>=NSTEP?`<small>第 ${NSTEP} / ${NSTEP} 步 · 落成</small><h3>一座木构的佛国</h3><p>从夯土筑台到塑像挂匾，一共 ${NSTEP} 道工序。现在可以拖动它，从任何角度看。</p>`
+  :s?`<small>第 ${bk} / ${NSTEP} 步 · ${LEVELNAME[s.level]}</small><h3>${s.name}</h3><p>${stepTxt(s)}</p>`
+  :`<small>第 0 / ${NSTEP} 步</small><h3>一块空地</h3><p>点“开始建造”，看它一步步立起来。</p>`;
+ $('bsl').value=bk;$('bval').textContent=`${bk}/${NSTEP}`;$('bplay').textContent=bPlaying?'暂停':bk>=NSTEP?'再盖一遍':bk?'继续建造':'开始建造';
+ $('bprev').disabled=bk<=0;$('bnext').disabled=bk>=NSTEP;
+ document.querySelectorAll('#blist button').forEach((b,i)=>{b.classList.toggle('done',i<bk-1);b.toggleAttribute('aria-current',i===bk-1);});
+ const cur=document.querySelector('#blist [aria-current]');if(cur&&!narrow.matches)panel.scrollTop=Math.max(0,cur.offsetTop-panel.clientHeight*.55);}
+function bPlay(){if(bk>=NSTEP)bSet(0);bPlaying=true;bUI();clearTimeout(bT);bT=setTimeout(bTick,bk?300:1200);}
+function bStop(){bPlaying=false;clearTimeout(bT);if(PAGE&&PAGE.build)bUI();}
+function bTick(){if(!bPlaying||!PAGE.build)return;if(buildShown<bk){bT=setTimeout(bTick,150);return;}
+ if(bk>=NSTEP){bPlaying=false;bUI();return;}bSet(bk+1);bT=setTimeout(bTick,bk>=NSTEP?300:STEPS[bk-1].tag==='up'?1400:2000);}
+addEventListener('keydown',e=>{if(e.key==='Escape')toggleToc(false);if(!PAGE||!PAGE.build||e.target.closest&&e.target.closest('input'))return;
+ if(e.key==='ArrowRight'){tourPause();bStop();bSet(bk+1);}else if(e.key==='ArrowLeft'){tourPause();bStop();bSet(bk-1);}});
+
+// ================= 自动导览 =================
+// 按路线逐页讲解：go() 翻页、say() 显示一句字幕，遇到 {act} 时切到该页的动作视图；手动翻页即暂停，继续时从停下的那页接着讲
+const TOUR=['home','history','spire','eaves','fujie','pingzuo','levels','dark','section','tube','statues','bracket','brktypes','fork','shoufen','joint','quake','today','build'];
+let T_on=false,T_started=false,T_tk=0,T_i=0,T_j=0;
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+// 每句字幕停留的时间按字数算
+const say=text=>sleep(text.length*200+1000);
+function tourSub(t){$('ttxt').textContent=t;$('tpos').textContent=`导览 ${T_i+1} / ${TOUR.length} · ${PAGES[TOUR[T_i]].t}`;}
+async function tourRun(tk){const ok=()=>tk===T_tk;
+ while(T_i<TOUR.length){const id=TOUR[T_i],p=PAGES[id];
+  if(PAGE.id!==id){T_j=0;go(id,true,true);}else if(T_j===0){actOn=-1;ov={};apply(true);}
+  if(p.build){await tourBuild(ok);if(!ok())return;}
+  else{const L=p.say.map(x=>typeof x==='string'?{s:x}:x);
+   if(T_j===0){tourSub('');await sleep(REDUCED?300:1500);if(!ok())return;}
+   for(;T_j<L.length;T_j++){const l=L[T_j];
+    if(l.act!==undefined&&actOn!==l.act){actOn=l.act;ov={};apply(true);await sleep(1000);if(!ok())return;}
+    tourSub(l.s);await say(l.s);if(!ok())return;await sleep(400);if(!ok())return;}}
+  T_j=0;T_i++;}
+ tourStop();}
+async function tourBuild(ok){bStop();
+ if(T_j===0){bSet(0);const t='最后，我们像辽代工匠一样，从一块空地开始，把木塔重新盖一遍。';tourSub(t);await say(t);if(!ok())return;T_j=1;}
+ for(;T_j<=NSTEP;T_j++){if(bk!==T_j)bSet(T_j);const s=STEPS[T_j-1],t=`${s.name}。${stepTxt(s)}`;tourSub(t);await say(t);if(!ok())return;
+  while(buildShown<T_j){await sleep(120);if(!ok())return;}await sleep(300);if(!ok())return;}
+ const t='一座木构的佛国就此落成。导览到这里结束，你可以拖动它转着看，也可以自己点着往下钻。';tourSub(t);await say(t);}
+function tourPlay(){if(T_on)return;
+ T_on=T_started=true;caption(null);hideHint();tourUI();toStage();tourRun(++T_tk);}
+function tourPause(){if(!T_on)return;T_on=false;T_tk++;tourUI();}
+function tourStop(){T_on=T_started=false;T_tk++;T_i=T_j=0;tourUI();}
+function tourNext(){T_on=false;T_tk++;if(PAGE.build&&TOUR[T_i]==='build')bSet(NSTEP);T_j=0;if(++T_i>=TOUR.length){tourStop();return;}tourPlay();}
+function tourUI(){const b=$('tourBtn');b.textContent=T_on?'❚❚ 导览':T_started?'▶ 继续':'▶ 导览';b.setAttribute('aria-pressed',T_on);b.setAttribute('aria-label',T_on?'暂停导览':T_started?'继续导览':'开始自动导览');
+ $('tsub').hidden=!(T_on||T_started&&PAGE&&PAGE.id===TOUR[T_i]);$('tPause').textContent=T_on?'暂停':'继续';
+ if(!T_on&&T_started)$('ttxt').textContent='导览已暂停。点“继续”接着讲，或者自己点着往下看。';}
+$('tourBtn').onclick=()=>T_on?tourPause():tourPlay();
+$('tPause').onclick=()=>T_on?tourPause():tourPlay();$('tNext').onclick=tourNext;$('tEnd').onclick=tourStop;
+
+// ---- 启动 ----
+[root,labRoot,dimG].forEach(g=>g.traverse(o=>{if(o.isMesh)ALLM.push(o);}));
+view.r=fitR(40,70)*1.8;view.th=1.4;resize();
+const h0=location.hash.slice(1);go(PAGES[h0]?h0:'home');requestAnimationFrame(loop);
+setTimeout(()=>$('loading').classList.add('gone'),60);
+window.__app={tour:{play:()=>tourPlay(),pause:()=>tourPause(),next:()=>tourNext(),state:()=>({T_on,T_i,T_j})},go,PAGES,setState,camTo,S,TG,get buildShown(){return buildShown},NSTEP,STEPS,view,get bk(){return bk}};
+
+}catch(e){console.error(e);const el=document.getElementById('err');el.hidden=false;el.textContent='三维场景初始化失败：'+e.message;document.getElementById('loading').classList.add('gone');}
+})();
+</script>
+
+</body>
+</html>
