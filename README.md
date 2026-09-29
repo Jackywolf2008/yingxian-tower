@@ -4,6 +4,8 @@
 
 在线访问：https://jackywolf2008.github.io/yingxian-tower/
 
+介绍视频（约 90 秒，页面底部也能直接播放）：https://jackywolf2008.github.io/yingxian-tower/yingxian-tower-intro.mp4
+
 - `index.html`：页面源码
 - `build.sh`：把 `index.html` 包成完整网页，连同图片输出到 `docs/`（GitHub Pages 从 `docs/` 发布）
 - `video/`：用 Remotion 做的约 90 秒介绍视频，画面从立体书里逐帧抓取（见 `video/README.md`）
