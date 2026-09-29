@@ -39,13 +39,13 @@ export const SHOT_TEXT: Record<string, ShotText> = {
   bracket: {
     plate: { kicker: '构造 · BRACKETS', title: '斗拱', sub: '柱头上层层出挑的木构件' },
     caps: [
-      { from: 10, to: 108, zh: '屋檐为什么能挑出去这么远？秘密在柱头上的斗拱', en: 'How do the eaves reach so far? The dougong brackets' },
-      { from: 108, to: 240, zh: '几十个构件咬合成一组；点任何一块，看它叫什么', en: 'Dozens of interlocking pieces — click any one to see its name' },
+      { from: 10, to: 108, zh: '屋檐为什么能挑这么远？秘密在柱头上的斗拱', en: 'How do the eaves reach so far? The dougong brackets' },
+      { from: 108, to: 240, zh: '几十个构件咬合成一组，点一下就知道名字', en: 'Dozens of interlocking pieces — click any one to see its name' },
     ],
   },
   fork: {
     plate: { kicker: '构造 · JOINERY', title: '叉柱造', sub: '上层柱怎么接到下层' },
-    caps: [{ from: 10, to: 120, zh: '上层柱脚开出十字口，像叉子一样骑在下层斗拱上', en: 'Upper columns straddle the brackets below, like a fork' }],
+    caps: [{ from: 10, to: 120, zh: '上层柱脚开十字口，像叉子一样骑在下层斗拱上', en: 'Upper columns straddle the brackets below, like a fork' }],
   },
   joint: {
     plate: { kicker: '构造 · JOINERY', title: '榫卯', sub: '不靠钉子，靠咬合' },
