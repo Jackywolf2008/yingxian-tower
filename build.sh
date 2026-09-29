@@ -16,7 +16,13 @@ URL=https://jackywolf2008.github.io/yingxian-tower
 } > docs/index.html
 # 公开站点不依赖外部 CDN：three.js 随站点一起发布；Google 字体改为不阻塞渲染（大陆打不开时直接用系统字体）
 [ -f docs/three.min.js ] || curl -sfL https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js -o docs/three.min.js
-sed -i '' -e 's#https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js#three.min.js#' \
+# -i.bak 在 macOS 和 Linux 的 sed 上都能用
+sed -i.bak -e 's#https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js#three.min.js#' \
   -e 's#display=swap" rel="stylesheet">#display=swap" rel="stylesheet" media="print" onload="this.media=\x27all\x27">#' docs/index.html
+rm -f docs/index.html.bak
 cp ta-1933.jpg liang-*.jpg docs/
+# 介绍视频与封面（在 video/ 里用 Remotion 渲染）
+for f in video/out/yingxian-tower-intro.mp4 video/out/intro-poster.jpg; do
+  if [ -f "$f" ]; then cp "$f" docs/; fi
+done
 touch docs/.nojekyll
