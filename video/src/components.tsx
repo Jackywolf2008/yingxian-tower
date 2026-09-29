@@ -57,8 +57,8 @@ export const Captions: React.FC<{ items: Cap[]; side?: 'left' | 'right'; width?:
         const o = items.length === 1 ? 1 : fade(f, c.from, c.to, 10);
         return (
           <div key={i} style={{ gridArea: '1 / 1', opacity: o }}>
-            <div style={{ fontFamily: F.serif, fontWeight: 500, fontSize: 34, lineHeight: 1.55, color: C.ink, textWrap: 'pretty' } as React.CSSProperties}>{c.zh}</div>
-            <div style={{ fontFamily: F.serif, fontSize: 21, lineHeight: 1.5, color: C.mute, marginTop: 6 }}>{c.en}</div>
+            <div style={{ fontFamily: F.serif, fontWeight: 500, fontSize: 34, lineHeight: 1.55, color: C.ink, textWrap: 'balance' } as React.CSSProperties}>{c.zh}</div>
+            <div style={{ fontFamily: F.serif, fontSize: 21, lineHeight: 1.5, color: C.mute, marginTop: 6, textWrap: 'balance' } as React.CSSProperties}>{c.en}</div>
           </div>
         );
       })}

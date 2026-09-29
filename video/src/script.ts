@@ -6,46 +6,46 @@ type ShotText = { plate: { kicker: string; title: string; sub: string }; caps: C
 export const SHOT_TEXT: Record<string, ShotText> = {
   hero: {
     plate: { kicker: '封面 · COVER', title: '应县木塔', sub: '佛宫寺释迦塔 · 辽清宁二年（1056）' },
-    caps: [{ from: 95, to: 195, zh: '世界上现存最高、最古老的木结构楼阁式塔', en: 'The tallest and oldest surviving multi-storey timber pagoda in the world' }],
+    caps: [{ from: 95, to: 195, zh: '世界上现存最高、最古老的木结构楼阁式塔', en: 'The world’s tallest and oldest surviving timber pagoda' }],
     labels: false,
   },
   eaves: {
     plate: { kicker: '外观 · EXTERIOR', title: '六重屋檐', sub: '五层六檐，檐角起翘' },
-    caps: [{ from: 12, to: 120, zh: '五层塔身，加上首层副阶的一重，一共六重屋檐', en: 'Five storeys plus a ground-floor veranda: six tiers of eaves, narrowing as they rise' }],
+    caps: [{ from: 12, to: 120, zh: '五层塔身，加上首层副阶的一重，一共六重屋檐', en: 'Five storeys plus a ground-floor veranda: six tiers of eaves' }],
   },
   spire: {
     plate: { kicker: '塔顶 · FINIAL', title: '塔刹', sub: '塔顶上一座缩小的窣堵坡' },
-    caps: [{ from: 12, to: 120, zh: '覆钵、相轮、宝盖、圆光，顶上是仰月和宝珠', en: 'A miniature stupa: bowl, rings, canopy and halo, crowned by a crescent and a jewel' }],
+    caps: [{ from: 12, to: 120, zh: '覆钵、相轮、宝盖、圆光，顶上是仰月和宝珠', en: 'A miniature stupa: bowl, rings, canopy, halo, crescent and jewel' }],
   },
   levels: {
     plate: { kicker: '结构 · STRUCTURE', title: '明五暗四', sub: '外看五层，里面九层' },
     caps: [
       { from: 10, to: 85, zh: '把塔一层层拉开……', en: 'Pull it apart, floor by floor…' },
-      { from: 85, to: 180, zh: '五个明层之间，各夹着一个暗层，一共九层', en: 'Four hidden mezzanines sit between the five visible floors: nine levels in all' },
+      { from: 85, to: 180, zh: '五个明层之间，各夹着一个暗层，一共九层', en: 'Four hidden mezzanines between five floors: nine levels in all' },
     ],
   },
   dark: {
     plate: { kicker: '结构 · STRUCTURE', title: '暗层斜撑', sub: '四道刚性的腰箍' },
     caps: [
       { from: 10, to: 92, zh: '把墙变透明：斜撑连成一个个三角形', en: 'Make the walls transparent: diagonal braces form rigid triangles' },
-      { from: 92, to: 165, zh: '四个暗层像四道腰箍，把内外两圈柱子箍在一起', en: 'Four hidden levels act as belts, binding the inner and outer rings of columns' },
+      { from: 92, to: 165, zh: '四个暗层像四道腰箍，把内外两圈柱子箍在一起', en: 'Four hidden levels act as belts binding both rings of columns' },
     ],
   },
   section: {
     plate: { kicker: '内部 · INSIDE', title: '剖开看', sub: '沿中轴线一刀剖开' },
-    caps: [{ from: 20, to: 180, zh: '两圈柱子围成“筒中筒”：里面供佛，外面走人', en: 'Two rings of columns form a tube within a tube: Buddhas inside, visitors outside' }],
+    caps: [{ from: 20, to: 180, zh: '两圈柱子围成“筒中筒”：里面供佛，外面走人', en: 'A tube within a tube: Buddhas inside, visitors outside' }],
     side: 'right',
   },
   bracket: {
     plate: { kicker: '构造 · BRACKETS', title: '斗拱', sub: '柱头上层层出挑的木构件' },
     caps: [
-      { from: 10, to: 108, zh: '屋檐为什么能挑出去这么远？秘密在柱头上的斗拱', en: 'How do the eaves reach so far? The secret is the dougong bracket set' },
+      { from: 10, to: 108, zh: '屋檐为什么能挑出去这么远？秘密在柱头上的斗拱', en: 'How do the eaves reach so far? The dougong brackets' },
       { from: 108, to: 240, zh: '几十个构件咬合成一组；点任何一块，看它叫什么', en: 'Dozens of interlocking pieces — click any one to see its name' },
     ],
   },
   fork: {
     plate: { kicker: '构造 · JOINERY', title: '叉柱造', sub: '上层柱怎么接到下层' },
-    caps: [{ from: 10, to: 120, zh: '上层柱脚开出十字口，像叉子一样骑在下层斗拱上', en: 'Upper columns are notched to straddle the brackets below, like a fork' }],
+    caps: [{ from: 10, to: 120, zh: '上层柱脚开出十字口，像叉子一样骑在下层斗拱上', en: 'Upper columns straddle the brackets below, like a fork' }],
   },
   joint: {
     plate: { kicker: '构造 · JOINERY', title: '榫卯', sub: '不靠钉子，靠咬合' },
@@ -53,11 +53,11 @@ export const SHOT_TEXT: Record<string, ShotText> = {
   },
   quake: {
     plate: { kicker: '抗震 · EARTHQUAKES', title: '为什么震不倒', sub: '刚柔相济' },
-    caps: [{ from: 10, to: 135, zh: '斗拱像减震垫，暗层像腰箍，榫卯在转动中耗能', en: 'Brackets cushion, mezzanines brace, joints absorb: it sways, and survives' }],
+    caps: [{ from: 10, to: 135, zh: '斗拱像减震垫，暗层像腰箍，榫卯在转动中耗能', en: 'Brackets cushion, mezzanines brace, joints absorb the shock' }],
   },
   today: {
     plate: { kicker: '现状 · TODAY', title: '今天的木塔', sub: '歪了，怎么修' },
-    caps: [{ from: 10, to: 120, zh: '近千年后，二层柱子明显倾斜（模型里夸大了）', en: 'After nearly a thousand years the second floor leans (exaggerated in the model)' }],
+    caps: [{ from: 10, to: 120, zh: '近千年后，二层柱子明显倾斜（模型里夸大了）', en: 'After 1,000 years the second floor leans (exaggerated here)' }],
   },
 };
 
