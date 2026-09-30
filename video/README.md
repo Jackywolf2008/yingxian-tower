@@ -39,4 +39,8 @@ npm run page             # 生成独立的视频页 ../docs/video/
 
 在无法下载 Chrome 的环境里渲染，可以指定本机的 Chromium：`npx remotion render src/index.ts Intro out/yingxian-tower-intro.mp4 --browser-executable=<chromium 路径>`。
 
-历史照片与测绘图出自梁思成《中国建筑史》和《图像中国建筑史》（中国营造学社测绘），版权归原作者所有。
+## 许可
+
+- 这里的源代码与脚本按 [MIT](../LICENSE) 授权；成片、封面和配乐按 [CC BY 4.0](../LICENSE-CONTENT) 授权，详见根目录 README 的“许可”一节。
+- 视频里出现的历史照片与测绘图出自梁思成《中国建筑史》和《图像中国建筑史》（中国营造学社测绘），版权归原作者所有，不在上述授权范围内。
+- 渲染视频用到的 [Remotion](https://www.remotion.dev/license) 有自己的许可：个人、3 人以下的营利公司和非营利组织可以免费使用（包括商用），规模更大的营利公司需要购买公司授权。

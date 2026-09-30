@@ -2,6 +2,7 @@
   "name": "yingxian-tower-video",
   "private": true,
   "description": "用 Remotion 制作的《应县木塔》介绍视频",
+  "license": "MIT",
   "type": "module",
   "scripts": {
     "capture": "node capture/capture.mjs",
