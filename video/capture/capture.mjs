@@ -1,4 +1,4 @@
-// 逐帧抓取《拆开应县木塔》的真实三维画面，供 Remotion 合成
+// 逐帧抓取《应县木塔》立体书的真实三维画面，供 Remotion 合成
 //
 // 做法：本地起一个静态服务器发布 ../docs（与线上 GitHub Pages 相同的页面），用虚拟时钟接管
 // performance.now / requestAnimationFrame / setTimeout，每推进 1/30 秒就从 WebGL 画布读出一帧（透明背景 WebP），
@@ -192,8 +192,21 @@ async function captureUI(browser, port) {
   fs.mkdirSync(UI_OUT, { recursive: true });
   const { ctx, page } = await newPage(browser, { viewport: { width: 1440, height: 900 }, dsf: 1.5, fonts: true, url: 'index.html?fast', vclock: false }, port);
   // 等网页字体（马善政、思源宋体）加载好；网络不通时退回系统字体
-  await page.waitForFunction(() => document.fonts.check('40px "Ma Shan Zheng"', '拆开应县木塔') && document.fonts.check('16px "Noto Serif SC"', '应县木塔'), null, { timeout: 120000 })
-    .catch(() => console.warn('  网页字体没有加载成功，界面截图将使用系统字体'));
+  // document.fonts.check() 在字体样式表生效前也会返回 true，所以先等样式表生效，再主动加载并确认字体真的到了
+  const fontsOk = await page.waitForFunction(async () => {
+    const link = document.querySelector('link[href*="fonts.googleapis"]');
+    if (!link || link.media !== 'all') return false;
+    const text = document.body.innerText.slice(0, 4000);
+    await Promise.all([
+      document.fonts.load('40px "Ma Shan Zheng"', '应县木塔封面'),
+      document.fonts.load('16px "Noto Serif SC"', text), document.fonts.load('700 16px "Noto Serif SC"', text),
+      document.fonts.load('14px "Noto Sans SC"', text), document.fonts.load('700 14px "Noto Sans SC"', text),
+    ]);
+    const loaded = name => [...document.fonts].some(f => f.family.replace(/["']/g, '') === name && f.status === 'loaded');
+    return loaded('Ma Shan Zheng') && loaded('Noto Serif SC') && loaded('Noto Sans SC');
+  }, null, { timeout: 180000, polling: 1000 }).then(() => true, () => false);
+  if (!fontsOk) console.warn('  网页字体没有加载成功，界面截图将使用系统字体');
+  await page.evaluate(() => document.fonts.ready);
   for (const s of UI_STILLS) {
     if (fs.existsSync(path.join(UI_OUT, `${s.name}.png`))) continue;
     await page.evaluate(js => { for (const c of js) new Function(c)(); }, s.js);

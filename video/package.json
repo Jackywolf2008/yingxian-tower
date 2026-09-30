@@ -1,7 +1,7 @@
 {
   "name": "yingxian-tower-video",
   "private": true,
-  "description": "用 Remotion 制作的《拆开应县木塔》介绍视频",
+  "description": "用 Remotion 制作的《应县木塔》介绍视频",
   "type": "module",
   "scripts": {
     "capture": "node capture/capture.mjs",
@@ -11,7 +11,8 @@
     "prepare-assets": "npm run capture && npm run images && npm run fonts && npm run music",
     "studio": "remotion studio src/index.ts",
     "render": "remotion render src/index.ts Intro out/yingxian-tower-intro.mp4",
-    "poster": "remotion still src/index.ts Intro out/intro-poster.jpg --frame=290 --image-format=jpeg --jpeg-quality=85"
+    "poster": "remotion still src/index.ts Intro out/intro-poster.jpg --frame=290 --image-format=jpeg --jpeg-quality=85",
+    "page": "node scripts/build-page.mjs"
   },
   "dependencies": {
     "@remotion/cli": "4.0.530",

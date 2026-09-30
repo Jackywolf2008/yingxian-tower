@@ -1,8 +1,8 @@
-# 《拆开应县木塔》介绍视频
+# 《应县木塔》介绍视频
 
 用 [Remotion](https://www.remotion.dev/) 做的一段约 90 秒的介绍视频（1920×1080，30fps），成片在 `out/yingxian-tower-intro.mp4`，封面图在 `out/intro-poster.jpg`。
 
-在线观看：https://jackywolf2008.github.io/yingxian-tower/yingxian-tower-intro.mp4 （立体书页面底部也嵌了播放器）。根目录的 `build.sh` 会把成片和封面一起复制到 `docs/` 发布。
+在线观看：https://jackywolf2008.github.io/yingxian-tower/video/ ——视频单独一页，和立体书应用分开。`npm run page` 用 `site/index.html` 生成这个页面（章节时间按 `src/timeline.json` 计算），连同成片、封面一起输出到 `../docs/video/`。
 
 画面里的木塔不是另外建模，而是从线上这本立体书（`../docs/`）里逐帧抓下来的真实三维画面，标注、字幕、配乐再由 Remotion 合成。
 
@@ -29,6 +29,7 @@ npm run prepare-assets   # 抓三维画面和界面截图 → 复制图片 → �
 npm run studio           # 在浏览器里预览、调整
 npm run render           # 输出 out/yingxian-tower-intro.mp4
 npm run poster           # 输出播放器封面 out/intro-poster.jpg
+npm run page             # 生成独立的视频页 ../docs/video/
 ```
 
 - `capture/capture.mjs`：本地发布 `../docs/`，用虚拟时钟接管页面的 `performance.now`、`requestAnimationFrame` 和 `setTimeout`，每推进 1/30 秒从 WebGL 画布读一帧（透明背景 WebP），同时记下每帧标注的位置。运镜和动作在 `capture/shots.mjs` 里按时间点编排。只在本地服务时给页面打三个小补丁（逐帧指定相机、强制重绘、跳过不必要的阴影重算），不改仓库里的页面。已抓完的镜头会跳过，删掉 `public/shots/<镜头>` 可以重抓。没有显卡时靠软件渲染，整套大约要一小时。
