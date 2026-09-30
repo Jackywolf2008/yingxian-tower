@@ -13,7 +13,7 @@
 ## 许可
 
 - **代码**：[MIT](LICENSE)。包括 `index.html` 里的 HTML、CSS、JavaScript（含生成三维模型的代码）、`build.sh`，以及 `video/` 下的源代码与脚本。
-- **内容**：[CC BY 4.0](LICENSE-CONTENT)。包括立体书里的讲解文字与导览词（虽然写在 `index.html` 里，也按这一条授权）、立体书的画面，以及介绍视频（`video/out/`、`docs/video/`）和它的配乐。可以转载、改编，也可以商用，但要署名并注明出处，例如：
+- **内容**：[CC BY 4.0](LICENSE-CONTENT)。包括立体书里的讲解文字与导览词（虽然写在 `index.html` 里，也按这一条授权）、立体书的画面、项目封面（`video/out/cover.jpg`），以及介绍视频（`video/out/`、`docs/video/`）和它的配乐。可以转载、改编，也可以商用，但要署名并注明出处，例如：
 
   > 应县木塔，Jackywolf2008，https://github.com/Jackywolf2008/yingxian-tower ，CC BY 4.0
 
