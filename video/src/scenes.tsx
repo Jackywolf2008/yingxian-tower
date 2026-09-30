@@ -9,7 +9,7 @@ const clamp = { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' } as const;
 // ---------------- 片头 ----------------
 export const Title: React.FC = () => {
   const f = useCurrentFrame();
-  const chars = [...'拆开应县木塔'];
+  const chars = [...'应县木塔'];
   return (
     <Paper tone={C.paper}>
       <Band progress={rise(f, 0, 26)} top={0} height={12} />
@@ -20,7 +20,7 @@ export const Title: React.FC = () => {
             {chars.map((ch, i) => {
               const k = rise(f, 10 + i * 6, 16);
               return (
-                <span key={i} style={{ fontFamily: F.disp, fontSize: 196, lineHeight: 1, color: C.ink, letterSpacing: '.04em', opacity: k, filter: `blur(${(1 - k) * 8}px)`, transform: `translateY(${(1 - k) * 18}px) scale(${1.06 - 0.06 * k})`, display: 'inline-block' }}>{ch}</span>
+                <span key={i} style={{ fontFamily: F.disp, fontSize: 220, lineHeight: 1, color: C.ink, letterSpacing: '.06em', opacity: k, filter: `blur(${(1 - k) * 8}px)`, transform: `translateY(${(1 - k) * 18}px) scale(${1.06 - 0.06 * k})`, display: 'inline-block' }}>{ch}</span>
               );
             })}
           </div>
@@ -32,7 +32,7 @@ export const Title: React.FC = () => {
           }}>千年木构</div>
         </div>
         <div style={{ marginTop: 34, fontFamily: F.serif, fontWeight: 500, fontSize: 40, color: C.ink, opacity: rise(f, 58, 18), letterSpacing: '.02em' }}>
-          Taking Apart the Yingxian Wooden Pagoda
+          Yingxian Wooden Pagoda
         </div>
         <div style={{ marginTop: 18, fontFamily: F.serif, fontSize: 28, color: C.mute, opacity: rise(f, 70, 18) }}>
           一本可以一层层点进去的三维立体书 · An interactive 3D pop-up book
@@ -220,9 +220,9 @@ export const End: React.FC = () => {
       <Img src={staticFile('shots/build/f0374.webp')} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', opacity: rise(f, 0, 30) }} />
       <Band progress={rise(f, 6, 26)} top={0} height={12} />
       <div style={{ position: 'absolute', left: 96, top: 230, width: 860 }}>
-        <div style={{ fontFamily: F.disp, fontSize: 128, lineHeight: 1.05, color: C.ink, whiteSpace: 'nowrap', opacity: rise(f, 8, 20) }}>拆开应县木塔</div>
-        <div style={{ fontFamily: F.serif, fontWeight: 500, fontSize: 40, color: C.ink, marginTop: 36, opacity: rise(f, 20, 18) }}>打开网页，自己拆一遍</div>
-        <div style={{ fontFamily: F.serif, fontSize: 26, color: C.mute, marginTop: 8, opacity: rise(f, 26, 18) }}>Open it — and take it apart yourself</div>
+        <div style={{ fontFamily: F.disp, fontSize: 150, lineHeight: 1.05, color: C.ink, whiteSpace: 'nowrap', opacity: rise(f, 8, 20) }}>应县木塔</div>
+        <div style={{ fontFamily: F.serif, fontWeight: 500, fontSize: 40, color: C.ink, marginTop: 36, opacity: rise(f, 20, 18) }}>打开网页，一层层看下去</div>
+        <div style={{ fontFamily: F.serif, fontSize: 26, color: C.mute, marginTop: 8, opacity: rise(f, 26, 18) }}>Open it and explore, layer by layer</div>
         <div style={{ display: 'inline-flex', alignItems: 'center', gap: 14, marginTop: 40, padding: '16px 30px', borderRadius: 40, background: C.qing, color: C.on, fontFamily: F.sans, fontWeight: 700, fontSize: 32, opacity: rise(f, 34, 18), transform: `scale(${0.94 + 0.06 * rise(f, 34, 18)})` }}>
           {SITE_URL}
         </div>
