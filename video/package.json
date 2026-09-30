@@ -13,7 +13,8 @@
     "studio": "remotion studio src/index.ts",
     "render": "remotion render src/index.ts Intro out/yingxian-tower-intro.mp4",
     "poster": "remotion still src/index.ts Intro out/intro-poster.jpg --frame=290 --image-format=jpeg --jpeg-quality=85",
-    "page": "node scripts/build-page.mjs"
+    "page": "node scripts/build-page.mjs",
+    "cover": "node capture/capture.mjs cover && remotion still src/index.ts Cover out/cover.jpg --scale=2 --image-format=jpeg --jpeg-quality=94"
   },
   "dependencies": {
     "@remotion/cli": "4.0.530",

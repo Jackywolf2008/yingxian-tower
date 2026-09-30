@@ -26,8 +26,8 @@ const PATCHES = [
   ['if(ptr.size)act=true;', 'if(ptr.size)act=true;if(window.__camFrame){const c=window.__camFrame;view.t.set(c.t[0],c.t[1],c.t[2]);view.r=c.r;view.th=c.th;view.ph=c.ph;act=true;}'],
   // 每帧都重绘，保证读到的画布是当帧内容
   ['if(needs>0){', 'if(needs>0||window.__forceRender){'],
-  // 几何不动的镜头可以跳过阴影贴图重算（光源固定，只有相机在动）
-  ['renderer.shadowMap.needsUpdate=true;', 'if(!window.__noShadowUpd)renderer.shadowMap.needsUpdate=true;'],
+  // 几何不动的镜头可以跳过阴影贴图重算（光源固定，只有相机在动）；__inkOnly 时只画墨线描边（封面用的线稿）
+  ['renderer.shadowMap.needsUpdate=true;renderer.render(scene,cam);', 'if(!window.__noShadowUpd)renderer.shadowMap.needsUpdate=true;if(window.__inkOnly)renderer.clear();else renderer.render(scene,cam);'],
 ];
 function patchHTML(s) {
   for (const [a, b] of PATCHES) {
@@ -219,6 +219,30 @@ async function captureUI(browser, port) {
   await ctx.close();
 }
 
+// ---------- 封面素材：超采样渲染彩色木塔与墨线线稿（透明背景 PNG），由 Remotion 的 Cover 合成 ----------
+const COVER_OUT = path.resolve(HERE, '../public/cover');
+const COVER_RENDERS = [
+  { name: 'tower', page: 'home', cam: { t: [0, 33, 0], w: 40, h: 74, th: 0.52, ph: 1.5 } },
+  { name: 'elev-ink', page: 'home', ink: true, cam: { t: [0, 33, 0], w: 40, h: 72, th: 0, ph: 1.555 } },
+  { name: 'section-ink', page: 'section', ink: true, cam: { t: [0, 33, 0], w: 36, h: 72, th: 0, ph: 1.555 } },
+];
+async function captureCover(browser, port) {
+  fs.mkdirSync(COVER_OUT, { recursive: true });
+  // 3840×2160 的页面按 1.5 倍像素比渲染，得到 5760×3240 的画布，合成时再缩小，边缘更干净
+  const { ctx, page } = await newPage(browser, { viewport: { width: 3840, height: 2160 }, dsf: 1.5, url: 'index.html?fast' }, port);
+  await page.addStyleTag({ content: CLEAN_CSS });
+  for (const r of COVER_RENDERS) {
+    const cam = toView(r.cam);
+    await page.evaluate(id => window.__app.go(id), r.page);
+    // 画布不保留绘图缓冲：最后一帧的渲染和读取必须在同一次调用里
+    let url;
+    for (let i = 0; i < 3; i++) url = await page.evaluate(({ cam, ink }) => { window.__camFrame = cam; window.__inkOnly = ink; window.__vt.advance(50); return document.getElementById('gl').toDataURL('image/png'); }, { cam, ink: !!r.ink });
+    fs.writeFileSync(path.join(COVER_OUT, `${r.name}.png`), Buffer.from(url.split(',')[1], 'base64'));
+    console.log(`  封面素材 ${r.name}`);
+  }
+  await ctx.close();
+}
+
 // ---------- 调度 ----------
 const want = process.argv.slice(2);
 const LAB = new Set(['bracket', 'fork', 'joint']);
@@ -229,6 +253,7 @@ const jobs = SHOTS.filter(s => (!want.length || want.includes(s.name)) && !done(
   .map(s => ({ label: s.name, run: (b, p) => captureShot(b, p, s) }));
 if ((!want.length || want.includes('ui')) && !UI_STILLS.every(s => fs.existsSync(path.join(UI_OUT, `${s.name}.png`))))
   jobs.splice(Math.min(1, jobs.length), 0, { label: 'ui', run: captureUI });
+if (want.includes('cover')) jobs.push({ label: 'cover', run: captureCover });
 
 const srv = await serve();
 const port = srv.address().port;
