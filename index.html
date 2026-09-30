@@ -158,7 +158,7 @@ button:focus-visible,.lb.go:focus-visible span{outline:2px solid var(--zhu);outl
 </section>
 <section class="notes">
 <h2>说明与出处</h2>
-<p>三维模型的结构依据梁思成《中国建筑史》中“佛宫寺释迦木塔”一节的记述，比例按《图像中国建筑史》手绘图中中国营造学社测绘的立面图、剖面图推算：八角平面，内槽 8 柱、外槽 24 柱，首层副阶 24 柱；明五暗四共九层；塔高 67.31 米，塔刹约 12 米。各层外檐、平坐、内槽的铺作按书中逐层记载配置；斜撑、楼梯的具体数量和位置做了简化，补间铺作只做了“驼峰短柱承大斗”一种，塑像造型为示意；“重建木塔”是按木构常规工序的推演，不是史料记载。</p>
+<p>三维模型的结构依据梁思成《中国建筑史》中“佛宫寺释迦木塔”一节的记述，比例按《图像中国建筑史》手绘图中中国营造学社测绘的立面图、剖面图推算：八角平面，内槽 8 柱、外槽 24 柱，首层副阶 24 柱；明五暗四共九层；塔高 67.31 米，塔刹约 12 米。各层外檐、平坐、内槽的铺作按书中逐层记载配置；斜撑、楼梯的具体数量和位置做了简化，补间铺作只做了“驼峰短柱承大斗”一种，塑像造型为示意；“重建木塔”是按木构常规工序的推演，不是史料记载。斗拱跳头的计心、偷心，塔的源流、“孤例”之说，以及辽代与明清斗拱的比例，也都依据《中国建筑史》；“斗拱变小了”一页中的明清斗拱只按比例缩小示意。</p>
 <p>页面中的历史照片（1933 年外景、塔刹、斗拱）与立面图、剖面图均出自上述两本书。</p>
 <p>“元代大地震连震七日”“近代身中二百余发炮弹”“明成祖、明武宗题匾”等来自方志与通行记述，具体细节各说不一；民国改造削弱结构刚度是部分研究者的观点；木材中榆木的使用依据公开资料。现状与“1∶1研究性复建”建议参见国家文物局、山西省文物局发布及 2026 年 3 月科技日报、澎湃新闻等报道。</p>
 </section>
@@ -224,6 +224,7 @@ function rod(cat,p1,p2,r,color,kind='cyl'){_x.subVectors(p2,p1);const L=_x.lengt
 function mesh(cat,geo,m){geo.computeBoundingBox();cur.top=Math.max(cur.top,geo.boundingBox.max.y);cur.meshes.push({cat,geo,m});}
 
 // ================= 斗拱构件生成（局部坐标：x 向外，y 向上，z 横向） =================
+// opt.heads[j]：第 j 跳跳头的做法，'none' 偷心（不施横栱）、'double' 重栱（瓜子栱上再加慢栱），缺省为单栱计心
 function bracketPieces(n,nAng,s,opt={}){
  const P=[],H=.26,W=.17,DH=.18,TI=.44,LD=.36,nH=n-nAng;
  const dou=(name,x,y,z,sz,h,t)=>P.push({name,kind:'dou',x,y:y+h/2,z,sx:sz,sy:h,sz:sz,t});
@@ -233,7 +234,9 @@ function bracketPieces(n,nAng,s,opt={}){
  for(let k=1;k<=n;k++){const yk=LD+(k-1)*TI;
   if(k<=nH){arm('华拱',-(opt.inner?k*s:.3+.25*k),k*s+.13,yk,k);dou('交互斗',k*s,yk+H,0,.3,DH,k);}
   const L=k%2?1.24:1.86;lat(k%2?'泥道拱':'慢拱',0,yk,L,k);dou('散斗',0,yk+H,L/2-.14,.28,DH,k);dou('散斗',0,yk+H,-(L/2-.14),.28,DH,k);
-  if(k>=2){const x=(k-1)*s;lat(k===n&&nAng===0?'令拱':'瓜子拱',x,yk,1.14,k);dou('散斗',x,yk+H,.43,.28,DH,k);dou('散斗',x,yk+H,-.43,.28,DH,k);}
+  const hd=k>=2&&(opt.heads&&opt.heads[k-1]||'single');
+  if(hd&&hd!=='none'){const x=(k-1)*s;lat(k===n&&nAng===0?'令拱':'瓜子拱',x,yk,1.14,k);dou('散斗',x,yk+H,.43,.28,DH,k);dou('散斗',x,yk+H,-.43,.28,DH,k);
+   if(hd==='double'){lat('慢拱',x,yk+TI,1.86,k+1);dou('散斗',x,yk+TI+H,.79,.28,DH,k+1);dou('散斗',x,yk+TI+H,-.79,.28,DH,k+1);}}
  }
  for(let j=1;j<=nAng;j++){const k=nH+j,yk=LD+(k-1)*TI,m=-.42,xc=k*s,yc=yk+H/2,x1=xc+.42,x0=-(1.0+.35*j);const y1=yc+m*(x1-xc),y0=yc+m*(x0-xc);
   const len=Math.hypot(x1-x0,y1-y0);P.push({name:'下昂',kind:'box',ang:1,x:(x0+x1)/2,y:(y0+y1)/2,z:0,sx:len,sy:H,sz:W,pitch:Math.atan2(y1-y0,x1-x0),t:k});
@@ -296,12 +299,14 @@ const FY=[BASE_TOP,18.2,27.4,36.1,44.5],APEX=54.8;
 // n/nAng：外檐出几跳、其中几跳为下昂。一、二层双杪双下昂，三层三杪，四层双杪，五层半栱承单杪；pz：其上平坐出几杪
 const FL=[{A:11.4,Ai:6.0,hc:7.9,n:4,nAng:2,s:.5,sc:1,ep:3.7,r:.33,pz:3},{A:11.1,Ai:6.0,hc:3.2,n:4,nAng:2,s:.5,sc:.86,ep:3.6,r:.29,pz:3},{A:10.75,Ai:6.0,hc:3.1,n:3,nAng:0,s:.5,sc:.86,ep:3.4,r:.28,pz:3},{A:10.4,Ai:6.0,hc:3.0,n:2,nAng:0,s:.5,sc:.86,ep:2.9,r:.27,pz:2},{A:10.0,Ai:5.6,hc:3.0,n:1,nAng:0,s:.5,sc:.86,ep:2.7,r:.27}];
 const HD=[],PZ={s:.62,sc:.82},FJ={A:15.0,hc:4.1,n:2,s:.45,sc:.72,ep:2.4};
+// 跳头做法依梁思成《中国建筑史》：一、二层外檐“如独乐寺观音阁上层檐”，第一、第三跳偷心、第二跳重栱；副阶“出双杪，偷心”；平坐“三杪重栱计心”
+const HEADS_12={1:'none',2:'double',3:'none'},HEADS_FJ={1:'none'},HEADS_PZ3={1:'double',2:'double'};
 // 补间铺作比柱头铺作少两跳，垫在驼峰短柱上
-const BP={};const bp=(n,na,s,o)=>{const k=[n,na,s,!!(o&&o.inner)].join();if(!BP[k]){BP[k]=bracketPieces(n,na,s,o);BP[k].mid=n>1?bracketPieces(Math.max(1,n-2),0,s,o):BP[k];}return BP[k];};
-(function(){FL.forEach((f,i)=>{f.y=FY[i];f.top=f.y+f.hc;f.yb=f.top+.2;f.B=bp(f.n,f.nAng,f.s);f.ybt=f.yb+f.B.h*f.sc;
+const BP={};const bp=(n,na,s,o)=>{const k=[n,na,s,!!(o&&o.inner),JSON.stringify(o&&o.heads||0)].join();if(!BP[k]){BP[k]=bracketPieces(n,na,s,o);BP[k].mid=n>1?bracketPieces(Math.max(1,n-2),0,s,o):BP[k];}return BP[k];};
+(function(){FL.forEach((f,i)=>{f.y=FY[i];f.top=f.y+f.hc;f.yb=f.top+.2;f.B=bp(f.n,f.nAng,f.s,i<2?{heads:HEADS_12}:undefined);f.ybt=f.yb+f.B.h*f.sc;
  f.Bi=bp(4,0,.42,{inner:1});f.sci=f.B.h*f.sc/f.Bi.h; // 内槽一律出华栱四跳，顶面与外檐齐平
- if(i<4){f.Ad=(f.A+FL[i+1].A)/2;f.Adi=(f.Ai+FL[i+1].Ai)/2;f.PZB=bp(f.pz,0,PZ.s);const pzh=f.PZB.h*PZ.sc;HD[i]=FY[i+1]-.25-pzh-.2-f.ybt;f.ydt=f.ybt+HD[i];f.pzb=f.ydt+.2;f.pzt=f.pzb+pzh;}});
- FJ.y=BASE_TOP;FJ.top=FJ.y+FJ.hc;FJ.yb=FJ.top+.2;FJ.B=bp(FJ.n,0,FJ.s);FJ.ybt=FJ.yb+FJ.B.h*FJ.sc;})();
+ if(i<4){f.Ad=(f.A+FL[i+1].A)/2;f.Adi=(f.Ai+FL[i+1].Ai)/2;f.PZB=bp(f.pz,0,PZ.s,f.pz===3?{heads:HEADS_PZ3}:undefined);const pzh=f.PZB.h*PZ.sc;HD[i]=FY[i+1]-.25-pzh-.2-f.ybt;f.ydt=f.ybt+HD[i];f.pzb=f.ydt+.2;f.pzt=f.pzb+pzh;}});
+ FJ.y=BASE_TOP;FJ.top=FJ.y+FJ.hc;FJ.yb=FJ.top+.2;FJ.B=bp(FJ.n,0,FJ.s,{heads:HEADS_FJ});FJ.ybt=FJ.yb+FJ.B.h*FJ.sc;})();
 const TOTAL_H=67.31;
 const LEVELNAME=['台基','一层','一层暗层','二层','二层暗层','三层','三层暗层','四层','四层暗层','五层','塔刹'];
 
@@ -501,7 +506,7 @@ function labMesh(group,name,geo,m,material,ex,tier=0){const me=new T.Mesh(geo,ma
 function labBox(group,name,cat,color,x,y,z,sx,sy,sz,ex,pitch=0,kind='box',ry=0){const q=new T.Quaternion().setFromAxisAngle(_Y,ry);if(pitch)q.multiply(new T.Quaternion().setFromAxisAngle(_Z,pitch));return labMesh(group,name,GEO[kind],new T.Matrix4().compose(V3(x,y,z),q,V3(sx,sy,sz)),cmat(cat,color),ex);}
 function buildLabs(){
  // ---- 斗拱：首层外檐 七铺作双杪双下昂（示意） ----
- {const g=new T.Group();g.userData.id='bracket';labRoot.add(g);const B=bracketPieces(4,2,.5),Y0=2.8,s=.5,gap=.62;
+ {const g=new T.Group();g.userData.id='bracket';labRoot.add(g);const B=bracketPieces(4,2,.5,{heads:HEADS_12}),Y0=2.8,s=.5,gap=.62;
   labBox(g,'柱','col',COL.col,0,Y0/2-.2,0,.62,Y0-.4,.62,V3(0,0,0),0,'cyl');
   labBox(g,'阑额','beam',COL.beam,0,Y0-.47,0,.24,.5,3.4,V3(0,0,0));
   labBox(g,'普拍枋','beam',0x7b5236,0,Y0-.1,0,.46,.2,3.6,V3(0,gap*.5,0));
@@ -538,6 +543,20 @@ function buildLabs(){
   labMesh(g,'榫（燕尾凸头）',tongue,new T.Matrix4().makeTranslation(0,1.4,0),cmat('brk',0x9f7652),V3(-.7,1.1,0));
   labBox(g,'支架','stone',0x8a8272,-1.2,.7,0,.4,1.4,.8,V3());labBox(g,'支架','stone',0x8a8272,1.4,.7,0,.4,1.4,.8,V3());
   setAnch(g,[['榫（燕尾凸头）',null,[-1.2,.5,0]],['卯（凹口）',null,[1.3,.5,0]]]);LABS.joint=g;}
+ // ---- 斗拱古今：同样高的柱子上，辽代斗栱约为柱高之半，明、清仅为柱高五分或六分之一（梁思成《中国建筑史》）；清式只按比例缩小示意 ----
+ {const g=new T.Group();g.userData.id='compare';labRoot.add(g);
+  const BL=bracketPieces(4,2,.5,{heads:HEADS_12}),BQ=bracketPieces(3,0,.5),CH=BL.h*2,anch={};
+  const set=(x0,B,sc,d,key,bar)=>{
+   labBox(g,'柱','col',COL.col,x0,CH/2,0,d,CH,d,V3(),0,'cyl');let top=null;
+   for(const q of B.P){const color=q.kind==='dou'?COL.dou:q.ang?COL.ang:COL.brk;
+    const m=labBox(g,q.name,q.ang?'ang':'brk',color,x0+q.x*sc,CH+q.y*sc,q.z*sc,q.sx*sc,q.sy*sc,q.sz*sc,V3(),q.pitch||0,q.kind);if(q.name==='令拱'&&(!top||m.position.y>top.position.y))top=m;}
+   const bh=B.h*sc,bx=x0-2.2;
+   labBox(g,'柱高','dim',0xb7aa8d,bx,CH/2,0,.07,CH,.07,V3());labBox(g,'斗栱高','dim',0xb13d28,bx,CH+bh/2,0,.12,bh,.12,V3());
+   for(const y of [0,CH,CH+bh])labBox(g,y===CH?'柱高':'斗栱高','dim',0x8a7a60,bx,y,0,.5,.05,.05,V3());
+   anch[key]={m:top,loc:V3(0,.5,0)};anch[bar]={m:g.children[g.children.length-4],loc:V3(0,0,0)};};
+  set(-3.4,BL,1,.64,'辽：斗栱约为柱高之半','1 / 2');
+  set(3.6,BQ,CH/6/BQ.h,CH/10,'明、清：仅为柱高五分或六分之一','1 / 6');
+  g.userData.anch=anch;LABS.compare=g;}
  Object.values(LABS).forEach(g=>g.visible=false);
 }
 function setAnch(g,specs){g.userData.anch={};for(const [name,pred,loc] of specs){const m=g.children.find(c=>c.userData.name===name&&(!pred||pred(c.userData.q||{})));if(m)g.userData.anch[name]={m,loc:V3(...loc)};}}
@@ -564,7 +583,7 @@ const PRE={
  explode:{t:[0,57,0],w:40,h:116,th:.55,ph:1.46}, sect:{t:[0,33,0],w:36,h:70,th:0,ph:1.53}, sect1:{t:[0,10.8,0],w:24,h:18.5,th:0,ph:1.5},
  sectUp:{t:[0,37,0],w:26,h:40,th:0,ph:1.5}, plan:{t:[0,6,0],w:40,h:40,th:.001,ph:.06}, dark:{t:[0,16,2],w:26,h:11,th:.45,ph:1.4},
  front:{t:[0,33,0],w:40,h:70,th:0,ph:1.52}, bLab:{t:[1.4,4.7,0],w:7.8,h:6.8,th:.62,ph:1.3}, bLabW:{t:[1.1,5.7,0],w:7.6,h:9.6,th:.62,ph:1.3},
- bLabX:{t:[1.3,5.9,0],w:8,h:12.8,th:.62,ph:1.3}, fLab:{t:[0,3.6,0],w:3.8,h:6.8,th:.62,ph:1.28}, jLab:{t:[-.1,2.1,0],w:5.8,h:4.2,th:.4,ph:.82}, build0:{t:[0,20,0],w:48,h:44,th:.5,ph:1.2},
+ bLabX:{t:[1.3,5.9,0],w:8,h:12.8,th:.62,ph:1.3}, fLab:{t:[0,3.6,0],w:3.8,h:6.8,th:.62,ph:1.28}, cLab:{t:[.1,4.4,0],w:11,h:9.8,th:.42,ph:1.46}, jLab:{t:[-.1,2.1,0],w:5.8,h:4.2,th:.4,ph:.82}, build0:{t:[0,20,0],w:48,h:44,th:.5,ph:1.2},
  layout:{t:[0,4,0],w:42,h:30,th:.3,ph:.7}, rise:{t:[0,36,0],w:40,h:72,th:.7,ph:1.42}
 };
 function fitR(w,h){const v=Math.tan(cam.fov*PI/360);return (Math.max(h/2/v,w/2/(v*cam.aspect))+w*.3)*1.14;}
@@ -639,7 +658,7 @@ for(let i=1;i<=4;i++){LT['dark'+i]=['暗层'+['一','二','三','四'][i-1]+'：
 for(let L=0;L<=10;L++)LT['L'+L]=[LEVELNAME[L],LBL['L'+L],L];
 LBL.eave.forEach((p,i)=>LT['e'+(i+1)]=['第'+'一二三四五六'[i]+'重檐',p,i?2*i-1:1]);
 ['副阶：双杪偷心','一层：双杪双下昂','二层：双杪双下昂','三层：三杪','四层：双杪','五层：半栱承单杪'].forEach((t,i)=>LT['k'+(i+1)]=[t,LBL.eave[i],i?2*i-1:1]);
-const _v=V3();const LSIDE={'泥道拱':'l','散斗':'l','华拱':'r','交互斗':'r','瓜子拱':'r','令拱':'l','耍头':'r','橑檐方':'l','椽子':'r','下昂':'r','柱头方':'l','阑额':'l','普拍枋':'r','栌斗':'l','柱':'r'};
+const _v=V3();const LSIDE={'辽：斗栱约为柱高之半':'r','明、清：仅为柱高五分或六分之一':'r','1 / 2':'l','1 / 6':'l','泥道拱':'l','散斗':'l','华拱':'r','交互斗':'r','瓜子拱':'r','令拱':'l','耍头':'r','橑檐方':'l','椽子':'r','下昂':'r','柱头方':'l','阑额':'l','普拍枋':'r','栌斗':'l','柱':'r'};
 function updateLabels(){const W=stage.clientWidth,H=stage.clientHeight;const want=new Set(labels);
  for(const id of labels){let el=LBEL[id];if(!el){el=document.createElement('div');el.className='lb';el.innerHTML='<i></i><span></span>';
    el.onclick=()=>{const h=HOT[id];if(h)go(Array.isArray(h)?h[0]:h);};el.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();el.onclick();}};labelsEl.appendChild(el);LBEL[id]=el;}
@@ -675,7 +694,7 @@ canvas.addEventListener('pointermove',e=>{if(e.pointerType!=='mouse'||ptr.size||
 canvas.addEventListener('pointerleave',()=>{hoverCat=null;tipEl.hidden=true;kick();});
 const LABTIP={'栌斗':'斗拱最底下的大斗，坐在普拍枋上。','华拱':'沿出挑方向伸出的拱，每挑出一层叫一跳。','泥道拱':'柱中线上的横拱。','慢拱':'比泥道拱更长的横拱。','瓜子拱':'每一跳外端的横拱。','散斗':'垫在拱两端的小斗。','交互斗':'华拱或昂外端上的小斗。','齐心斗':'拱正中的小斗。',
  '下昂':'斜置的长杆，像杠杆一样挑起屋檐。','令拱':'最外一跳的横拱，托住橑檐方。','耍头':'最上层伸出的构件端头。','橑檐方':'托住椽子的通长方木。','柱头方':'柱中线上层层叠放的横方。','普拍枋':'压在柱头上的平板枋。','阑额':'柱与柱之间的横梁。','柱':'承托斗拱的柱子。','椽子':'搭在橑檐方上的圆木，承托屋面。',
- '下层柱':'下面一层的柱子。','十字相交的拱':'下层斗拱在栌斗上十字相交。','柱脚开叉':'上层柱底开出十字口。','上层柱':'骑在下层斗拱上的柱子。','榫（燕尾凸头）':'头大颈小，越拉越紧。','卯（凹口）':'与榫对应的凹槽。','支架':'展示用支架。'};
+ '下层柱':'下面一层的柱子。','十字相交的拱':'下层斗拱在栌斗上十字相交。','柱脚开叉':'上层柱底开出十字口。','上层柱':'骑在下层斗拱上的柱子。','柱高':'两边的柱子一样高。','斗栱高':'红色一段是斗拱的高度。','榫（燕尾凸头）':'头大颈小，越拉越紧。','卯（凹口）':'与榫对应的凹槽。','支架':'展示用支架。'};
 
 // ================= 渲染循环 =================
 let needs=3,last=performance.now();function kick(){needs=Math.max(needs,3);}
@@ -692,19 +711,19 @@ function loop(now){requestAnimationFrame(loop);const dt=Math.min(.05,(now-last)/
 const DEF={cut:0,cutY:null,xray:0,explode:0,focus:[],iso:0,lab:null,labEx:0,build:null,spin:0,dim:0,sway:0,lean:0};
 const DOU1CAM={t:oct(7,1/3,FL[0].A+1.2,FL[0].yb+1.2),w:12,h:8,th:.55,ph:1.62},CORNERCAM={t:LBL.corner,w:9,h:7,th:.95,ph:1.42};
 const PAGES={
-home:{say:["这是山西应县佛宫寺释迦塔，人们叫它应县木塔。", "它建于辽清宁二年，也就是公元一零五六年，到今天快一千岁了。", "塔高六十七点三一米，约合二十多层楼，是世界上现存最高、最古老的木结构楼阁式塔。", "接下来，我们把它一层层拆开来看。这里的三维模型，按梁思成书中的测绘图和记述搭建。"],k:'封面',t:'应县木塔',s:'佛宫寺释迦塔 · 辽清宁二年（1056）',cam:'wide',st:{spin:.05},
+home:{say:["这是山西应县佛宫寺释迦塔，人们叫它应县木塔。", "它建于辽清宁二年，也就是公元一零五六年，到今天快一千岁了。", "塔高六十七点三一米，约合二十多层楼，是世界上现存最高、最古老的木结构楼阁式塔。梁思成称它是中国古代木塔的唯一孤例。", "接下来，我们把它一层层拆开来看。这里的三维模型，按梁思成书中的测绘图和记述搭建。"],k:'封面',t:'应县木塔',s:'佛宫寺释迦塔 · 辽清宁二年（1056）',cam:'wide',st:{spin:.05},
  lead:'山西应县佛宫寺里，立着一座快一千岁的木塔，是世界上现存最高、最古老的木结构楼阁式塔。这里的三维模型按梁思成书中的测绘图和记述搭建。图上的红点能点，塔上每一类构件也能点，一层层往下看。',
- facts:[{b:'1056',t:'辽清宁二年起建'},{b:'67.31 m',t:'塔高，约合二十多层楼'},{b:'5 + 4',t:'外看五层，里面九层',x:'明五暗四'},{img:'ta-1933.jpg',t:'1933 年中国营造学社考察时拍摄的应县木塔',x:'梁思成《中国建筑史》图 64'}],
+ facts:[{b:'1056',t:'辽清宁二年起建'},{b:'67.31 m',t:'塔高，约合二十多层楼'},{b:'5 + 4',t:'外看五层，里面九层',x:'明五暗四'},{b:'孤例',t:'中国古代木塔，只留下这一座',x:'梁思成：木塔“唯应县佛宫寺释迦塔一孤例”'},{img:'ta-1933.jpg',t:'1933 年中国营造学社考察时拍摄的应县木塔',x:'梁思成《中国建筑史》图 64'}],
  hot:{spire:['spire','塔刹'],e3:['eaves','六重屋檐'],pz2:['pingzuo','平坐与勾栏'],dou1:['bracket','斗拱'],fujie:['fujie','副阶周匝'],taiji:['base','台基']},
  links:['levels','section','bracket','quake','history','today','build']},
-history:{say:["先看它的履历。辽代在边城应州起建这座塔，到金代明昌六年增修完毕。", "元代一场大地震连震七日，据记载塔身屹立不倒。明成祖题了“峻极神工”，明武宗题了“天下奇观”。", "近代战火中，据说它身中二百余发炮弹，依然没有倒下。", "一九三三年，梁思成给应县的照相馆寄去一块钱，求一张木塔照片，随后和中国营造学社的同人赶来实测，画出了这张立面图。"],k:'年表',t:'千年履历',s:'从辽到今天',up:'home',cam:'wideL',st:{spin:.06},
- lead:'契丹人建立的辽朝，在边城应州起了这座塔，用的却是中原一脉相承的木构技艺。梁思成说辽代建筑“以雄朴为主，结构完固，不尚华饰”。',
- tl:[['1056','辽清宁二年起建','当时的应州在辽国西南边地，与北宋隔着雁门关一带相望。'],['1195','金明昌六年增修完毕',''],['元','大地震','据记载连震七日，塔身屹立不倒。'],['明','两位皇帝题匾','明成祖题“峻极神工”，明武宗题“天下奇观”。塔上挂有历代牌匾五十多块。'],['近代','战火','据说身中二百余发炮弹，依然没有倒下。'],['1933','梁思成的一块钱','他给应县的照相馆寄去一块钱求一张木塔照片，随后与中国营造学社同人赶来实测，绘出立面图和剖面图。'],['1974','秘藏重现','四层佛像腹中发现辽代秘藏经卷。'],['2016','吉尼斯认证','世界最高的木塔。']],
+history:{say:["塔是随佛教从印度传来的。汉末有人起浮屠，“上累金盘，下为重楼”，就是把印度的窣堵坡放在中国的楼阁顶上。", "南北朝时木塔很多，北魏洛阳永宁寺的九层木塔，百里之外就能望见，可如今国内已无一处实例。梁思成写道：木塔，唯应县佛宫寺释迦塔一孤例。", "再看它自己的履历。辽代在边城应州起建这座塔，到金代明昌六年增修完毕。", "元代一场大地震连震七日，据记载塔身屹立不倒。明成祖题了“峻极神工”，明武宗题了“天下奇观”。", "近代战火中，据说它身中二百余发炮弹，依然没有倒下。", "一九三三年，梁思成给应县的照相馆寄去一块钱，求一张木塔照片，随后和中国营造学社的同人赶来实测，画出了这张立面图。", "一九四四年，他在四川李庄写成《中国建筑史》。据该书编者前言，那时他要穿着金属背心支撑身体，才能伏案写作。"],k:'年表',t:'千年履历',s:'从辽到今天',up:'home',cam:'wideL',st:{spin:.06},
+ lead:'契丹人建立的辽朝，在边城应州起了这座塔，用的却是中原一脉相承的木构技艺。梁思成说辽代建筑“以雄朴为主，结构完固，不尚华饰”，又说中国的古代木塔“唯应县佛宫寺释迦塔一孤例”。',
+ tl:[['汉末','“上累金盘，下为重楼”','笮融起浮屠。梁思成认为，这是把印度的窣堵坡放在中国原有的重楼之上，于是有了木塔。'],['北魏','永宁寺九层木塔','《洛阳伽蓝记》：“架木为之……去京师百里，已遥见之。”南北朝的木塔，国内已无实例。'],['1056','辽清宁二年起建','当时的应州在辽国西南边地，与北宋隔着雁门关一带相望。'],['1195','金明昌六年增修完毕',''],['元','大地震','据记载连震七日，塔身屹立不倒。'],['元以后','不再建木塔','梁思成：“自元以后，不复见木塔之建造。”'],['明','两位皇帝题匾','明成祖题“峻极神工”，明武宗题“天下奇观”。塔上挂有历代牌匾五十多块。'],['近代','战火','据说身中二百余发炮弹，依然没有倒下。'],['1933','梁思成的一块钱','他给应县的照相馆寄去一块钱求一张木塔照片，随后与中国营造学社同人赶来实测，绘出立面图和剖面图。'],['1944','《中国建筑史》','梁思成在四川李庄写成此书，把木塔记为“唯应县佛宫寺释迦塔一孤例”。据编者前言，他当时要穿金属背心支撑身体才能伏案写作。'],['1974','秘藏重现','四层佛像腹中发现辽代秘藏经卷。'],['2016','吉尼斯认证','世界最高的木塔。']],
  facts:[{img:'liang-elev.jpg',fit:1,t:'中国营造学社测绘的立面图',x:'梁思成《图像中国建筑史》手绘图'}],
  links:['statues','today']},
-spire:{say:["塔的源头，是印度埋藏舍利的窣堵坡。传入中国后，它和楼阁结合，成了可以登临的楼阁式塔。", "塔顶的刹，就是一座缩小的窣堵坡。梁思成记：以砖砌仰莲两层为座，上面是铁仰莲，承托覆钵、相轮、宝盖和圆光，最顶上是仰月和宝珠。", {"s": "八条铁链从宝盖拉到八条屋脊上，像八根风缆，稳住高处的塔刹。", "act": 0}],k:'塔顶',t:'塔刹',s:'塔顶上一座缩小的窣堵坡',up:'home',cam:'spire',labels:['s_lotus','s_bowl','s_rings','s_gai','s_halo','s_moon','s_pearl'],
- lead:'塔的源头是印度的窣堵坡，一座埋藏舍利的半球形坟冢。传入中国后，它和楼阁结合，长成了可以登临的楼阁式塔；塔顶的刹，就是一座缩小的窣堵坡。',
- facts:[{b:'砖座',t:'砖砌仰莲两层为座',x:'梁思成《中国建筑史》'},{b:'铁刹',t:'铁仰莲之上，依次是覆钵、相轮、宝盖、圆光',x:'顶上是仰月和宝珠'},{b:'约 12 m',t:'塔刹高度',x:'按剖面图比例推算'},{b:'8 条',t:'铁链',x:'从宝盖拉到八条屋脊上，像八根风缆'},{img:'liang-spire.jpg',fit:1,t:'塔刹近景',x:'梁思成《中国建筑史》图 65-3'}],
+spire:{say:["塔的源头，是印度埋藏舍利的窣堵坡。汉末传入中国，“上累金盘，下为重楼”：窣堵坡被放在了中国原有的楼阁之上，成了可以登临的楼阁式塔。", "塔顶的刹，就是一座缩小的窣堵坡。梁思成记：以砖砌仰莲两层为座，上面是铁仰莲，承托覆钵、相轮、宝盖和圆光。再往上是仰月和宝珠。", {"s": "八条铁链从宝盖拉到八条屋脊上，像八根风缆，稳住高处的塔刹。", "act": 0}],k:'塔顶',t:'塔刹',s:'塔顶上一座缩小的窣堵坡',up:'home',cam:'spire',labels:['s_lotus','s_bowl','s_rings','s_gai','s_halo','s_moon','s_pearl'],
+ lead:'塔的源头是印度的窣堵坡，一座埋藏舍利的半球形坟冢。汉末传入中国，“上累金盘，下为重楼”，窣堵坡被放在中国原有的楼阁之上，长成了可以登临的楼阁式塔；塔顶的刹，就是一座缩小的窣堵坡。',
+ facts:[{b:'汉末',t:'“上累金盘，下为重楼”',x:'《后汉书·陶谦传》；梁思成认为即以窣堵坡置于中国原有的重楼之上'},{b:'砖座',t:'砖砌仰莲两层为座',x:'梁思成《中国建筑史》'},{b:'铁刹',t:'铁仰莲之上，依次是覆钵、相轮、宝盖、圆光',x:'顶上是仰月和宝珠'},{b:'约 12 m',t:'塔刹高度',x:'按剖面图比例推算'},{b:'8 条',t:'铁链',x:'从宝盖拉到八条屋脊上，像八根风缆'},{img:'liang-spire.jpg',fit:1,t:'塔刹近景',x:'梁思成《中国建筑史》图 65-3'}],
  acts:[{t:'看铁链',cam:'top',st:{focus:['chain']},labels:['chain']}],links:['history']},
 eaves:{say:["从外面看，五层塔身，加上首层外面副阶的一重，一共六重屋檐。", "越往下，斗拱出挑越多，屋檐伸得越远；越往上越简，屋檐一层层收窄。", {"s": "屋角翘起，挂着铁马风铃，风一吹就响。", "act": 0}],k:'外观',t:'六重屋檐',s:'五层六檐，檐角起翘',up:'home',cam:'wideL',labels:['e1','e2','e4','e5','e6'],hot:{dou1:['bracket','屋檐靠什么挑出去？']},
  lead:'五层塔身，加上首层外面副阶的一重，一共六重屋檐。檐口向上凹曲，屋角翘起。越往上，斗拱出挑越少，屋檐也越收越窄。',
@@ -712,7 +731,7 @@ eaves:{say:["从外面看，五层塔身，加上首层外面副阶的一重，�
  acts:[{t:'看屋角',cam:CORNERCAM,labels:['corner','bell']}],links:['brktypes','bracket','fujie']},
 pingzuo:{say:["二层以上，每层屋檐上方都挑出一圈平坐，外缘围着勾栏，可以绕塔一周。", "四个正面的当心间开门，其余各间是木条编道抹灰墙。", "平坐的斗拱后面，藏着一个从外面看不出来的暗层。"],k:'外观',t:'平坐与勾栏',s:'每层挑出的一圈环廊',up:'home',cam:'pz',labels:['pz2','lattice'],hot:{dark1:['dark','平坐后面藏着什么？']},
  lead:'二层以上，每层屋檐上方挑出一圈平坐，外缘围着勾栏，可以绕塔一周。梁思成记：平坐柱的下端“叉于下层斗栱之上”。',
- facts:[{b:'4 圈',t:'平坐',x:'二至五层各一圈'},{b:'三杪',t:'二、三、四层平坐斗拱',x:'五层为双杪'},{b:'勾栏',t:'斗子蜀柱，华版无华',x:'华版素面，不雕花'},{b:'门 · 墙',t:'四个正面的当心间辟门',x:'其余各间是木条编道抹灰墙'},{t:'平坐斗拱后面藏着一个暗层，从外面看不出来'}],
+ facts:[{b:'4 圈',t:'平坐',x:'二至五层各一圈'},{b:'三杪',t:'二、三、四层平坐斗拱',x:'重栱计心（梁思成）；五层为双杪'},{b:'勾栏',t:'斗子蜀柱，华版无华',x:'华版素面，不雕花'},{b:'门 · 墙',t:'四个正面的当心间辟门',x:'其余各间是木条编道抹灰墙'},{t:'平坐斗拱后面藏着一个暗层，从外面看不出来'}],
  links:['levels','dark']},
 fujie:{say:["首层外面绕着一圈带屋檐的回廊，叫副阶周匝，所以首层有两重屋檐。", "梁思成记，最下层内外两圈柱子，都包砌在土墼墙里。剖开来看，墙体下厚上薄，底层格外稳。"],k:'一层',t:'首层与副阶',s:'副阶周匝：绕着首层的回廊',up:'home',cam:'eave1',labels:['fujie'],hot:{door1:['section','进门，剖开看'],taiji:['base','台基']},
  lead:'首层外面绕了一圈带屋檐的回廊，叫“副阶周匝”，所以首层有两重屋檐。梁思成记：最下层内外两圈柱子，都包砌在土墼墙里。',
@@ -745,13 +764,17 @@ stair:{k:'内部',t:'楼梯',s:'藏在两圈柱子之间',up:'section',cam:'sect
  facts:[{b:'45°',t:'楼梯斜度大致为四十五度',x:'两颊夹安踏板与促版'},{b:'卧棂',t:'扶梯勾栏',x:'颊上安斗子蜀柱勾栏，不施华版，用卧棂一条'},{b:'9 层',t:'楼梯经过全部明层和暗层'}],links:['levels']},
 bracket:{say:["屋檐为什么能挑出去这么远？秘密在柱头上的斗拱。", "这是一组首层外檐斗拱，梁思成记为双杪双下昂。最底下是栌斗，向外一层层挑出的是华拱，斜着伸出去的两根长杆是下昂。", {"s": "把它拆开来看：一组斗拱由几十个构件咬合而成。梁思成统计，木塔各层内外共有斗拱三十余种。", "act": 0}],k:'构造',t:'斗拱',s:'柱头上层层出挑的木构件',up:'home',cam:'bLab',st:{lab:'bracket'},labels:['栌斗','华拱','下昂','令拱','耍头'],
  lead:'屋檐为什么能挑出去这么远？秘密在柱头上的斗拱。这是一组首层外檐斗拱，梁思成记为“双杪双下昂”，单独取下来放大。点任何一块木头，看它叫什么。',
- facts:[{b:'30余种',t:'梁思成统计：各层内外共有斗拱三十余种',x:'今天通行的说法是 54 种，分类口径不同'},{b:'斗拱昂',t:'三类构件',x:'斗是垫块，拱是横臂，昂是斜杆'},{b:'一跳',t:'每向外挑出一层'},{img:'liang-dougong.jpg',t:'照片里有人坐在斗拱之间，可以看出斗拱有多大',x:'梁思成《中国建筑史》图 65-2'}],
+ facts:[{b:'30余种',t:'梁思成统计：各层内外共有斗拱三十余种',x:'今天通行的说法是 54 种，分类口径不同'},{b:'斗拱昂',t:'三类构件',x:'斗是垫块，拱是横臂，昂是斜杆'},{b:'一跳',t:'每向外挑出一层'},{b:'偷心',t:'第一、第三跳跳头不施横栱，第二跳施重栱',x:'如独乐寺观音阁上层檐（梁思成）'},{img:'liang-dougong.jpg',t:'照片里有人坐在斗拱之间，可以看出斗拱有多大',x:'梁思成《中国建筑史》图 65-2'}],
  acts:[{t:'拆开构件',cam:'bLabX',st:{labEx:1},labels:['华拱','泥道拱','瓜子拱','令拱','下昂','橑檐方','椽子']},{t:'放回塔上',cam:DOU1CAM,st:{lab:null,focus:['brk','ang']},labels:['dou1']}],
- links:['brktypes','ang','fork','joint']},
+ links:['scale','brktypes','ang','fork','joint']},
 brktypes:{say:["而且每一层的斗拱都不一样。", "副阶双杪偷心；一层、二层双杪双下昂，出挑最远；三层三杪，四层双杪，五层半栱承单杪。", "平坐二到四层出三杪，五层出双杪；内槽一律出华拱四跳。越往上越简，正好配合屋檐一层层收窄。"],k:'构造',t:'各层斗拱',s:'每一层的铺作都不一样',up:'bracket',cam:'wideL',st:{focus:['brk','ang']},labels:['k1','k2','k3','k4','k5','k6'],
  lead:'梁思成逐层记下了木塔斗拱的做法：越往下出挑越多，越往上越简，正好配合屋檐一层层收窄。',
- tl:[['副阶','双杪，偷心','跳头上不施横拱'],['一层','双杪双下昂','出挑最远，托起首层大檐'],['二层','双杪双下昂','与独乐寺观音阁上层檐同'],['三层','三杪','不用昂'],['四层','双杪',''],['五层','半栱承单杪',''],['平坐','二、三、四层出三杪，五层出双杪',''],['内槽','一律出华拱四跳','跳头或施横拱，或偷心'],['补间','驼峰短柱承大斗，或用斜拱相交','如善化寺大殿及普贤阁所见']],
- facts:[{t:'模型按上表逐层配置铺作；补间铺作按“驼峰短柱承大斗”做，斜拱从略'}],links:['ang','eaves']},
+ tl:[['副阶','双杪，偷心','跳头上不施横拱'],['一层','双杪双下昂','第一、三跳偷心，第二跳重栱；出挑最远，托起首层大檐'],['二层','双杪双下昂','与独乐寺观音阁上层檐同'],['三层','三杪','不用昂'],['四层','双杪',''],['五层','半栱承单杪',''],['平坐','二、三、四层三杪重栱计心，五层出双杪',''],['内槽','一律出华拱四跳','跳头或施横拱，或偷心'],['补间','驼峰短柱承大斗，或用斜拱相交','如善化寺大殿及普贤阁所见']],
+ facts:[{b:'计心',t:'跳头施横栱叫计心，不施叫偷心',x:'横栱一层为单栱，两层为重栱（梁思成）'},{t:'模型按上表逐层配置铺作；补间铺作按“驼峰短柱承大斗”做，斜拱从略'}],links:['scale','ang','eaves']},
+scale:{say:["同样高的柱子，看看上面的斗拱有多大。", "左边是应县木塔首层外檐的斗拱，高度约为柱高的一半；右边按明、清的比例，只有柱高的五分之一到六分之一。", "梁思成说，燕云一带的辽代建筑尚多存唐风，斗栱之高，竟及柱高之半。到了清代，连度量单位也从“材”换成了更小的“斗口”。"],k:'构造',t:'斗拱变小了',s:'从辽到明清',up:'bracket',cam:'cLab',st:{lab:'compare'},labels:['辽：斗栱约为柱高之半','明、清：仅为柱高五分或六分之一','1 / 2','1 / 6'],
+ lead:'把两组斗拱放在一样高的柱子上比一比。梁思成写道：“斗栱之高，在辽、宋为柱高之半者，至明、清仅为柱高五分或六分之一。”',
+ facts:[{b:'1 / 2',t:'辽、宋：斗栱之高约为柱高之半',x:'应县木塔、独乐寺观音阁等燕云一带的辽建“尚多存唐风”'},{b:'1 / 5–1 / 6',t:'明、清：仅为柱高五分或六分之一',x:'梁思成《中国建筑史》'},{b:'材 → 斗口',t:'度量单位也变小了',x:'宋式以“材”为度量单位，清式以斗口为准，斗口即宋式之材厚'},{t:'右边的明清斗拱只按比例缩小示意，不是清代实物的构造'}],
+ links:['brktypes','bracket']},
 ang:{k:'构造',t:'下昂',s:'一根杠杆挑起屋檐',up:'bracket',cam:'bLabX',st:{lab:'bracket',labEx:.85,focus:['ang']},labels:['下昂','柱头方','交互斗'],
  lead:'斜着伸出的两根长杆叫下昂。它像一根杠杆：里端被屋架压住，外端向上挑起屋檐。木塔只在一、二层外檐用下昂。',
  facts:[{b:'2 根',t:'这组斗拱里的下昂',x:'一、二层外檐都是双杪双下昂'},{b:'平 / 斜',t:'华拱平着出挑，下昂斜着出挑'}],links:['joint']},
@@ -882,7 +905,7 @@ addEventListener('keydown',e=>{if(e.key==='Escape')toggleToc(false);if(!PAGE||!P
 
 // ================= 自动导览 =================
 // 按路线逐页讲解：go() 翻页、say() 显示一句字幕，遇到 {act} 时切到该页的动作视图；手动翻页即暂停，继续时从停下的那页接着讲
-const TOUR=['home','history','spire','eaves','fujie','pingzuo','levels','dark','section','tube','statues','bracket','brktypes','fork','shoufen','joint','quake','today','build'];
+const TOUR=['home','history','spire','eaves','fujie','pingzuo','levels','dark','section','tube','statues','bracket','brktypes','scale','fork','shoufen','joint','quake','today','build'];
 let T_on=false,T_started=false,T_tk=0,T_i=0,T_j=0;
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 // 每句字幕停留的时间按字数算
