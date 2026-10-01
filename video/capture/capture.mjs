@@ -104,7 +104,12 @@ async function newPage(browser, { viewport, dsf = 1, fonts = false, url = 'index
   page.on('pageerror', e => console.error('[page error]', e.message));
   if (vclock) await page.addInitScript(VCLOCK);
   await page.goto(`http://localhost:${port}/${url}`, { waitUntil: 'domcontentloaded', timeout: 600000 });
-  await page.waitForFunction(() => window.__app, null, { timeout: 600000 });
+  // 页面脚本是 ES 模块，要等 three.js 加载完才建好场景；虚拟时钟接管了 requestAnimationFrame，
+  // waitForFunction 的轮询会被卡住，所以从 Node 这边轮询
+  for (const t0 = Date.now(); !(await page.evaluate(() => !!window.__app));) {
+    if (Date.now() - t0 > 600000) throw new Error('页面加载超时');
+    await new Promise(r => setTimeout(r, 200));
+  }
   return { ctx, page };
 }
 
